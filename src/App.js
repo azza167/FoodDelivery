@@ -1,13 +1,23 @@
-// import logo from './logo.svg';
-// import './App.css';
+
+import React from 'react';
+
+import Footer from './component/Footer/footer.jsx';
+import Routers from './routes/Routers';
+import Header from './component/Header/header.jsx';
+
 
 import Category from "./component/Category/Category";
 
 function App() {
   return (
     <div >
-    <h1>Hello my team</h1>
-    <Category></Category>
+    
+      <Header/>
+      <Routers/> 
+      <Category></Category>
+        
+      <Footer/>
+
     </div>
     
     
