@@ -1,12 +1,10 @@
-
 import React from 'react';
-
 import Footer from './component/Footer/footer.jsx';
 import Routers from './routes/Routers';
 import Header from './component/Header/header.jsx';
 
 
-import Category from "./component/Category/Category";
+import Home from './pages/Home.jsx';
 
 function App() {
   return (
@@ -14,8 +12,7 @@ function App() {
     
       <Header/>
       <Routers/> 
-      <Category></Category>
-        
+
       <Footer/>
 
     </div>
