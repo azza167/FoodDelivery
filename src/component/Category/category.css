@@ -6,9 +6,10 @@
     padding: 20px 0px;
     border-radius: 8px;
   }
-  /* .all_btn{
-   
-  } */
+  .all_btn{
+   width: 100 px;
+   /* height: 50px ; */
+  }
   .food_category button {
     border: none;
     outline: none;
@@ -16,8 +17,8 @@
     background: none;
     /* background: transparent; */
     color: #fff;
-    width: 80px;
-    height: 80px;
+    /* width: 80px; */
+    /* height: 80px; */
   }
   .foodBtnActive {
     background: #fff !important;
@@ -25,13 +26,19 @@
     color: #ff5f00 !important;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .food_category {
       padding: 10px;
     }
     .food_category button {
       padding: 5px;
       font-size: 0.7rem;
+    }
+  
+  }
+  @media screen and (max-width: 600px) {
+    .food_category button {
+      font-size: 0.5rem;
     }
   
   }
