@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import {BrowserRouter as ROuter} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
+import "remixicon/fonts/remixicon.css";
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ROuter>
+    <Router>
     <App />
-    </ROuter>
+    </Router>
 
   </React.StrictMode>
 );
