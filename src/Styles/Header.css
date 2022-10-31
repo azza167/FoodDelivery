@@ -11,7 +11,7 @@
   .logo img {
     width: 40%;
     object-fit: contain;
-    margin-top: -20px;
+    margin-top: 0px;
   }
   
    .logo h5 {
@@ -80,12 +80,11 @@
   
   @media only screen and (max-width: 992px) {
     .logo img {
-      width: calc(100% - 70%);
+      width: 40%;
+      margin-right: 70%;
+      
     }
-    .logo h5 {
-      font-size: 0.8rem;
-      margin-top: -15px;
-    }
+    
   
     .navigation {
       position: fixed;
@@ -139,10 +138,9 @@
     }
   
     .logo img {
-      margin-top: -70px !important;
+      margin-top: -15px !important;
+      margin-right: 90%;
     }
-    .logo h5 {
-      margin-top: -55px;
-    }
+    
   }
   
