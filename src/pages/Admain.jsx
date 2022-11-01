@@ -54,7 +54,7 @@ const [dsc,setdsc] =useState("")
    }
 
 else{
-    alert("complete data")
+    alert("complete field")
 }
 }
 

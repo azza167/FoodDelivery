@@ -62,13 +62,7 @@ const Home = () => {
 
       <Category/>
 
-        {product.map((item)=>(
-          <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-          <ProductCard item={item}/>
-
-          </Col>
-
-        ))} 
+ 
         </Row>
 
     </Container>
