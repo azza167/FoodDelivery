@@ -4,7 +4,7 @@ import { Routes,Route,Navigate} from 'react-router-dom' ;
 import Home from '../pages/Home';
 import AllFoods from '../pages/AllFoods';
 import FoodDetails from '../pages/FoodDetails';
-import Store from '../store/Store';
+ import Store from '../store/Store';
 import Admain from '../pages/Admain';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -25,14 +25,6 @@ const Routers = () => {
 
     <Route path='/Checkout' element={<Checkout/>}/>
 
-
-
-
-   
-
-  </Routes>
-    
-  
+  </Routes> 
 }
-
 export default Routers

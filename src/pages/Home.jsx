@@ -1,9 +1,8 @@
-import products from "../assets/products.js";
+// import products from "../assets/products.js";
 // import { useSelector ,useDispatch  } from 'react-redux'
 // import { useEffect } from "react";
 //  import ProductCard from "../component/ProuductCard/ProductCard.jsx";
 import React, { useState } from 'react'
-import ProductCard from "../component/ProuductCard/ProductCard.jsx";
 import Category from "../component/Category/Category";
 import { Col, Container, Row } from "reactstrap";
 import hero from '../assets/images/hero.png'
@@ -14,7 +13,7 @@ const Home = () => {
 // const [allproducts,setAllProducts]=useState(products);
 
     
-const [allproducts]=useState(products);
+// const [allproducts]=useState(products);
 
 
   return (
@@ -44,21 +43,8 @@ const [allproducts]=useState(products);
         </Col>
 
 
-
       <Category/>
-      </Row>
-{/* 
-         {product.map((item)=>(
-=======
-      <Category/>
-
-        {allproducts.map((item)=>(
-          <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-          <ProductCard item={item}/>
-
-          </Col>
-
-        ))}   */}
+      </Row>     
     </Container>
 
   )
