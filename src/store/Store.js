@@ -20,7 +20,8 @@ const Store = (state = initstate, action) => {
    }
 
    if(action.type === "delete" ){
-    console.log(action.payload.index)
+    const a = state.product.filter((el)=>el.id =="04")
+    console.log(a)
     return {...state ,admaincart:state.admaincart.filter((el,i)=>i!=action.payload.index,1),product:state.product.filter((el)=>el.id!=action.payload.ell.id) }
 
 
