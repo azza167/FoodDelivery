@@ -2,6 +2,9 @@
 // import { useSelector ,useDispatch  } from 'react-redux'
 // import { useEffect } from "react";
 //  import ProductCard from "../component/ProuductCard/ProductCard.jsx";
+import products from "../assets/products.js";
+import { useSelector ,useDispatch  } from 'react-redux'
+import { useEffect } from "react";
 import React, { useState } from 'react'
 import Category from "../component/Category/Category";
 import { Col, Container, Row } from "reactstrap";
@@ -14,11 +17,16 @@ const Home = () => {
 
     
 // const [allproducts]=useState(products);
+  const product = useSelector((state)=>state.product)
+  const newadmain = useSelector((state)=>state.admaincart)
+  console.log(newadmain);
 
+  const [allproducts,setAllProducts]=useState(product);
 
   return (
     
     <Container> 
+        
       <Row>
         <Col lg='6' md='6' className="hero-details">
         <h4>Easy way to make an order </h4>
@@ -39,12 +47,12 @@ const Home = () => {
                   
                 </div>
         <Col lg='6' md='6' className="hero-image ">
-        <img src={hero}  className="w-100" alt="" />
+        <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
         </Col>
 
 
       <Category/>
-      </Row>     
+      </Row>        
     </Container>
 
   )
