@@ -36,7 +36,7 @@ import beef1 from  "../assets/images/beef (1).png"
       title: "Cheese pizza",
       price: 95.0,
       image01: pizza1,
-      category: "pizza",
+      category: "Pizza",
   
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
     },
@@ -125,7 +125,7 @@ import beef1 from  "../assets/images/beef (1).png"
     },
     {
         id: "11",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef1,
         category: "Beef",
@@ -135,7 +135,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "12",
-        title: "Pizza With Mushroom",
+        title: "Beef Double Cheese",
         price: 80.0,
         image01: beef2,
         category: "Beef",
@@ -145,7 +145,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "13",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef3,
         category: "Beef",
@@ -155,7 +155,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "14",
-        title: "Pizza With Mushroom",
+        title: "Beef",
         price: 80.0,
         image01: beef4,
         category: "Beef",
@@ -165,7 +165,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "15",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef5,
         category: "Beef",
@@ -175,7 +175,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "16",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef6,
         category: "Beef",
@@ -185,7 +185,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "17",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef7,
         category: "Beef",
@@ -195,7 +195,7 @@ import beef1 from  "../assets/images/beef (1).png"
   
     {
         id: "18",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef8,
         category: "Beef",
@@ -205,7 +205,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "19",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef9,
         category: "Beef",
@@ -215,7 +215,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "20",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef10,
         category: "Beef",
@@ -225,7 +225,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "21",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef11,
         category: "Beef",
@@ -235,7 +235,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "22",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef12,
         category: "Beef",
@@ -245,7 +245,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "23",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef13,
         category: "Beef",
@@ -255,7 +255,7 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "24",
-        title: "Pizza With Mushroom",
+        title: "Beef With Mushroom",
         price: 80.0,
         image01: beef14,
         category: "Beef",
@@ -265,38 +265,38 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "25",
-        title: "Pizza With Mushroom",
+        title: "Chicken With Mushroom",
         price: 80.0,
         image01: chicken1,
-        category: "Beef",
+        category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },
     {
         id: "26",
-        title: "Pizza With Mushroom",
+        title: "Chicken With Mushroom",
         price: 80.0,
         image01: chicken2,
-        category: "Beef",
+        category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },
     {
         id: "27",
-        title: "Pizza With Mushroom",
+        title: "Chicken With Mushroom",
         price: 80.0,
         image01: chicken3,
-        category: "Beef",
+        category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },
 
     {
         id: "28",
-        title: "Pizza With Mushroom",
+        title: "Chicken Double Cheese ",
         price: 80.0,
         image01: chicken4,
-        category: "Beef",
+        category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },     
