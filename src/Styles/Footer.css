@@ -1,7 +1,8 @@
 .footer {
+    
     padding-top: 50px;
-    padding-bottom: 30px;
-    background: #fde4e4;
+    padding-bottom: 60px;
+    background: black;
   }
   
   .footer__logo img {
@@ -17,7 +18,7 @@
   
   .footer__logo p {
     font-size: 0.9rem;
-    color: #333;
+    color:  white;
     line-height: 28px;
   }
   
@@ -28,21 +29,21 @@
   .delivery__time-item span {
     font-weight: 600;
     font-size: 1rem;
-    color: #212245;
+    color: white;
   }
   
   .delivery__time-item p {
-    color: #212245;
+    color: white;
   }
   .footer__title {
     font-size: 1.1rem;
-    color: #212245;
+    color: white;
     font-weight: 600;
   }
   
   .newsletter {
     padding: 5px;
-    border: 1px solid #212245;
+    border: 1px solid white;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -70,7 +71,7 @@
   }
   
   .newsletter input::placeholder {
-    color: #212245;
+    color: white;
   }
   
   .social__links span i {
@@ -125,5 +126,8 @@
     }
     .social__links span a {
       font-size: 0.7rem;
+    }
+    .myRow{
+        background-color: black;
     }
   }

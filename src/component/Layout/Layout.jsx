@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import Routers from "../../routes/Routers";
+import Checkout from "../../pages/Checkout";
 // import { Route } from "react-router-dom";
 
 
@@ -12,7 +13,9 @@ const Layout = () => {
     <div>
     <Header/>
     <Routers/>
+    <Checkout/>
      <Footer/>
+
     </div>
   );
 };

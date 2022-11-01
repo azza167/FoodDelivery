@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer>
     <Container>
-    <Row>
+    <Row className='footer'>
       <Col lg="3" md="4" sm="6">
         <div className=" footer__logo text-start">
           <img src={logo} alt="logo" />
@@ -63,7 +63,7 @@ const Footer = () => {
       </Col>
     </Row>
 
-    <Row className="mt-5">
+    <Row className="mt-5 myRow">
       <Col lg="6" md="6">
         <p className="copyright__text">
           Copyright - 2022, website made by Muhibur Rahman. All Rights
