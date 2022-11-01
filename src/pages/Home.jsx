@@ -25,13 +25,12 @@ const Home = () => {
 
   return (
     
-    <Container> 
+    <Container > 
         
-      <Row>
+      <Row >
         <Col lg='6' md='6' className="hero-details">
         <h4>Easy way to make an order </h4>
         <h1 color="">Hungry?<span>Just order foood </span><span>at your door</span></h1>
-        </Col>
         <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
                   magni delectus tenetur autem, sint veritatis!
@@ -46,21 +45,16 @@ const Home = () => {
                   </button>
                   
                 </div>
+        </Col>
         <Col lg='6' md='6' className="hero-image ">
         <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
         </Col>
 
 
+        </Row>
       <Category/>
 
-        {product.map((item)=>(
-          <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-          <ProductCard item={item}/>
-
-          </Col>
-
-        ))} 
-        </Row>
+ 
 
     </Container>
 
