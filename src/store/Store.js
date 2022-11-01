@@ -8,8 +8,8 @@ let initstate={
 }
 const Store = (state = initstate, action) => {
     if(action.type === "add" ){
-
-
+        // const a = state.product.filter((el)=>el.image01 == action.payload.image01)
+// console.log(a)
         state.product.push(action.payload)
         state.admaincart.push(action.payload)
 
@@ -20,8 +20,8 @@ const Store = (state = initstate, action) => {
    }
 
    if(action.type === "delete" ){
-    const a = state.product.filter((el)=>el.id =="04")
-    console.log(a)
+
+
     return {...state ,admaincart:state.admaincart.filter((el,i)=>i!=action.payload.index,1),product:state.product.filter((el)=>el.id!=action.payload.ell.id) }
 
 
