@@ -8,6 +8,7 @@ export default function ProductCard(props) {
     return (
     <Container >
         <div className='product_card text-center w-100'>
+            <h1>{id}</h1>
             <div className='product_img '>
                 <img className="w-50" src={image01}  alt="product"/>
             </div>

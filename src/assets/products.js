@@ -30,7 +30,7 @@ import beef1 from  "../assets/images/beef (1).png"
  import chicken4 from  "../assets/images/chicken4.png" 
  
 
-const products = [
+ const products = [
     {
       id: "01",
       title: "Cheese pizza",
@@ -302,4 +302,7 @@ const products = [
     },     
     
 ];
-export default products;
+
+
+
+export default products ;
