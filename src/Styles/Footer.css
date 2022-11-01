@@ -1,12 +1,13 @@
 .footer {
-    
+    width: 100%;
     padding-top: 50px;
     padding-bottom: 60px;
     background: black;
+    
   }
   
   .footer__logo img {
-    width: calc(100% - 80%);
+    width: 40%;
     margin-bottom: 5px;
   }
   
@@ -127,7 +128,5 @@
     .social__links span a {
       font-size: 0.7rem;
     }
-    .myRow{
-        background-color: black;
-    }
+    
   }
