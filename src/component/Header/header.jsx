@@ -24,7 +24,7 @@ const nav__links=[
     path: "/contact",
   },
   {
-    display: "admain",
+    display: "Admain",
     path: "/admain",
   }
 ]

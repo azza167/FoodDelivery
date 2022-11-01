@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.succefull{
+ text-transform: capitalize;
+ margin: auto;
 }
-
-.App-link {
-  color: #61dafb;
+.succefull span{
+  color: #ff5f00;
+  
+  text-shadow:5px 5px 50px #ff5f00;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.bt{
+ width: 70%;
+ margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+ 
+}
+.bt:hover{
+  background-color: #ca4a00;
+  transition: 0.5s;
+  transform: scale(1.25);
+}
+.cont{
+  display:flex;
+  flex-direction:column;
+  width:50% ;
+  height: 80vh;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+margin-top: 10px;
+text-align: center;
+font-size: 15px;
+color: #000000;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+border: 1px solid red;
+}
+.cont input{
+  padding: 6px;
+ 
+}
+.mmm{
+width: 100%;
+height: 20vh;
+display: flex;
+text-align: center;
+justify-content: space-around;
+align-items: center;
+margin-right: auto;
+margin-right: auto;
+overflow: hidden;
+
+}
+.mmm h1{
+  width: 25%;
+}
+.mmm h3{
+  width: 25%;
+}
+.mmm image{
+  width: 25%;
+}
+.mmm button{
+width:20% ;  
+}
+.aaa {
+  border: 1px solid red;
+
 }

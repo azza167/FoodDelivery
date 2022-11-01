@@ -9,7 +9,12 @@ import hero from '../assets/images/hero.png'
 import { Link } from "react-router-dom";
 const Home = () => {
 
-const product = useSelector((state)=>state.product)
+  const product = useSelector((state)=>state.product)
+  const newadmain = useSelector((state)=>state.admaincart)
+  console.log(newadmain);
+
+  const [allproducts,setAllProducts]=useState(product);
+
 
 
 
@@ -19,6 +24,7 @@ const product = useSelector((state)=>state.product)
   return (
     
     <Container> 
+   
  
 
      
