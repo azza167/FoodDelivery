@@ -5,7 +5,8 @@ import products from '../assets/products'
 let initstate = {
     product: products,
     admaincart: [],
-    AddTocart: []
+    AddTocart: [],
+    tot:0,
 }
 const Store = (state = initstate, action) => {
     if (action.type === "add") {
@@ -30,13 +31,26 @@ const Store = (state = initstate, action) => {
     if (action.type === "cart") {
 
 
-        state.AddTocart.push(action.payload)
-        console.log(state.AddTocart)
-        console.log("check")
+console.log(state.tot)
+
+console.log("check")
+state.tot+=action.payload.price
+console.log(state.AddTocart)
+state.AddTocart.push(action.payload)
         return {...state, }
 
 
     }
+    if (action.type === "del") {
+
+
+      console.log("delete")
+      console.log(action.payload.element)
+
+      return {...state,AddTocart:state.AddTocart.filter((el,i)=>i!=action.payload.index),tot:state.tot-=action.payload.element.price }
+
+    }
+
     return state;
 }
 const store = createStore(Store)

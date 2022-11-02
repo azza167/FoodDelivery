@@ -2,6 +2,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import Logo from '../../assets/images/icon1.png'
+import { useSelector,useDispatch} from 'react-redux';
 
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
@@ -30,6 +31,7 @@ const nav__links=[
 ]
 
 const Header = () => {
+  var hamada = useSelector((state)=>state.AddTocart);
   return (
     <header className="header">
   <Container>
@@ -59,7 +61,7 @@ const Header = () => {
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon">
          <i className="ri-shopping-basket-line"></i>
-         <span className="cart__badge"></span>
+         <span className="cart__badge">{hamada.length}</span>
        </span>
 
        <span className="user">
