@@ -22,7 +22,7 @@ export default function ProductCard(props) {
                 <span className='product_price'>
                     EGP {price}
                 </span>   
-                <button className='add_btn' onClick={()=>{}}>Add To Cart</button>
+                <button className='add_btn' style={{}} onClick={()=>{}}>Add To Cart</button>
             </div>
         </div>
         </div>
