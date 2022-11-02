@@ -9,11 +9,17 @@ export default function ProductCard(props) {
      const {id,title,image01,price}=props.item;
     //  const [category, setCategory] = useState("ALL");
     const dispatch = useDispatch()
-    function addCartHandeler(){
+
+
+    
+    function addCartHandeler(img,idd,tit,pric){
             
             const obj = {
                 type:"cart",
-                payload:{id:id,title:title,img:image01,price:price}
+                payload:{id:idd,
+                    title:tit,
+                    img:img,
+                    price:pric}
             }
             
             dispatch(obj);
@@ -33,13 +39,13 @@ export default function ProductCard(props) {
                 <span className='product_price'>
                     EGP {price}
                 </span>   
-<<<<<<< HEAD
-                <button className='add_btn' style={{}} onClick={()=>{}}>Add To Cart</button>
-=======
+
+               
+
                 <button className='add_btn' onClick={()=>{
-                    addCartHandeler();
+                    addCartHandeler(image01,id,title,price);
                 }}>Add To Cart</button>
->>>>>>> eb3d8aebf08fad750aea813149c2d20feb6a4657
+
             </div>
         </div>
         </div>
