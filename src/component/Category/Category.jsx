@@ -5,9 +5,7 @@ import pizza01 from "../../assets/images/pizzaaa1.png"
 import beef from "../../assets/images/beef (1).png"
 import './category.css'
 import ProductCard from "../ProuductCard/ProductCard";
-//  import products from "../../assets/products.js";
 import { useSelector   } from 'react-redux'
-
 const categories = [
     {
         display: "Beef",
@@ -82,8 +80,11 @@ function Category() {
                 {allproducts.map((item)=>(
                     <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
                         <ProductCard item={item}/>
+
                     </Col>   
                 ))} 
+
+
             </Row>
         </Container>
     )

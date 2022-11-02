@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap'
 import ProductCard from '../component/ProuductCard/ProductCard';
-// import ReactPaginate from 'react-paginate';
+ import ReactPaginate from 'react-paginate';
 
 const AllFoods = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -64,14 +64,14 @@ const AllFoods = () => {
               />
             </div> */}
 
-            {/* <ReactPaginate
+            <ReactPaginate
         nextLabel="next"
         onPageChange={()=>{}}
         pageRangeDisplayed={2}
         pageCount={2}
         previousLabel="previous"
         renderOnZeroPageCount={null}
-      /> */}
+      />
         </Row>
       </Container>
     </section>
