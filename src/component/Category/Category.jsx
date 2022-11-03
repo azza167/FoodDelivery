@@ -84,7 +84,6 @@ function Category() {
                     </Col>   
                 ))} 
 
-
             </Row>
         </Container>
     )

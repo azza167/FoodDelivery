@@ -19,8 +19,14 @@ const Home = () => {
     
 // const [allproducts]=useState(products);
   const product = useSelector((state)=>state.product)
+  const user = useSelector((state)=>state.user)
+  const show = useSelector((state)=>state.showin)
+
+
   const newadmain = useSelector((state)=>state.admaincart)
-  console.log(newadmain);
+  console.log(user);
+  console.log(show);
+
 
   const [allproducts,setAllProducts]=useState(product);
 
@@ -46,7 +52,7 @@ const Home = () => {
                   </button>
                   
                 </div>
-        </Col>
+                </Col>
         <Col lg='6' md='6' className="hero-image ">
         <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
         </Col>

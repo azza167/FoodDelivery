@@ -1,14 +1,44 @@
 // import React from 'react'
 import { createStore } from 'redux'
 import products from '../assets/products'
+import { useEffect, useState } from 'react'
+import { auth } from '../firebase'
+
 
 let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
+
+
+
     tot: 0,
+    user: '',
+
+    userauto: false,
+
+    showin: false
 }
 const Store = (state = initstate, action) => {
+
+
+
+    function aa() {
+
+        const a = auth.onAuthStateChanged((userr) => {
+            state.user = userr;
+            state.userauto = state.user
+            state.showin = true
+
+
+        })
+
+        return a
+    }
+
+    aa()
+
+
     if (action.type === "add") {
         // const a = state.product.filter((el)=>el.image01 == action.payload.image01)
         // console.log(a)
@@ -53,5 +83,28 @@ const Store = (state = initstate, action) => {
 
     return state;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const store = createStore(Store)
-export default store;
+
+
+export default (store)

@@ -1,13 +1,55 @@
 .checkout__bill {
-    background: #de9595;
+    background: #ff5f00;
     padding: 30px;
+    border-radius: 30px;
+    border: 3px solid rgba(13, 14, 15, 0.15);
+    margin-top: 20px;
   }
   
   .checkout__total {
-    border-top: 1px solid rgb(190, 94, 94);
+    border-top: 1px solid rgb(159, 144, 144);
     padding-top: 30px;
   }
+  .shipping{
+    margin: 20px;
+    font-size: 20px;
+  }
+  .form__group{
+    /* font-size: 2em; */
+   
   
+  color: #000;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  font-weight: bold; 
+   padding-left: 10px; 
+   border-radius: 6px;
+  }
+  .input{
+    padding:7px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 0;
+    width: 350px;
+    z-index: 50;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(180, 179, 179);
+  /* border-left: 2px solid #ff5f00; */
+
+  }
+  .submit{
+    background-color: #ff5f00;
+    border: 5px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;  
+      font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+
+ 
+
   @media only screen and (max-width: 768px) {
     .checkout__bill h6 {
       font-size: 0.9rem;
@@ -16,3 +58,5 @@
       margin-top: 40px;
     }
   }
+
+  

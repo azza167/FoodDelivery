@@ -314,3 +314,12 @@ button {
 }
 
 .style-28 {}
+
+.addTOCart__btn {
+    background-color: #ff5f00;
+    border: 2px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}

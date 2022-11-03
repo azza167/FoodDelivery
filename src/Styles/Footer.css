@@ -63,8 +63,12 @@
   
   .newsletter span {
     background: #ff5f00;
-    padding: 5px 30px;
+    padding: 5px 20px;
     border-radius: 5px;
+    margin-right: 90px;
+  }
+  .email{
+    width: 150px;
   }
   
   .newsletter span i {
@@ -80,6 +84,9 @@
     background: #ff5f00;
     color: #fff;
     border-radius: 50%;
+  }
+  .follow{
+    color: #fff;
   }
   
   .copyright__text {
