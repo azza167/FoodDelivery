@@ -67,7 +67,9 @@ const Header = () => {
          <i className="ri-shopping-basket-line"></i>
          <span className="cart__badge"></span>
 
-         <span className="cart__badge">{cartTotal.AddTocart.length}</span>
+         <span className="cart__badge">
+         <Link to=""></Link>
+         {cartTotal.AddTocart.length}</span>
        </span>
 
        <span className="user">

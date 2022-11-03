@@ -15,9 +15,7 @@ const Layout = () => {
 
     <Header/>
     <Routers/>
-    <button >
-                    <Link to="/checkout">checkout</Link>
-                  </button>
+   
      <Footer/>
 
     </div>

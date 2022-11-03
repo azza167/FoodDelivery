@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container,Row, Col } from 'reactstrap';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
 import '../Styles/checkout.css';
@@ -21,8 +21,11 @@ const Checkout = () => {
 
 
   const shippingInfo = [];
-  
+  const cartTotalAmount = useSelector((state) => state.tot);
+
    const shippingCost = 15;
+   const totalAmount = cartTotalAmount + Number(shippingCost);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -115,14 +118,14 @@ const Checkout = () => {
               <Col lg="4" md="6">
                 <div className="checkout__bill">
                   <h6 className="d-flex align-items-center justify-content-between mb-3">
-                    Subtotal: <span></span>
+                    Subtotal: <span>${cartTotalAmount}</span>
                   </h6>
                   <h6 className="d-flex align-items-center justify-content-between mb-3">
                     Shipping: <span>${shippingCost}</span>
                   </h6>
                   <div className="checkout__total">
                     <h5 className="d-flex align-items-center justify-content-between">
-                      Total: <span></span>
+                      Total: <span>${totalAmount}</span>
                     </h5>
                   </div>
                 </div>
