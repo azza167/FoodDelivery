@@ -89,13 +89,10 @@ const[user,setuser]=useState(useSelector((state)=>state.userauto))
          {cartTotal.AddTocart.length}</span>
        </span>
 
-<<<<<<< HEAD
+
        <span className="user" >
          <Link to="/login">
-=======
-       <span className="user">
-         <Link to="">
->>>>>>> fef3fac333cc7f767e674ad9d98a2f892d44006d
+
            <i className="ri-user-line"></i>
     
      
