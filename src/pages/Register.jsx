@@ -13,6 +13,9 @@ const Register = () => {
   const x= useNavigate()
 
   const[err,seterr]=useState('')
+  const[done,setdone]=useState('')
+
+
 
 
 
@@ -34,8 +37,11 @@ const Register = () => {
   try {
   await auth.createUserWithEmailAndPassword(inp.email,inp.password)
   console.log('done')
-  
-  x('/')
+  setdone("congratulation you create an account ")
+  setTimeout(() => {
+    x('/home')
+  }, 2000);
+ 
   
   
   }
@@ -90,6 +96,7 @@ const Register = () => {
               Sign Up
             </button>
             <p style={{color:'red'}}>{err}</p>
+            <p>{done}</p>
           </form>
           <Link to="/login">Already have an account? Login</Link>
         </Col>
