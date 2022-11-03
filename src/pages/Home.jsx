@@ -19,8 +19,14 @@ const Home = () => {
     
 // const [allproducts]=useState(products);
   const product = useSelector((state)=>state.product)
+  const user = useSelector((state)=>state.user)
+  const show = useSelector((state)=>state.showin)
+
+
   const newadmain = useSelector((state)=>state.admaincart)
-  console.log(newadmain);
+  console.log(user);
+  console.log(show);
+
 
   const [allproducts,setAllProducts]=useState(product);
 

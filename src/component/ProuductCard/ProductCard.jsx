@@ -2,11 +2,28 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import './product-card.css'
-export default function ProductCard(props) {
+import { useSelector,useDispatch} from 'react-redux';
 
+export default function ProductCard(props) {
     
      const {id,title,image01,price}=props.item;
     //  const [category, setCategory] = useState("ALL");
+    const dispatch = useDispatch()
+
+
+    
+    function addCartHandeler(img,idd,tit,pric){
+            
+            const obj = {
+                type:"cart",
+                payload:{id:idd,
+                    title:tit,
+                    img:img,
+                    price:pric}
+            }
+            
+            dispatch(obj);
+    }
 
      return (
     <Container>
@@ -24,7 +41,13 @@ export default function ProductCard(props) {
                 <span className='product_price'>
                     EGP {price}
                 </span>   
-                <button className='add_btn' onClick={()=>{}}>Add To Cart</button>
+
+               
+
+                <button className='add_btn' onClick={()=>{
+                    addCartHandeler(image01,id,title,price);
+                }}>Add To Cart</button>
+
             </div>
         </div>
         </div>
