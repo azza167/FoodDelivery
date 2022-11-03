@@ -31,7 +31,8 @@ const nav__links=[
 ]
 
 const Header = () => {
-  var hamada = useSelector((state)=>state.AddTocart);
+  var cartTotal = useSelector((state)=>state);
+
   return (
     <header className="header">
   <Container>
@@ -61,7 +62,7 @@ const Header = () => {
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon">
          <i className="ri-shopping-basket-line"></i>
-         <span className="cart__badge">{hamada.length}</span>
+         <span className="cart__badge">{cartTotal.AddTocart.length}</span>
        </span>
 
        <span className="user">
