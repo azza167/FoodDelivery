@@ -32,6 +32,9 @@ const nav__links=[
 ]
 
 const Header = () => {
+
+  
+
   var cartTotal = useSelector((state)=>state);
 
 const [a,seta]=useState(null)
@@ -79,11 +82,20 @@ const[user,setuser]=useState(useSelector((state)=>state.userauto))
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon">
          <i className="ri-shopping-basket-line"></i>
-         <span className="cart__badge">{cartTotal.AddTocart.length}</span>
+         <span className="cart__badge"></span>
+
+         <span className="cart__badge">
+         <Link to=""></Link>
+         {cartTotal.AddTocart.length}</span>
        </span>
 
+<<<<<<< HEAD
        <span className="user" >
          <Link to="/login">
+=======
+       <span className="user">
+         <Link to="">
+>>>>>>> fef3fac333cc7f767e674ad9d98a2f892d44006d
            <i className="ri-user-line"></i>
     
      

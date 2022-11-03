@@ -14,13 +14,7 @@
     margin-top: 0px;
   }
   
-   .logo h5 {
-    font-weight: 600;
-    font-size: 1rem;
-    color: white;
-    margin-top: -40px;
-    margin-bottom: 0;
-  }
+
   .menu a {
     font-weight: 600;
     font-size: 1rem;
@@ -77,11 +71,11 @@
     z-index: 99999;
     box-shadow: 5px 5px 15px -5px #fde4e4;
   }
-  
+
   @media only screen and (max-width: 992px) {
     .logo img {
       width: 40%;
-      margin-right: 70%;
+      /* margin-right: 70%; */
       
     }
     
@@ -95,6 +89,9 @@
       background: rgba(0, 0, 0, 0.425);
       z-index: 99;
       display: none;
+      /* text-decoration: none; */
+
+      
     }
   
     .menu {
@@ -109,6 +106,8 @@
       align-items: center;
       z-index: 100;
       line-height: 20px;
+      text-decoration: none;
+
     }
   
     .menu a {
