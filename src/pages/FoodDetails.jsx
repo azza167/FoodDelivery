@@ -41,8 +41,9 @@ const FoodDetails = () => {
         const reviewsById= reviews.filter((item)=>id===item.id)
         setReviews(reviews);
         setReviewsById(reviewsById)
+        console.log("naaa")
       }
-    },[reviews]);
+    },[product,reviews]);
 
     useEffect(() => {
       window.scrollTo(0, 0);
