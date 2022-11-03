@@ -1,11 +1,15 @@
 
 import React from 'react';
+
 import { Container } from 'reactstrap';
 import Logo from '../../assets/images/icon1.png'
 import { useSelector,useDispatch} from 'react-redux';
 
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
+import { useEffect, useState } from 'react'
+import { auth } from '../../firebase';
+
 
 const nav__links=[
   {
@@ -24,14 +28,19 @@ const nav__links=[
     display: "Contact",
     path: "/contact",
   },
-  {
-    display: "Admain",
-    path: "/admain",
-  }
+
 ]
 
 const Header = () => {
   var cartTotal = useSelector((state)=>state);
+
+const [a,seta]=useState(null)
+
+const[user,setuser]=useState(useSelector((state)=>state.userauto))
+
+// const user=useSelector((state)=>state.userauto)
+
+
 
   return (
     <header className="header">
@@ -56,6 +65,14 @@ const Header = () => {
               {item.display}
             </NavLink>
           ))}
+        
+          <NavLink
+              to={'/admain'}
+
+            >
+            Admain
+            </NavLink>
+           
         </div>
       </div>
        {/* nav right icons */}
@@ -65,9 +82,11 @@ const Header = () => {
          <span className="cart__badge">{cartTotal.AddTocart.length}</span>
        </span>
 
-       <span className="user">
+       <span className="user" >
          <Link to="/login">
            <i className="ri-user-line"></i>
+    
+     
          </Link>
        </span>
 

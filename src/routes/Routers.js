@@ -10,7 +10,11 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
+import { useEffect, useState } from 'react'
+
 const Routers = () => {
+  const [a,seta]=useState(null)
+
   return <Routes>
     <Route path='/' element={<Navigate to='/home'/>}/>
     <Route path='/home' element={<Home/>}/>
@@ -20,7 +24,8 @@ const Routers = () => {
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-    <Route path='/admain' element={<Admain/>}/>
+    {!a? <Route path='/admain' element={<Admain/>}/>:''}
+   
 
 
     <Route path='/Checkout' element={<Checkout/>}/>
