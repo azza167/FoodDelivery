@@ -12,16 +12,15 @@ const Cart = () => {
 const dispatch =useDispatch()
  const handeldel=(i ,el)=>{
 
-const dele={
-type:"del",
-payload:{
-  index:i,
-  element:el
-},
+  const dele={
+  type:"del",
+  payload:{
+    index:i,
+    element:el}
+  } 
+  dispatch(dele);
 
-    dispatch(pluss);
-
-  }
+}
 
   // const {id,title,image01,price}=hamadas;
 
@@ -30,7 +29,7 @@ payload:{
   return (
     <div>
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
-      <h1> total:{total}</h1>
+      <h1> total:{totalAmount}</h1>
       <div class="style-3">Cart</div>
       <div class="style-4"> {hamada.length}</div>
       <div class="style-0">
@@ -149,7 +148,7 @@ payload:{
       // </div>
 
     
-}
+
   
 
 export default Cart;

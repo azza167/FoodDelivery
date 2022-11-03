@@ -8,7 +8,7 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
-import { auth } from '../../firebase';
+import { auth } from '../../FireBase';
 
 
 const nav__links=[

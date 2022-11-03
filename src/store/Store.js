@@ -1,8 +1,8 @@
-// import React from 'react'
+import React from 'react'
 import { createStore } from 'redux'
 import products from '../assets/products'
 import { useEffect, useState } from 'react'
-import { auth } from '../firebase'
+import { auth } from '../FireBase'
 
 
 let initstate = {
