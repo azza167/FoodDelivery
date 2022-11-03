@@ -6,7 +6,7 @@ let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
-    tot:0,
+    tot: 0,
 }
 const Store = (state = initstate, action) => {
     if (action.type === "add") {
@@ -31,12 +31,12 @@ const Store = (state = initstate, action) => {
     if (action.type === "cart") {
 
 
-console.log(state.tot)
+        console.log(state.tot)
 
-console.log("check")
-state.tot+=action.payload.price
-console.log(state.AddTocart)
-state.AddTocart.push(action.payload)
+        console.log("check")
+        state.tot += action.payload.price
+        console.log(state.AddTocart)
+        state.AddTocart.push(action.payload)
         return {...state, }
 
 
@@ -44,10 +44,10 @@ state.AddTocart.push(action.payload)
     if (action.type === "del") {
 
 
-      console.log("delete")
-      console.log(action.payload.element)
+        console.log("delete")
+        console.log(action.payload.element)
 
-      return {...state,AddTocart:state.AddTocart.filter((el,i)=>i!=action.payload.index),tot:state.tot-=action.payload.element.price }
+        return {...state, AddTocart: state.AddTocart.filter((el, i) => i != action.payload.index), tot: state.tot -= action.payload.element.price }
 
     }
 
