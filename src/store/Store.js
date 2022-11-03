@@ -22,7 +22,7 @@ const Store = (state = initstate, action) => {
    if(action.type === "delete" ){
 
 
-    return {...state ,admaincart:state.admaincart.filter((el,i)=>i!=action.payload.index,1),product:state.product.filter((el)=>el.id!=action.payload.ell.id) }
+    return {...state ,admaincart:state.admaincart.filter((el,i)=>i!==action.payload.index,1),product:state.product.filter((el)=>el.id!==action.payload.ell.id) }
 
 
    }
