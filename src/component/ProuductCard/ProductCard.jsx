@@ -9,10 +9,12 @@ export default function ProductCard(props) {
     //  const [category, setCategory] = useState("ALL");
 
      return (
-    <Container >
+    <Container>
         <div className='product_card text-center w-100'>
             <div className='product_img '>
+            <Link className=' text-black' to={`/foods/${id}`}>
                 <img className="w-50" src={image01}  alt="product"/>
+            </Link>
             </div>
         <div className='product_content mb-2'>
         <h6>

@@ -34,7 +34,9 @@
     border-radius: 5px;
     font-size: 0.9rem;
 }
-
+.add_btn:focus{
+  outline: none;
+}
 
 @media only screen and (max-width: 992px) {
     .product_content h6 a {
