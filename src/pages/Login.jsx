@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react'
-import { auth } from "../firebase";
+import { auth } from "../FireBase";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'

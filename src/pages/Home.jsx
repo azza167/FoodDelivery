@@ -52,7 +52,7 @@ const Home = () => {
                   </button>
                   
                 </div>
-        </Col>
+                </Col>
         <Col lg='6' md='6' className="hero-image ">
         <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
         </Col>

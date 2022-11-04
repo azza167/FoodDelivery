@@ -34,11 +34,12 @@ import beef1 from  "../assets/images/beef (1).png"
     {
       id: "01",
       title: "Cheese pizza",
-      price: 95.0,
+      price: 90.0,
       image01: pizza1,
+      image02: pizza2,
+      image03: pizza3,
       category: "Pizza",
-  
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
+      desc: "Cheese pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
     },
   
     {
@@ -46,15 +47,19 @@ import beef1 from  "../assets/images/beef (1).png"
       title: "Vegetarian Pizza",
       price: 90.0,
       image01: pizza2,
+      image02: pizza3,
+      image03: pizza4,
       category: "Pizza",
   
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+      desc: "Vegetarian Pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
     },
     {
         id: "03",
         title: "Seafood Pizza",
-        price: 75.0,
+        price: 85.0,
         image01: pizza3,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
     
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
@@ -63,8 +68,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "04",
         title: "Pizza With Mushroom",
-        price: 65.0,
+        price: 85.0,
         image01: pizza4,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -72,8 +79,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "05",
         title: "Maxican Green Wave",
-        price: 85.0,
+        price: 65.0,
         image01: pizza5,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -81,8 +90,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "06",
         title: "Double Cheese Margherita",
-        price: 115.0,
+        price: 75.0,
         image01: pizza6,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -90,8 +101,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "07",
         title: "Pizza With Mushroom",
-        price: 100.0,
+        price: 75.0,
         image01: pizza7,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -99,8 +112,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "08",
         title: "Pizza With Mushroom",
-        price: 90.0,
+        price: 85.0,
         image01: pizza8,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -108,17 +123,21 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "09",
         title: "Pizza With Mushroom",
-        price: 80.0,
+        price: 100.0,
         image01: pizza9,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },
     {
         id: "10",
-        title: "Pizza With Mushroom",
-        price: 60.0,
+        title: "Pizza",
+        price: 85.0,
         image01: pizza10,
+        image02: pizza2,
+        image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -126,8 +145,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "11",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 70.0,
         image01: beef1,
+        image02: beef10,
+        image03: beef3,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -136,8 +157,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "12",
         title: "Beef Double Cheese",
-        price: 80.0,
+        price: 70.0,
         image01: beef2,
+        image02: beef10,
+        image03: beef3,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -146,8 +169,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "13",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 65.0,
         image01: beef3,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -158,6 +183,8 @@ import beef1 from  "../assets/images/beef (1).png"
         title: "Beef",
         price: 80.0,
         image01: beef4,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -166,8 +193,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "15",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 55.0,
         image01: beef5,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -176,8 +205,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "16",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 55.0,
         image01: beef6,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -186,8 +217,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "17",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 50.0,
         image01: beef7,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -196,8 +229,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "18",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 70.0,
         image01: beef8,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -205,9 +240,11 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "19",
-        title: "Beef With Mushroom",
+        title: "Beef Double Cheese",
         price: 80.0,
         image01: beef9,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -216,8 +253,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "20",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 70.0,
         image01: beef10,
+        image02: beef1,
+        image03: beef2,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -226,8 +265,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "21",
         title: "Beef With Mushroom",
-        price: 80.0,
+        price: 60.0,
         image01: beef11,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -238,6 +279,8 @@ import beef1 from  "../assets/images/beef (1).png"
         title: "Beef With Mushroom",
         price: 80.0,
         image01: beef12,
+        image02: beef10,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -248,6 +291,8 @@ import beef1 from  "../assets/images/beef (1).png"
         title: "Beef With Mushroom",
         price: 80.0,
         image01: beef13,
+        image02: beef2,
+        image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -258,6 +303,8 @@ import beef1 from  "../assets/images/beef (1).png"
         title: "Beef With Mushroom",
         price: 80.0,
         image01: beef14,
+        image02: beef1,
+        image03: beef2,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -266,8 +313,10 @@ import beef1 from  "../assets/images/beef (1).png"
     {
         id: "25",
         title: "Chicken With Mushroom",
-        price: 80.0,
+        price: 70.0,
         image01: chicken1,
+        image02: chicken2,
+        image03: chicken3,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -277,15 +326,19 @@ import beef1 from  "../assets/images/beef (1).png"
         title: "Chicken With Mushroom",
         price: 80.0,
         image01: chicken2,
+        image02: chicken4,
+        image03: chicken1,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
     },
     {
         id: "27",
-        title: "Chicken With Mushroom",
-        price: 80.0,
+        title: "Chicken",
+        price: 70.0,
         image01: chicken3,
+        image02: chicken1,
+        image03: chicken2,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
@@ -293,11 +346,13 @@ import beef1 from  "../assets/images/beef (1).png"
 
     {
         id: "28",
-        title: "Chicken Double Cheese ",
+        title: "Chicken Double Cheese",
         price: 80.0,
         image01: chicken4,
+        image02: chicken1,
+        image03: chicken2,
         category: "Chicken",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+        desc:`Chicken Double Cheese Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.`
 
     },     
     
