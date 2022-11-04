@@ -38,10 +38,21 @@ const Header = () => {
   var cartTotal = useSelector((state)=>state);
 
 const [a,seta]=useState(null)
+const [email,setemail]=useState('')
 
-const[user,setuser]=useState(useSelector((state)=>state.userauto))
+const[show , setshow]=useState(false)
 
-// const user=useSelector((state)=>state.userauto)
+useEffect(()=>{
+  auth.onAuthStateChanged((userr)=>{
+    
+    userr?setemail(userr.email):setemail('')
+    console.log(show)
+   userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
+
+   
+ 
+      })
+},[]) 
 
 
 
@@ -66,34 +77,39 @@ const[user,setuser]=useState(useSelector((state)=>state.userauto))
               }
             >
               {item.display}
+              
             </NavLink>
           ))}
-        
-          <NavLink
+          {show?
+         <NavLink
               to={'/admain'}
 
             >
             Admain
             </NavLink>
+:''}
+       
            
         </div>
       </div>
        {/* nav right icons */}
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon">
+
+       <NavLink to={'/Cart'}>
          <i className="ri-shopping-basket-line"></i>
+    </NavLink>
          <span className="cart__badge"></span>
 
-         <span className="cart__badge">
-         <Link to=""></Link>
-         {cartTotal.AddTocart.length}</span>
+         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
+         
+       
        </span>
-
 
        <span className="user" >
          <Link to="/login">
 
-           <i className="ri-user-line"></i>
+           <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>
     
      
          </Link>

@@ -4,6 +4,7 @@ import products from '../assets/products'
 import { useEffect, useState } from 'react'
 import {auth} from '../firebase'
 
+// import { auth } from "./firebase";
 
 let initstate = {
     product: products,
@@ -12,33 +13,19 @@ let initstate = {
     tot:0,
     user:'',
 
-    userauto:false,
+    userauto:'',
 
     showin:false
 }
 const Store = (state = initstate, action) => {
 
-    
-    
-    function aa(){
-
- const a =auth.onAuthStateChanged((userr)=>{
-  state.user=userr ;
-  state.userauto=state.user
-   state.showin=true
 
 
-})
-
-return a
-}
-
-aa()
 
 
     if (action.type === "add") {
-        // const a = state.product.filter((el)=>el.image01 == action.payload.image01)
-        // console.log(a)
+        
+    
         state.product.push(action.payload)
         state.admaincart.push(action.payload)
 

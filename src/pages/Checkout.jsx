@@ -9,27 +9,38 @@ import { useState } from 'react';
 
 
 
-
 const Checkout = () => {
   const [enterName, setEnterName] = useState("");
+  const [se, set] = useState("");
+
   const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
   const [enterCountry, setEnterCountry] = useState("");
   const [enterCity, setEnterCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   
+  const obj ={name:'',email:'',number:'',country:'',city:'',PostalCode:''}
+  const [usersss, setusersss] = useState('');
+  const [age, setage] = useState('');
 
-
+  
+  
+  
+  
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.tot);
-
-   const shippingCost = 15;
-   const totalAmount = cartTotalAmount + Number(shippingCost);
-
-
+  
+  const shippingCost = 15;
+  const totalAmount = cartTotalAmount + Number(shippingCost);
+  
+  
   const submitHandler = (e) => {
-    e.preventDefault();
-    const userShippingAddress = {
+     setusersss({name:enterName,email:enterEmail,number:enterNumber,country:enterCountry,city:enterCity,PostalCode:postalCode})
+     
+     e.preventDefault();
+     console.log(usersss.name)
+     alert(usersss.name)
+     const userShippingAddress = {
       name: enterName,
       email: enterEmail,
       phone: enterNumber,
@@ -41,23 +52,30 @@ const Checkout = () => {
     console.log(shippingInfo);
 
   };
+  // const hade=()=>{
+
+  //   setusersss(enterName)
+  //   setage(se)
+
+  // }
   
   return(
-   <Helmet title ="Checkout">
+
+    <Helmet title ="Checkout">
     <CommonSection title= "Checkout"/>
     <section>
         <Container>
           <Row>
             <Col lg="8" md="6">
               <h6 className="shipping">Shipping Address</h6>
-    <form className="checkout__form" onSubmit={submitHandler}>
+    <form className="checkout__form" >
                 <div className="form__group">
                   <input className='input'
                     type="text"
                     placeholder="Enter your name"
                     required
                     onChange={(e) => setEnterName(e.target.value)}
-                     
+                     name=''
                   />
                 </div>
 
@@ -104,12 +122,12 @@ const Checkout = () => {
                     type="number"
                     placeholder="Postal code"
                     required
-                    onChange={(e) => setPostalCode(e.target.value)}
+                    onChange={(e)=>setPostalCode(e.target.value)}
 
                    
                   />
                 </div>
-                <button type="submit" className='submit' >
+                <button  onClick={submitHandler} className='submit' >
                   Payment
                 </button>
               </form>
@@ -134,6 +152,27 @@ const Checkout = () => {
           </Container>
         </section>
     </Helmet>
+
+/* 
+    
+    <input className='input'
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    onChange={(e) => setEnterName(e.target.value)}
+                     name=''
+                  
+                    <input className='input'
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    onChange={(e) => set(e.target.value)}
+                     name=''
+                  <button onClick={hade}>submit</button>
+                  <p>{usersss}</p>
+                  <p>{age}</p>
+                  </> */
+   
     );
   
 }
