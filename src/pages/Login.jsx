@@ -5,20 +5,34 @@ import { auth } from "../firebase";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
-
+import {store,fire} from '../firebase'
 const Login = () => {
 
-  const dispatch=useDispatch()
+  // const dispatch=useDispatch()
 const initial ={email:'',password:''}
 const[inp,setinp]=useState(initial)
+const[show , setshow]=useState(false)
+const[email , setemail]=useState('')
 
-// const user = useSelector()
-const[user,setuser]=useState(useSelector((state)=>state.userauto))
+const[dat , setdat]=useState([])
+
+
+
+useEffect(()=>{
+  auth.onAuthStateChanged((userr)=>{
+    
+    userr?setshow(true):setshow(false)
+    setemail(userr.email)
+
+ 
+      })
+},[]) 
+       
+
 const x= useNavigate()
 const[err,seterr]=useState('')
-const hadelerlogin=(e,)=>{
+const hadelerlogin=(e)=>{
 
-console.log(e.target.name)
 setinp({...inp,[e.target.name]:e.target.value})
 
 }
@@ -28,7 +42,7 @@ setinp({...inp,[e.target.name]:e.target.value})
       
 e.preventDefault()
 try {
-await auth.signInWithEmailAndPassword(inp.email,inp.password)
+await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
 
 
 x('/')
@@ -36,7 +50,7 @@ x('/')
 
 }
 catch (error){
-  seterr(error.message)
+  error.message.includes('There is no user record')? seterr('this account not excited please register'):seterr('incorrect password or email')
 
 }
 
@@ -49,31 +63,41 @@ catch (error){
 
 
 
+//  const handelerdel=(e)=>
+//  {
+//   fire.collection('/product').doc(e).delete()
 
+//  }
 
 
 
 
 
   const hadelerlog=()=>{
-    setuser('')
-    x('/Login')
-    auth.signOut()
-    // const log={
-    //   type:"login"
-      
-    // }
-  //  dispatch(log)
+    auth.signOut().then(()=>console.log("login out"))
+   
+  
+window.location.reload(true)
+ 
+    x('/login')
+
     }
   
   return (
    
     <section>
+      {/* {dat.map((el)=>(
+        <div>
+<p>{el.dataa.name}</p>
+<img src={el.dataa.img} alt="" />
+<button onClick={()=>{handelerdel(el.id)}}>delet</button>
+        </div>
+      ))} */}
       <Container>
         <Row>
           <Col lg="6" md="6" sm="12" className="m-auto text-center">
-           
-            {!user?   <div>  <form className="form mb-5" onSubmit={hadelersub}>
+           {!show?
+              <div>  <form className="form mb-5" onSubmit={hadelersub}>
               <div className="form__group">
                 <input
                   type="email"
@@ -94,7 +118,7 @@ catch (error){
 
                 />
               </div>
-              
+             
               <button  type="submit" className="addTOCart__btn">
                 Login
               </button>
@@ -106,12 +130,13 @@ catch (error){
                </Link>
                </div>
             
-            :<div><p>welcom { user._delegate.email  }</p>
+               :<div><p>welcom {email} </p>
             
             
-            <button onClick={()=>hadelerlog()}>log out</button></div>}
+            <button onClick={()=>hadelerlog()}>log out</button></div>
+           
      
-        
+           }
           </Col>
         </Row>
       </Container>

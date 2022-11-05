@@ -35,7 +35,7 @@ const Register = () => {
        if(inp.password!=inp.repassword) 
        return seterr('password not matchenig')
   try {
-  await auth.createUserWithEmailAndPassword(inp.email,inp.password)
+  await auth.createUserWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
   console.log('done')
   setdone("congratulation you create an account ")
   setTimeout(() => {

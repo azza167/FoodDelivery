@@ -1,0 +1,11 @@
+.floatty {
+    position: absolute;
+    right: 00px;
+    z-index: 1;
+    padding: 18px;
+    margin: 30px auto;
+    background-color: antiquewhite;
+    width: 20%;
+    height: 100vh;
+    overflow: scroll;
+}
