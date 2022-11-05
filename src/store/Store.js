@@ -19,7 +19,6 @@ let initstate = {
 
 
 
->>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
     tot: 0,
     qty: 1,
     user: '',
