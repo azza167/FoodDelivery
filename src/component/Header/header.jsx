@@ -42,6 +42,7 @@ const [a,seta]=useState(null)
 const [email,setemail]=useState('')
 
 const[show , setshow]=useState(false)
+const dispatch =useDispatch()
 
 //<<<<<<< HEAD
 const dispatch = useDispatch();
@@ -111,7 +112,7 @@ const handeler=()=>{
        <div className="nav__right d-flex align-items-center gap-4">
 
        <span className="cart__icon"
-                       onClick={()=>{handeler()}}
+ onClick={()=>{handeler()}}
        >
        </span>
 

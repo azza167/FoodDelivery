@@ -51,17 +51,9 @@ const Store = (state = initstate, action) => {
 // >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
-    if (action.type === "add") {
-        
-    
-        state.product.push(action.payload)
-        state.admaincart.push(action.payload)
 
 
 
-        return {...state, }
-
-    }
 
     if (action.type === "delete") {
 
