@@ -8,7 +8,9 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
+
 import { auth } from '../../firebase';
+
 
 
 const nav__links=[
@@ -42,12 +44,11 @@ const [a,seta]=useState(null)
 const [email,setemail]=useState('')
 
 const[show , setshow]=useState(false)
-const dispatch =useDispatch()
 
-//<<<<<<< HEAD
+ 
 const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
-//=======
+
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
@@ -58,7 +59,6 @@ useEffect(()=>{
  
       })
 },[]) 
-////>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
 
 const handeler=()=>{
   const obj ={
@@ -110,7 +110,6 @@ const handeler=()=>{
        {/* nav right icons */}
        
        <div className="nav__right d-flex align-items-center gap-4">
-
        <span className="cart__icon"
  onClick={()=>{handeler()}}
        >
@@ -127,6 +126,7 @@ const handeler=()=>{
          <span className="cart__badge"
 
          >
+         
          <Link to=""></Link>
          {cartTotal.AddTocart.length}</span>
 
