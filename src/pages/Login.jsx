@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react'
-import { auth } from "../FireBase";
+import { auth } from "../firebase";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
@@ -20,7 +20,6 @@ useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
     userr?setshow(true):setshow(false)
-    console.log(show)
     setemail(userr.email)
 
    
@@ -33,7 +32,6 @@ const x= useNavigate()
 const[err,seterr]=useState('')
 const hadelerlogin=(e)=>{
 
-console.log(e.target.name)
 setinp({...inp,[e.target.name]:e.target.value})
 
 }
@@ -51,7 +49,7 @@ x('/')
 
 }
 catch (error){
-  seterr(error.message)
+  error.message.includes('There is no user record')? seterr('this account not excited please register'):seterr('incorrect password or email')
 
 }
 

@@ -25,7 +25,6 @@ useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
     userr?seta(true):seta(false)
-    console.log(show)
    userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
 
    

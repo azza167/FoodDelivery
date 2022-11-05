@@ -8,7 +8,7 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
-import { auth } from '../../FireBase';
+import { auth } from '../../firebase';
 
 
 const nav__links=[
@@ -46,7 +46,6 @@ useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
     userr?setemail(userr.email):setemail('')
-    console.log(show)
    userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
 
    

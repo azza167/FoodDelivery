@@ -24,7 +24,7 @@ const dispatch =useDispatch()
 
   // const {id,title,image01,price}=hamadas;
 
-  console.log(hamada);
+
 
   return (
     <div>
