@@ -1,6 +1,6 @@
 import { useSelector ,useDispatch  } from 'react-redux'
 import { useNavigate } from "react-router-dom";
-import { auth } from "../FireBase";
+import { auth } from "../firebase";
 import { useEffect, useState } from 'react'
 
 import React from 'react'

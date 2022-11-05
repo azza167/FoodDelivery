@@ -2,7 +2,7 @@ import React from 'react'
 import { createStore } from 'redux'
 import products from '../assets/products'
 import { useEffect, useState } from 'react'
-import { auth } from '../FireBase'
+import { auth } from '../firebase'
 
 // import { auth } from "./firebase";
 
@@ -11,10 +11,10 @@ let initstate = {
     admaincart: [],
     AddTocart: [],
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
     userauto:'',
-=======
->>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
+// =======
+// >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
     tot: 0,
@@ -28,8 +28,8 @@ const Store = (state = initstate, action) => {
 
 
 
-<<<<<<< HEAD
-=======
+/* HEAD*/
+
     function aa() {
 
         const a = auth.onAuthStateChanged((userr) => {
@@ -44,7 +44,7 @@ const Store = (state = initstate, action) => {
     }
 
     aa()
->>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
+// >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
     if (action.type === "add") {

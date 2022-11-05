@@ -37,6 +37,22 @@
   /* border-left: 2px solid #ff5f00; */
 
   }
+  .inputDis{
+    /* margin-top: 20px; */
+    padding:7px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    /* border: 0; */
+    width: 350px;
+    /* z-index: 50; */
+    background-color: transparent;
+    border: 2px solid rgb(180, 179, 179);
+  }
+  .dis{
+    color: #ff5f00;
+    width: 270px;
+    margin-top: 20px
+  }
   .submit{
     background-color: #ff5f00;
     border: 5px solid rgba(27, 31, 35, .15);
@@ -45,6 +61,18 @@
     font-weight: 700;
     line-height: 30px;
     margin-bottom: 20px;
+    color: black;
+  }
+  .apply{
+    background-color: #ff5f00;
+    border: 5px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;  
+      font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 15px;
+    margin-left: 135px;
+    color: black;
   }
 
 

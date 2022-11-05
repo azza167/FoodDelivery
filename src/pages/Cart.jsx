@@ -126,6 +126,9 @@ const dispatch =useDispatch()
           </div>
         ))}
       </div>
+      <button className="addTOCart__btn">
+          <Link to="/checkout">Proceed to checkout</Link>
+            </button>
     </div>
   );
 };
