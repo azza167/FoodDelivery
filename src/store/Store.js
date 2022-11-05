@@ -10,13 +10,13 @@ let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
+
+
+
     tot: 0,
     qty: 1,
     user: '',
@@ -48,17 +48,9 @@ const Store = (state = initstate, action) => {
 
 
 
-    if (action.type === "add") {
-        
-    
-        state.product.push(action.payload)
-        state.admaincart.push(action.payload)
 
 
 
-        return {...state, }
-
-    }
 
     if (action.type === "delete") {
 

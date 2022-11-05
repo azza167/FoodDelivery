@@ -35,7 +35,7 @@ const ProductCart = ()=> {
     
      console.log(show);
 return(<>
-  {show?<div className='floatty'><h3>{totalAmount}</h3>
+  {!show?<div className='floatty'><h3>{totalAmount}</h3>
 {hamada.map((el, i) => (
           <div>
             <h1>{el.price}</h1>
