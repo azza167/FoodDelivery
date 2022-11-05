@@ -6,20 +6,22 @@ import { useSelector,useDispatch} from 'react-redux';
 
 export default function ProductCard(props) {
     
-     const {id,title,image01,price}=props.item;
+     const {id,title,image01,price,quantity}=props.item;
     //  const [category, setCategory] = useState("ALL");
     const dispatch = useDispatch()
 
 
     
-    function addCartHandeler(img,idd,tit,pric){
+    function addCartHandeler(img,idd,tit,pric,qty){
             
             const obj = {
                 type:"cart",
                 payload:{id:idd,
                     title:tit,
                     img:img,
-                    price:pric}
+                    price:pric,
+                    quantity:qty
+                }
             }
             
             dispatch(obj);
@@ -45,7 +47,7 @@ export default function ProductCard(props) {
                
 
                 <button className='add_btn' onClick={()=>{
-                    addCartHandeler(image01,id,title,price);
+                    addCartHandeler(image01,id,title,price,quantity);
                 }}>Add To Cart</button>
 
             </div>

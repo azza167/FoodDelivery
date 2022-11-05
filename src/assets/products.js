@@ -1,57 +1,57 @@
-import pizza1 from  "../assets/images/pizzaaa1.png" 
-import pizza2 from  "../assets/images/pizzaaa2.png" 
-import pizza3 from  "../assets/images/pizzaaa3.png" 
-import pizza4 from  "../assets/images/pizzaaa4.png" 
-import pizza5 from  "../assets/images/pizzaaa5.png" 
-import pizza6 from  "../assets/images/pizzaaa6.png" 
-import pizza7 from  "../assets/images/pizzaaa7.png" 
-import pizza8 from  "../assets/images/pizzaaa8.png" 
-import pizza9 from  "../assets/images/pizzaaa9.png" 
-import pizza10 from  "../assets/images/pizzaaa10.png" 
+import pizza1 from "../assets/images/pizzaaa1.png"
+import pizza2 from "../assets/images/pizzaaa2.png"
+import pizza3 from "../assets/images/pizzaaa3.png"
+import pizza4 from "../assets/images/pizzaaa4.png"
+import pizza5 from "../assets/images/pizzaaa5.png"
+import pizza6 from "../assets/images/pizzaaa6.png"
+import pizza7 from "../assets/images/pizzaaa7.png"
+import pizza8 from "../assets/images/pizzaaa8.png"
+import pizza9 from "../assets/images/pizzaaa9.png"
+import pizza10 from "../assets/images/pizzaaa10.png"
 
-import beef1 from  "../assets/images/beef (1).png" 
- import beef2 from  "../assets/images/beef (2).png" 
- import beef3 from  "../assets/images/beef (3).png" 
- import beef4 from  "../assets/images/beef (4).png" 
- import beef5 from  "../assets/images/beef (5).png" 
- import beef6 from  "../assets/images/beef (6).png" 
- import beef7 from  "../assets/images/beef (7).png" 
- import beef8 from  "../assets/images/beef (8).png"
- import beef9 from  "../assets/images/beef (9).png" 
- import beef10 from  "../assets/images/beef (10).png" 
- import beef11 from  "../assets/images/beef (11).png" 
- import beef12 from  "../assets/images/beef (12).png" 
- import beef13 from  "../assets/images/beef (13).png" 
- import beef14 from  "../assets/images/beef (14).png" 
- 
- import chicken1 from  "../assets/images/chicken1.png" 
- import chicken2 from  "../assets/images/chicken2.png" 
- import chicken3 from  "../assets/images/chicken3.png" 
- import chicken4 from  "../assets/images/chicken4.png" 
- 
+import beef1 from "../assets/images/beef (1).png"
+import beef2 from "../assets/images/beef (2).png"
+import beef3 from "../assets/images/beef (3).png"
+import beef4 from "../assets/images/beef (4).png"
+import beef5 from "../assets/images/beef (5).png"
+import beef6 from "../assets/images/beef (6).png"
+import beef7 from "../assets/images/beef (7).png"
+import beef8 from "../assets/images/beef (8).png"
+import beef9 from "../assets/images/beef (9).png"
+import beef10 from "../assets/images/beef (10).png"
+import beef11 from "../assets/images/beef (11).png"
+import beef12 from "../assets/images/beef (12).png"
+import beef13 from "../assets/images/beef (13).png"
+import beef14 from "../assets/images/beef (14).png"
 
- const products = [
-    {
-      id: "01",
-      title: "Cheese pizza",
-      price: 90.0,
-      image01: pizza1,
-      image02: pizza2,
-      image03: pizza3,
-      category: "Pizza",
-      desc: "Cheese pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
+import chicken1 from "../assets/images/chicken1.png"
+import chicken2 from "../assets/images/chicken2.png"
+import chicken3 from "../assets/images/chicken3.png"
+import chicken4 from "../assets/images/chicken4.png"
+
+
+const products = [{
+        id: "01",
+        title: "Cheese pizza",
+        price: 90.0,
+        image01: pizza1,
+        image02: pizza2,
+        image03: pizza3,
+        category: "Pizza",
+        desc: "Cheese pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque. ",
+        quantity: 1
     },
-  
     {
-      id: "02",
-      title: "Vegetarian Pizza",
-      price: 90.0,
-      image01: pizza2,
-      image02: pizza3,
-      image03: pizza4,
-      category: "Pizza",
-  
-      desc: "Vegetarian Pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+        id: "02",
+        title: "Vegetarian Pizza",
+        price: 90.0,
+        image01: pizza2,
+        image02: pizza3,
+        image03: pizza4,
+        category: "Pizza",
+
+        desc: "Vegetarian Pizza Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+        quantity: 1
     },
     {
         id: "03",
@@ -61,9 +61,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image02: pizza2,
         image03: pizza3,
         category: "Pizza",
-    
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
 
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
+        quantity: 1
     },
     {
         id: "04",
@@ -74,7 +74,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "05",
@@ -85,7 +85,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "06",
@@ -96,7 +96,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "07",
@@ -107,7 +107,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "08",
@@ -118,7 +118,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "09",
@@ -129,7 +129,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "10",
@@ -140,7 +140,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: pizza3,
         category: "Pizza",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "11",
@@ -151,7 +151,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef3,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -163,9 +163,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef3,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "13",
         title: "Beef With Mushroom",
@@ -175,9 +175,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "14",
         title: "Beef",
@@ -187,9 +187,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "15",
         title: "Beef With Mushroom",
@@ -199,9 +199,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "16",
         title: "Beef With Mushroom",
@@ -211,9 +211,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "17",
         title: "Beef With Mushroom",
@@ -223,9 +223,9 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
-  
+
     {
         id: "18",
         title: "Beef With Mushroom",
@@ -235,7 +235,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -247,7 +247,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -259,7 +259,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef2,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -271,7 +271,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -283,7 +283,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -295,7 +295,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef1,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -307,7 +307,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: beef2,
         category: "Beef",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -319,7 +319,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: chicken3,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "26",
@@ -330,7 +330,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: chicken1,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
     {
         id: "27",
@@ -341,7 +341,7 @@ import beef1 from  "../assets/images/beef (1).png"
         image03: chicken2,
         category: "Chicken",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.",
-
+        quantity: 1
     },
 
     {
@@ -352,12 +352,12 @@ import beef1 from  "../assets/images/beef (1).png"
         image02: chicken1,
         image03: chicken2,
         category: "Chicken",
-        desc:`Chicken Double Cheese Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.`
+        desc: `Chicken Double Cheese Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad et est, fugiat repudiandae neque illo delectus commodi magnam explicabo autem voluptates eaque velit vero facere mollitia. Placeat rem, molestiae error obcaecati enim doloribus impedit aliquam, maiores qui minus neque.`,
+        quantity: 1
+    },
 
-    },     
-    
 ];
 
 
 
-export default products ;
+export default products;

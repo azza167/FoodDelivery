@@ -1,30 +1,44 @@
-
-import React from 'react'
-import { useSelector,useDispatch} from 'react-redux';
-import { Link } from 'react-router-dom';
-import "../Styles/cart.css"
-
-
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import "../Styles/cart.css";
+import { useState } from "react";
 
 const Cart = () => {
-  const hamada = useSelector((state)=>state.AddTocart);
-  const totalAmount = useSelector((state)=>state.tot);
-const dispatch =useDispatch()
- const handeldel=(i ,el)=>{
+  const hamada = useSelector((state) => state.AddTocart);
+  const totalAmount = useSelector((state) => state.tot);
+  const dispatch = useDispatch();
+  const handeldel = (i, el) => {
+    const dele = {
+      type: "del",
+      payload: {  
+        index: i,
+        element: el,
+      },
+    };
+    dispatch(dele);
+  };
 
-  const dele={
-  type:"del",
-  payload:{
-    index:i,
-    element:el}
-  } 
-  dispatch(dele);
+const [count, setCount] = useState(0);
 
+console.log(hamada)
+console.log("hamada")
+
+
+<<<<<<< HEAD
+const handelPlus = (e,i) =>{
+   setCount(e.target.value*hamada.price);
+  console.log(hamada.price)
 }
+const handelMinus = () =>{
+  if(count>1 && count !== 0){
+    setCount(count-1);
+  }
+}
+ 
+=======
 
-  // const {id,title,image01,price}=hamadas;
-
-  console.log(hamada);
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
 
   return (
     <div>
@@ -87,7 +101,7 @@ const dispatch =useDispatch()
                 </div>
                 <div class="style-18">
                   <div class="style-19">
-                    <button class="style-20">
+                    <button class="style-20" onClick={() => handelMinus()}>
                       <svg
                         class="style-21"
                         focusable="false"
@@ -100,9 +114,10 @@ const dispatch =useDispatch()
                           class="style-22"
                         ></path>
                       </svg>
-                    </button  >
-                    <span class="style-23">3</span>
-                    <button class="style-24" onClick={() => handeldel(i, el)}>
+                    </button>
+                    <span class="style-23">{count}</span>
+                    <input type="number" onChange={(e,i) => handelPlus(e,i)}/>
+                    {/* <button class="style-24" onClick={(e,i) => handelPlus(e,i)}> */}
                       <svg
                         class="style-25"
                         focusable="false"
@@ -115,7 +130,7 @@ const dispatch =useDispatch()
                           class="style-26"
                         ></path>
                       </svg>
-                    </button>
+                    {/* </button> */}
                   </div>
                 </div>
                 <div class="style-27">
@@ -133,25 +148,21 @@ const dispatch =useDispatch()
   );
 };
 
-      //  <h1 style={{color:'#ff5f00'}}> Counter: {hamada.length}</h1>
-      // <h1> total:{totalAmount}</h1>
-      // {hamada.map((el,i) =>(
-      //   <div>
-      //     <h1>
-      //       {el.price}
-             
-      //     </h1>
-      //    <img src={el.img} alt="" />
-      //    <button onClick={()=>handeldel(i,el)}>delete</button>
-      //   </div>
-      // ))}
-      // <button className="addTOCart__btn">
-      //               <Link to="/checkout">Proceed to checkout</Link>
-      //             </button>
-      // </div>
+//  <h1 style={{color:'#ff5f00'}}> Counter: {hamada.length}</h1>
+// <h1> total:{totalAmount}</h1>
+// {hamada.map((el,i) =>(
+//   <div>
+//     <h1>
+//       {el.price}
 
-    
-
-  
+//     </h1>
+//    <img src={el.img} alt="" />
+//    <button onClick={()=>handeldel(i,el)}>delete</button>
+//   </div>
+// ))}
+// <button className="addTOCart__btn">
+//               <Link to="/checkout">Proceed to checkout</Link>
+//             </button>
+// </div>
 
 export default Cart;

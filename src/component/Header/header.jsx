@@ -8,7 +8,13 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
+<<<<<<< HEAD
+
+import { auth } from '../../FireBase';
+=======
 import { auth } from '../../firebase';
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
+
 
 
 const nav__links=[
@@ -33,7 +39,8 @@ const nav__links=[
 
 const Header = () => {
 
-  
+
+
 
   var cartTotal = useSelector((state)=>state);
 
@@ -46,15 +53,24 @@ useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
     userr?setemail(userr.email):setemail('')
-    console.log(show)
    userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
 
    
  
       })
 },[]) 
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
 
+const handeler=()=>{
+  const obj ={
+    
+    type:"showCart",
 
+    
+  
+  };
+  dispatch(obj);
+}
 
   return (
     <header className="header">
@@ -93,17 +109,32 @@ useEffect(()=>{
         </div>
       </div>
        {/* nav right icons */}
+       
        <div className="nav__right d-flex align-items-center gap-4">
+<<<<<<< HEAD
+       <span className="cart__icon"
+                       onClick={()=>{handeler()}}
+       >
+=======
        <span className="cart__icon">
 
        <NavLink to={'/Cart'}>
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
          <i className="ri-shopping-basket-line"></i>
     </NavLink>
          <span className="cart__badge"></span>
 
+<<<<<<< HEAD
+         <span className="cart__badge"
+
+         >
+         <Link to=""></Link>
+         {cartTotal.AddTocart.length}</span>
+=======
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
          
        
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
        </span>
 
        <span className="user" >
