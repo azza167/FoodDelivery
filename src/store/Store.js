@@ -2,13 +2,21 @@ import React from 'react'
 import { createStore } from 'redux'
 import products from '../assets/products'
 import { useEffect, useState } from 'react'
-import { auth } from '../FireBase'
+import { auth } from '../firebase'
 
+// import { auth } from "./firebase";
 
 let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
     tot: 0,
     qty: 1,
     user: '',
@@ -19,6 +27,7 @@ let initstate = {
     showin: false
 }
 const Store = (state = initstate, action) => {
+
 
 
 
@@ -38,9 +47,10 @@ const Store = (state = initstate, action) => {
     aa()
 
 
+
     if (action.type === "add") {
-        // const a = state.product.filter((el)=>el.image01 == action.payload.image01)
-        // console.log(a)
+        
+    
         state.product.push(action.payload)
         state.admaincart.push(action.payload)
 

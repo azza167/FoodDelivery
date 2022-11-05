@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 
 import React from 'react';
 import { Routes,Route,Navigate} from 'react-router-dom' ;
@@ -11,9 +12,26 @@ import Register from '../pages/Register';
 import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
 import { useEffect, useState } from 'react'
+import { auth } from "../firebase";
 
 const Routers = () => {
-  const [a,seta]=useState(null)
+  const Navigat= useNavigate()
+
+  const [a,seta]=useState(false)
+
+  const[show , setshow]=useState(false)
+
+useEffect(()=>{
+  auth.onAuthStateChanged((userr)=>{
+    
+    userr?seta(true):seta(false)
+   userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
+
+   
+ 
+      })
+},[]) 
+
 
   return <Routes>
     <Route path='/' element={<Navigate to='/home'/>}/>
@@ -24,11 +42,18 @@ const Routers = () => {
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-    {!a? <Route path='/admain' element={<Admain/>}/>:''}
+    <Route path='/Cart' element={<Cart/>}/>
+    <Route path='/Cart' element={<Cart/>}/>
+    {/* <Route path='*' element={<Cart/>}/> */}
+
+
+
+
+    {show? <Route path='/admain' element={<Admain/>}/>:''}
    
 
 
-    <Route path='/Checkout' element={<Checkout/>}/>
+  {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}
 
   </Routes> 
 }

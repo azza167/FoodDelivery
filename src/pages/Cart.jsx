@@ -25,6 +25,7 @@ console.log(hamada)
 console.log("hamada")
 
 
+<<<<<<< HEAD
 const handelPlus = (e,i) =>{
    setCount(e.target.value*hamada.price);
   console.log(hamada.price)
@@ -35,6 +36,9 @@ const handelMinus = () =>{
   }
 }
  
+=======
+
+>>>>>>> 85adac57e14f6776e457ca7df752c84b770e348d
 
   return (
     <div>

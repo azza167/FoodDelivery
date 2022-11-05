@@ -24,8 +24,7 @@ const Home = () => {
 
 
   const newadmain = useSelector((state)=>state.admaincart)
-  console.log(user);
-  console.log(show);
+
 
 
   const [allproducts,setAllProducts]=useState(product);

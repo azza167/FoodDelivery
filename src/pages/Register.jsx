@@ -1,6 +1,6 @@
 import { useSelector ,useDispatch  } from 'react-redux'
 import { useNavigate } from "react-router-dom";
-import { auth } from "../FireBase";
+import { auth } from "../firebase";
 import { useEffect, useState } from 'react'
 
 import React from 'react'
@@ -35,7 +35,7 @@ const Register = () => {
        if(inp.password!=inp.repassword) 
        return seterr('password not matchenig')
   try {
-  await auth.createUserWithEmailAndPassword(inp.email,inp.password)
+  await auth.createUserWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
   console.log('done')
   setdone("congratulation you create an account ")
   setTimeout(() => {
