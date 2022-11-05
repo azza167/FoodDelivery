@@ -9,11 +9,10 @@ let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
-
-
-
     tot: 0,
+    qty: 1,
     user: '',
+    cartShow: true,
 
     userauto: false,
 
@@ -66,6 +65,7 @@ const Store = (state = initstate, action) => {
         console.log("check")
         state.tot += action.payload.price
         console.log(state.AddTocart)
+        console.log("check")
         state.AddTocart.push(action.payload)
         return {...state, }
 
@@ -76,11 +76,19 @@ const Store = (state = initstate, action) => {
 
         console.log("delete")
         console.log(action.payload.element)
+        console.log(action.payload.element.id)
+        console.log(action.payload.index)
+
 
         return {...state, AddTocart: state.AddTocart.filter((el, i) => i != action.payload.index), tot: state.tot -= action.payload.element.price }
 
     }
+    if (action.type === "showCart") {
+        state.cartShow ? state.cartShow = false : state.cartShow = true
+        console.log("sasd")
 
+        return {...state }
+    }
     return state;
 }
 

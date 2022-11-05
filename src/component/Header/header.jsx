@@ -8,7 +8,9 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
+
 import { auth } from '../../FireBase';
+
 
 
 const nav__links=[
@@ -33,7 +35,8 @@ const nav__links=[
 
 const Header = () => {
 
-  
+
+
 
   var cartTotal = useSelector((state)=>state);
 
@@ -41,9 +44,19 @@ const [a,seta]=useState(null)
 
 const[user,setuser]=useState(useSelector((state)=>state.userauto))
 
+const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
 
+const handeler=()=>{
+  const obj ={
+    
+    type:"showCart",
 
+    
+  
+  };
+  dispatch(obj);
+}
 
   return (
     <header className="header">
@@ -79,12 +92,17 @@ const[user,setuser]=useState(useSelector((state)=>state.userauto))
         </div>
       </div>
        {/* nav right icons */}
+       
        <div className="nav__right d-flex align-items-center gap-4">
-       <span className="cart__icon">
+       <span className="cart__icon"
+                       onClick={()=>{handeler()}}
+       >
          <i className="ri-shopping-basket-line"></i>
          <span className="cart__badge"></span>
 
-         <span className="cart__badge">
+         <span className="cart__badge"
+
+         >
          <Link to=""></Link>
          {cartTotal.AddTocart.length}</span>
        </span>
