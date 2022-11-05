@@ -16,6 +16,10 @@ let initstate = {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
     tot: 0,
     qty: 1,
     user: '',
@@ -47,17 +51,17 @@ const Store = (state = initstate, action) => {
 
 
 
+<<<<<<< HEAD
     if (action.type === "add") {
 
 
         state.product.push(action.payload)
         state.admaincart.push(action.payload)
+=======
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
 
 
 
-        return {...state, }
-
-    }
 
     if (action.type === "delete") {
 

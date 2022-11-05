@@ -10,6 +10,10 @@ import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
 
 
+<<<<<<< HEAD
+=======
+// import { auth } from '../../FireBase';
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
 
 import { auth } from '../../firebase';
 
@@ -47,9 +51,13 @@ const [a,seta]=useState(null)
 const [email,setemail]=useState('')
 
 const[show , setshow]=useState(false)
+const dispatch =useDispatch()
 
+<<<<<<< HEAD
 const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
+=======
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
     
@@ -60,6 +68,10 @@ useEffect(()=>{
  
       })
 },[]) 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
 
 const handeler=()=>{
   const obj ={
@@ -111,26 +123,50 @@ const handeler=()=>{
        {/* nav right icons */}
        
        <div className="nav__right d-flex align-items-center gap-4">
+<<<<<<< HEAD
+=======
+
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
        <span className="cart__icon"
-                       onClick={()=>{handeler()}}
+ onClick={()=>{handeler()}}
        >
+<<<<<<< HEAD
         
        <span className="cart__icon">
 
        <NavLink to={'/Cart'}>
+=======
+
+       <span className="cart__icon">
+
+       <NavLink to={'/Cart'}>
+
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
          <i className="ri-shopping-basket-line"></i>
     </NavLink>
          <span className="cart__badge"></span>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
          <span className="cart__badge"
 
          >
           </span>
          <Link to=""></Link>
          {cartTotal.AddTocart.length}</span>
+<<<<<<< HEAD
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
          
        
+=======
+
+         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
+         
+       
+</span>
+>>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
        </span>
 
        <span className="user" >

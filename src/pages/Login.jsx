@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
-
+import {store,fire} from '../firebase'
 const Login = () => {
 
   // const dispatch=useDispatch()
@@ -13,6 +13,8 @@ const initial ={email:'',password:''}
 const[inp,setinp]=useState(initial)
 const[show , setshow]=useState(false)
 const[email , setemail]=useState('')
+
+const[dat , setdat]=useState([])
 
 
 
@@ -22,7 +24,6 @@ useEffect(()=>{
     userr?setshow(true):setshow(false)
     setemail(userr.email)
 
-   
  
       })
 },[]) 
@@ -62,7 +63,11 @@ catch (error){
 
 
 
+//  const handelerdel=(e)=>
+//  {
+//   fire.collection('/product').doc(e).delete()
 
+//  }
 
 
 
@@ -81,6 +86,13 @@ window.location.reload(true)
   return (
    
     <section>
+      {/* {dat.map((el)=>(
+        <div>
+<p>{el.dataa.name}</p>
+<img src={el.dataa.img} alt="" />
+<button onClick={()=>{handelerdel(el.id)}}>delet</button>
+        </div>
+      ))} */}
       <Container>
         <Row>
           <Col lg="6" md="6" sm="12" className="m-auto text-center">
