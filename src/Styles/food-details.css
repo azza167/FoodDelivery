@@ -1,7 +1,9 @@
 .product_price span {
     color: #ff5f00;
   }
-  
+.img{
+  cursor: pointer;
+}  
   .product_category {
     font-weight: 600;
     display: flex;
@@ -12,7 +14,7 @@
   
   .product_category span {
     padding: 5px 10px;
-    background: rgb(248, 245, 245);
+    background:#f8f5f4;
 
     border-radius: 5px;
   }
@@ -20,9 +22,12 @@
 .related_Product{
     font-size: 1.4rem;
   }
+  
+  .tab h6 {
+    cursor: pointer;
+  }  
 .tabed{
     color: #ff5f00;
-
 }
 .form{
     width: 60%;

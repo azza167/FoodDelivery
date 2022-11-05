@@ -60,12 +60,12 @@ function Category() {
         <Container>
             <Row>
             <Col lg="12">
-                    <div className='food_category d-flex align-items-center gap-4 
+                    <div className=' food_category d-flex align-items-center gap-4 
                     justify-content-center'>
-                        <button className='all_btn foodBtnActive' onClick={()=>setCategory("All")}>All</button>
+                        <button className={`all_btn ${category==="All" ? "foodBtnActive":"" } `} onClick={()=>setCategory("All")}>All</button>
                         { categories.map((item) => (
                             <button key={item.display} 
-                            className="d-flex align-items-center gap-2"
+                            className={`d-flex align-items-center gap-2 ${category===item.display ? "foodBtnActive":"" } `}
                             onClick={()=>setCategory(`${item.display}`)}>
                                 <img className='w-50' src={item.imgUrl} alt="categories"
                                     width={50} height="50" />

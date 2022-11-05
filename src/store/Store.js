@@ -1,9 +1,10 @@
-// import React from 'react'
+import React from 'react'
 import { createStore } from 'redux'
 import products from '../assets/products'
 import { useEffect, useState } from 'react'
 import { auth } from '../firebase'
 
+// import { auth } from "./firebase";
 
 let initstate = {
     product: products,
@@ -12,14 +13,24 @@ let initstate = {
 
 
 
+
+
+
+// <<<<<<< HEAD
+// =======
+
+// >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
     tot: 0,
+    qty: 1,
     user: '',
+    cartShow: true,
 
     userauto: false,
 
     showin: false
 }
 const Store = (state = initstate, action) => {
+
 
 
 
@@ -39,17 +50,18 @@ const Store = (state = initstate, action) => {
     aa()
 
 
+
+// <<<<<<< HEAD
     if (action.type === "add") {
-        // const a = state.product.filter((el)=>el.image01 == action.payload.image01)
-        // console.log(a)
+
+
         state.product.push(action.payload)
         state.admaincart.push(action.payload)
-
-
-
-        return {...state, }
-
+// =======
+// >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
     }
+
+
 
     if (action.type === "delete") {
 
@@ -66,6 +78,7 @@ const Store = (state = initstate, action) => {
         console.log("check")
         state.tot += action.payload.price
         console.log(state.AddTocart)
+        console.log("check")
         state.AddTocart.push(action.payload)
         return {...state, }
 
@@ -76,35 +89,22 @@ const Store = (state = initstate, action) => {
 
         console.log("delete")
         console.log(action.payload.element)
+        console.log(action.payload.element.id)
+        console.log(action.payload.index)
+
 
         return {...state, AddTocart: state.AddTocart.filter((el, i) => i != action.payload.index), tot: state.tot -= action.payload.element.price }
 
     }
+    if (action.type === "showCart") {
+        state.cartShow ? state.cartShow = false : state.cartShow = true
+        console.log("sasd")
 
+        return {...state }
+    }
     return state;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const store = createStore(Store)
-
-
 export default (store)

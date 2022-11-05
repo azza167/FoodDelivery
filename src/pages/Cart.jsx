@@ -19,10 +19,10 @@ payload:{
   element:el
 },
 
-    dispatch(pluss);
+// dispatch(pluss);
 
   }
-
+ 
   // const {id,title,image01,price}=hamadas;
 
   console.log(hamada);
@@ -30,7 +30,7 @@ payload:{
   return (
     <div>
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
-      <h1> total:{total}</h1>
+      {/* <h1> total:{total}</h1> */}
       <div class="style-3">Cart</div>
       <div class="style-4"> {hamada.length}</div>
       <div class="style-0">
@@ -101,7 +101,7 @@ payload:{
                           class="style-22"
                         ></path>
                       </svg>
-                    </button  >
+                    </button>
                     <span class="style-23">3</span>
                     <button class="style-24" onClick={() => handeldel(i, el)}>
                       <svg

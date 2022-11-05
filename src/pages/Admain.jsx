@@ -2,10 +2,13 @@ import React from 'react'
 import { useSelector ,useDispatch  } from 'react-redux'
 import { useEffect } from "react";
 import  { useState } from 'react'
+import {store,fire} from '../firebase'
+
 import '../App.css'
 const Admain = () => {
     const product = useSelector((state)=>state.product)
     const admin = useSelector((state)=>state.admaincart)
+    
 
     const [show,setshow] =useState(true)
 
@@ -17,30 +20,57 @@ const [pric,setprice] =useState(0)
 const [image,setimage] =useState(null)
 const [category,setcategory] =useState("")
 const [dsc,setdsc] =useState("")
+const [download,setdownload] =useState("")
 
 
 
 
-   const additem=()=>{
-   
- 
-    console.log(pric)
-    if(titl.length!=0&&(pric!=0&&image!=null)){
-    const item ={
-        type:"add",
-        payload:{
-            id:iddd,
-            title:String( titl),
-            price:String( pric),
-            image01:String( image),
-            category:String( category),
-            desc:String(dsc)
-        }
-       
-          
+
+
+
+const handelerimagereq =(e)=>{
+    setimage(URL.createObjectURL(e.target.files[0]))
+const file = e.target.files[0]
+const storage = store.ref('/image'+file.name)
+storage.put(file).then(()=>{
+
+   alert('uplod fin')
+storage.getDownloadURL().then((el)=>setdownload(el))
+})
+}
+
+const [dat,setdat] =useState([])
+
+
+useEffect(()=>{
     
-     }
-     dispatch(item)
+    fire.collection('/product').onSnapshot((el)=>{
+        setdat(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
+      })
+      const obj ={
+        type:'data',
+        payload:dat
+      }
+      dispatch(obj)
+    },[setdat])
+
+
+
+    
+
+   
+      
+
+
+  
+
+
+const additem=()=>{
+    
+
+
+    if(titl.length!=0&&(pric!=0)){
+
    
         setshow(false)
   
@@ -51,6 +81,19 @@ const [dsc,setdsc] =useState("")
         setimage(null)
      },3000)
 
+
+     fire.collection('/product').add({
+        id:iddd,
+        title:String( titl),
+        price:String( pric),
+        image01:download,
+        category:String( category),
+        desc:String(dsc)
+    
+
+
+     })
+
    }
 
 else{
@@ -59,33 +102,16 @@ else{
 }
 
 const hadelerdelete=(el,i)=>{
- 
-    const  deleteitem={
-        type:"delete",
-        payload:{
-                        index:i,
-               ell:el
-                    
-             }
-    }
 
-        dispatch(deleteitem)
+
+
+    fire.collection('/product').doc(i).delete()
+ 
+
 
 }
 
-// const hadelerdelete=(el.i)=>{
 
-
-//     const deleteitem ={
-//         type:"delete",
-//         payload:{
-//             index:i,
-//             el:el;
-        
-//         }
-//         dispatch(deleteitem)
-
-// }
 
 
 
@@ -104,7 +130,7 @@ const hadelerdelete=(el,i)=>{
 <label htmlFor="tit" > price</label>
 <input required id='tit' type="number" onChange={(event)=>setprice(event.target.value)} />
 <label htmlFor="mm" > upload image</label>
-<input  required="required" id='mm' type="file"  onChange={(event)=>setimage(URL.createObjectURL(event.target.files[0]))}/>
+<input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
 <img src={image} width='200px' alt="" />
       <label for="cars"> category:</label>
 <select  required="required" onChange={(event)=>setcategory(event.target.value)}  name="cars" id="cars">
@@ -118,18 +144,22 @@ const hadelerdelete=(el,i)=>{
 
     </div>
     <div>
-        <h1 style={{textAlign:'center',margin:'5px'}}>your announce <span>{admin.length}</span> </h1>
+        <h1 style={{textAlign:'center',margin:'5px'}}>your announce <span>{dat.length}</span> </h1>
         <div className='aaa' style={{overflow:"scroll",height:'250px'}}>
-    {admin.map((el,i)=>(
+            <div>
+    {dat.map((el,i)=>(
         <div className='mmm'>
 
-            <h4>{el.title}</h4>
-            <h6>{el.price}</h6>
-            <img width={'70px'} src={el.image01} alt="" />
-            <button onClick={()=>hadelerdelete(el,i)} >delet</button>
+            <h4>{el.dataa.title}</h4>
+            <h6>{el.dataa.price}</h6>
+            <img width={'70px'} src={el.dataa.image01} alt="" />
+            <button onClick={()=>hadelerdelete(el,el.id)} >delet</button>
         </div>
     ))}
+</div>
         </div>
+      
+
 </div>
 </>
 
