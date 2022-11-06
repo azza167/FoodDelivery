@@ -16,7 +16,19 @@ const AllFoods = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   // const [searchedProdut,setSearchedProdut]=useState(products)
-  const searchedProduct=showenProducts.filter((product) => {
+    
+  const productPerPage = 8;
+  const visitedPage = pageNumber * productPerPage;
+  const displayPage = showenProducts.slice(
+    visitedPage,
+    visitedPage + productPerPage
+  );
+
+  const pageCount = Math.ceil(showenProducts.length / productPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+  const searchedProduct=products.filter((product) => {
     if(searchValue===""){
       return product;
     }
@@ -28,21 +40,7 @@ const AllFoods = () => {
     {
       return 0;
     }
-  });    
-
-  const productPerPage = 8;
-  const visitedPage = pageNumber * productPerPage;
-  const displayPage = searchedProduct.slice(
-    visitedPage,
-    visitedPage + productPerPage
-  );
-
-  const pageCount = Math.ceil(searchedProduct.length / productPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
-
+  });
 
   useEffect(() => {
       if(selectedValue==="Default")
@@ -72,7 +70,7 @@ const AllFoods = () => {
       else {
         setshowenProducts(products);
       }
-  }, [selectedValue ,products]);
+  }, [selectedValue,products]);
 
   useEffect(() => { 
     if(searchValue)
@@ -88,7 +86,7 @@ const AllFoods = () => {
 
   // Z-A
   //  const sortByDescendingName= [...products].sort((a,b)=>(a.title>b.title)?-1:1); 
-// A-Z
+  // A-Z
   // const sortByDescendingName=[...products].sort((a,b)=>(a.title>b.title)?1:-1); 
 
   return (
