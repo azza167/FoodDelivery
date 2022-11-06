@@ -111,9 +111,14 @@ const handeler=()=>{
        
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon"
- onClick={()=>{handeler()}}
+         onClick={()=>{handeler()}}
        >
        </span>
+
+
+
+        
+
 
        <span className="cart__icon">
 
@@ -133,14 +138,13 @@ const handeler=()=>{
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
          
        
-       </span>
 
+         <Link to=""></Link>
+         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>         
+       </span>
        <span className="user" >
          <Link to="/login">
-
-           <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>
-    
-     
+           <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>     
          </Link>
        </span>
 

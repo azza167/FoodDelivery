@@ -1,34 +1,109 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap'
 import ProductCard from '../component/ProuductCard/ProductCard';
  import ReactPaginate from 'react-paginate';
-
+import "../Styles/all_food.css"
+import Helmet from '../component/Helmet';
+import CommonSection from '../component/common-section/common-section';
 const AllFoods = () => {
   const [searchValue, setSearchValue] = useState("");
   const products= useSelector((state)=>state.product);
-  const searchedProdut=products.filter((product) => {
+  const [selectedValue, setselectedValue] = useState("");
+  const [showenProducts,setshowenProducts]=useState(products);
+  const [pageNumber, setPageNumber] = useState(0);
+
+  // const [searchedProdut,setSearchedProdut]=useState(products)
+  const searchedProduct=showenProducts.filter((product) => {
     if(searchValue===""){
       return product;
     }
-    if(product.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+    if(product.title.toLowerCase().includes(searchValue.toLowerCase()))
     {
       return product;
     }
-    else return "";
-  });
+    else
+    {
+      return 0;
+    }
+  });    
+
+  const productPerPage = 8;
+  const visitedPage = pageNumber * productPerPage;
+  const displayPage = searchedProduct.slice(
+    visitedPage,
+    visitedPage + productPerPage
+  );
+
+  const pageCount = Math.ceil(searchedProduct.length / productPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+
+  useEffect(() => {
+      if(selectedValue==="Default")
+      {
+        setshowenProducts(products);
+      }
+      else if(selectedValue==="descending")
+      {
+        const sortByDescendingName=[...products].sort((a,b)=>a.title>b.title ?-1:1); 
+         setshowenProducts(sortByDescendingName);
+      }
+      else if(selectedValue==="ascending")
+      {
+        const sortByAscendingName=[...products].sort((a,b)=>a.title>b.title ?1:-1); 
+        setshowenProducts(sortByAscendingName);
+      }
+      else if(selectedValue==="high-price")
+      {
+        const sortingByHighPrice=[...products].sort((a,b)=>b.price - a.price)
+        setshowenProducts(sortingByHighPrice);
+      }
+      else if(selectedValue==="low-price")
+      {
+        const sortingByLowPrice= [...products].sort((a,b)=>a.price - b.price);;
+        setshowenProducts(sortingByLowPrice);
+      }
+      else {
+        setshowenProducts(products);
+      }
+  }, [selectedValue ,products]);
+
+  useEffect(() => { 
+    if(searchValue)
+    setshowenProducts(searchedProduct);
+    else
+    {
+      setshowenProducts(products);
+    }
+  },[searchValue]);
+    // high price
+  // const sortingArray= products.sort((a,b)=>a.price - b.price); 
+  // const sortingArray= products.sort((a,b)=>b.price - a.price); 
+
+  // Z-A
+  //  const sortByDescendingName= [...products].sort((a,b)=>(a.title>b.title)?-1:1); 
+// A-Z
+  // const sortByDescendingName=[...products].sort((a,b)=>(a.title>b.title)?1:-1); 
 
   return (
-    <section>
+    <Helmet title="All-Foods">
+      <CommonSection title="All Foods">
+      </CommonSection>
+      <section>
       <Container>
         <Row>
-          <Col lg="6" sm="6" xs="12">
-            <div>
+          <Col lg="6" md="6" sm="6" xs="12">
+          <div className="search d-flex align-items-center justify-content-between ">
               <input 
                 type={"text"}
                 placeholder="I'm looking for..."
-                value={searchValue}
+                // value={searchValue}
                 onChange={(e)=>setSearchValue(e.target.value)}
               />
               <span>
@@ -36,46 +111,41 @@ const AllFoods = () => {
               </span>
             </div>
           </Col>
-          <Col lg="6" sm="6" xs="12">
-            <div>
-              <select>
-                <option>Default</option>
-                <option value="ascending">Alphabetically, A-Z</option>
-                <option value="descending">Alphabetically, Z-A</option>
+          <Col lg="6" sm="6" xs="12" className='mb-5'>
+            <div className='select text-end'>
+              <select className='w-50' onChange={(e)=>setselectedValue(e.target.value)}>
+                <option value="Default">Default</option>
+                <option value="ascending">Alphabetically: A-Z</option>
+                <option value="descending">Alphabetically: Z-A</option>
                 <option value="high-price">High Price</option>
                 <option value="low-price">Low Price</option>
               </select>
             </div>
           </Col>
-          {searchedProdut.map((item)=>(
-            <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
+          {displayPage.map((item)=>(
+            <Col lg="3" md="4" sm="6"
+             xs="6" key={item.id} >
             <ProductCard item={item}/>
             </Col>
           ))}
 
-
-          {/* <div>
+          <div>
               <ReactPaginate
-                pageCount={1}
-                onPageChange={2}
-                previousLabel={"Prev"}
-                nextLabel={"Next"}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                previousLabel={"<<"}
+                nextLabel={">>"}
                 containerClassName=" paginationBttns "
               />
-            </div> */}
+            </div>
 
-            <ReactPaginate
-        nextLabel="next"
-        onPageChange={()=>{}}
-        pageRangeDisplayed={2}
-        pageCount={2}
-        previousLabel="previous"
-        renderOnZeroPageCount={null}
-      />
         </Row>
       </Container>
     </section>
-  )
-}
+  
+    </Helmet>
+
+  );
+};
 
 export default AllFoods

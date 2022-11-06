@@ -18,7 +18,10 @@ let initstate = {
 
 
 
+// <<<<<<< HEAD
+// =======
 
+// >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
     tot: 0,
     qty: 1,
     user: '',
@@ -51,7 +54,15 @@ const Store = (state = initstate, action) => {
 // >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
+// <<<<<<< HEAD
+    if (action.type === "add") {
 
+
+        state.product.push(action.payload)
+        state.admaincart.push(action.payload)
+// =======
+// >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
+    }
 
 
 
@@ -98,26 +109,5 @@ const Store = (state = initstate, action) => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const store = createStore(Store)
-
-
 export default (store)

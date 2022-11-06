@@ -87,7 +87,7 @@ const FoodDetails = () => {
           </div>
         </Col>
         <Col lg="12">
-          <div className='d-flex gap-5 align-items-center py-2'>
+          <div className='tab d-flex gap-5 align-items-center py-2'>
             <h6 className={`${tab==="Description"? 'tabed':""}`} 
             onClick={()=>setTab("Description")}>
               Description
@@ -131,6 +131,7 @@ const FoodDetails = () => {
                       type={'email'}
                       placeholder='Enter your email'
                       value={email}
+                      required
                       onChange={(e)=>setEmail(e.target.value)}
                     />                    
                   </div>

@@ -67,7 +67,7 @@ const products = [{
     },
     {
         id: "04",
-        title: "Pizza With Mushroom",
+        title:"Pizza With Mushroom",
         price: 85.0,
         image01: pizza4,
         image02: pizza2,
@@ -123,7 +123,7 @@ const products = [{
     {
         id: "09",
         title: "Pizza With Mushroom",
-        price: 100.0,
+        price: 95.0,
         image01: pizza9,
         image02: pizza2,
         image03: pizza3,
