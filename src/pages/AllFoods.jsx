@@ -49,22 +49,22 @@ const AllFoods = () => {
       }
       else if(selectedValue==="descending")
       {
-        const sortByDescendingName=[...products].sort((a,b)=>a.title>b.title ?-1:1); 
+        const sortByDescendingName=[...showenProducts].sort((a,b)=>a.title>b.title ?-1:1); 
          setshowenProducts(sortByDescendingName);
       }
       else if(selectedValue==="ascending")
       {
-        const sortByAscendingName=[...products].sort((a,b)=>a.title>b.title ?1:-1); 
+        const sortByAscendingName=[...showenProducts].sort((a,b)=>a.title>b.title ?1:-1); 
         setshowenProducts(sortByAscendingName);
       }
       else if(selectedValue==="high-price")
       {
-        const sortingByHighPrice=[...products].sort((a,b)=>b.price - a.price)
+        const sortingByHighPrice=[...showenProducts].sort((a,b)=>b.price - a.price)
         setshowenProducts(sortingByHighPrice);
       }
       else if(selectedValue==="low-price")
       {
-        const sortingByLowPrice= [...products].sort((a,b)=>a.price - b.price);;
+        const sortingByLowPrice= [...showenProducts].sort((a,b)=>a.price - b.price);;
         setshowenProducts(sortingByLowPrice);
       }
       else {
