@@ -32,6 +32,16 @@ const Checkout = () => {
   
   const shippingCost = 15;
   const totalAmount = cartTotalAmount + Number(shippingCost);
+
+  
+//   const discountcode=["Bufflo20"]
+//   if (!discountCode) {
+//     setNoDiscountCode(true)
+//     setInvalidDiscountCode(false)
+// } else {
+
+// }
+
   
   
   const submitHandler = (e) => {
@@ -132,8 +142,18 @@ const Checkout = () => {
                 </button>
               </form>
               </Col>
+             
 
               <Col lg="4" md="6">
+              <Col lg="4" md="6">
+              <h5 className='dis'>Do you have a discount code..?</h5>
+              <input  className='inputDis'
+                    type="text"
+                    placeholder="Discount code"
+                    
+                    />
+                    <button className='apply'>Apply</button>
+              </Col>
                 <div className="checkout__bill">
                   <h6 className="d-flex align-items-center justify-content-between mb-3">
                     Subtotal: <span>${cartTotalAmount}</span>

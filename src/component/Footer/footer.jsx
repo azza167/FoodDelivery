@@ -72,7 +72,7 @@ const Footer = () => {
       </Col>
       <Col lg="6" md="6">
         <div className="social__links d-flex align-items-center gap-4 justify-content-end">
-          <p className="m-0 follow">Follow: </p>
+          <p    className="m-0 follow">Follow: </p>
           <span>
             {" "}
             <Link to="https://www.facebook.com/muhib160">

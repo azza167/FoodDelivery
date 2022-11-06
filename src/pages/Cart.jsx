@@ -37,6 +37,7 @@ const handelMinus = () =>{
  
 
 
+
   return (
     <div>
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
@@ -138,6 +139,9 @@ const handelMinus = () =>{
           </div>
         ))}
       </div>
+      <button className="addTOCart__btn">
+          <Link to="/checkout">Proceed to checkout</Link>
+            </button>
     </div>
   );
 };

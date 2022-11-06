@@ -11,8 +11,10 @@ let initstate = {
     admaincart: [],
     AddTocart: [],
 
-
-
+// <<<<<<< HEAD
+    userauto:'',
+// =======
+// >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
 
@@ -33,6 +35,7 @@ const Store = (state = initstate, action) => {
 
 
 
+/* HEAD*/
 
     function aa() {
 
@@ -48,7 +51,7 @@ const Store = (state = initstate, action) => {
     }
 
     aa()
-
+// >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
 
 // <<<<<<< HEAD

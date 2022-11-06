@@ -69,6 +69,7 @@
   }
   .email{
     width: 150px;
+    color: white;
   }
   
   .newsletter span i {
@@ -85,6 +86,10 @@
     color: #fff;
     border-radius: 50%;
   }
+  .social__links a{
+    text-decoration: none;
+
+  }
   .follow{
     color: #fff;
   }
@@ -94,6 +99,9 @@
     color: #ff5f00;
   }
   
+  p{
+    color: white;
+  }
   @media only screen and (max-width: 992px) {
     .newsletter input {
       padding: 7px;

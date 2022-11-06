@@ -8,8 +8,8 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
-import { auth } from '../../firebase';
 
+import { auth } from '../../firebase';
 
 
 
@@ -44,7 +44,10 @@ const [a,seta]=useState(null)
 const [email,setemail]=useState('')
 
 const[show , setshow]=useState(false)
-const dispatch =useDispatch()
+
+ 
+const dispatch = useDispatch();
+// const user=useSelector((state)=>state.userauto)
 
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
@@ -107,11 +110,12 @@ const handeler=()=>{
        {/* nav right icons */}
        
        <div className="nav__right d-flex align-items-center gap-4">
-
        <span className="cart__icon"
          onClick={()=>{handeler()}}
        >
        </span>
+
+
 
         
 
@@ -123,6 +127,17 @@ const handeler=()=>{
     </NavLink>
          <span className="cart__badge"></span>
 
+
+         <span className="cart__badge"
+
+         >
+         
+         <Link to=""></Link>
+         {cartTotal.AddTocart.length}</span>
+
+         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
+         
+       
 
          <Link to=""></Link>
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>         

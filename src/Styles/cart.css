@@ -323,3 +323,6 @@ button {
     font-weight: 700;
     line-height: 30px;
 }
+.addTOCart__btn a{
+    text-decoration: none;
+}
