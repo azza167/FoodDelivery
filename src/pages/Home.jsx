@@ -10,6 +10,7 @@ import Category from "../component/Category/Category";
 import { Col, Container, Row } from "reactstrap";
 import hero from '../assets/images/hero.png'
 import { Link } from "react-router-dom";
+import HomeSlider from "../component/Slider/HomeSlider.jsx";
 
 const Home = () => {
 
@@ -30,9 +31,11 @@ const Home = () => {
   const [allproducts,setAllProducts]=useState(product);
 
   return (
-    
-    <Container> 
-        
+<div className="overflow-hidden">
+<div className="mb-4">
+  <HomeSlider/>
+  </div>      
+<Container> 
       <Row>
         <Col lg='6' md='6' className="hero-details">
         <h4>Easy way to make an order </h4>
@@ -64,6 +67,7 @@ const Home = () => {
 
     </Container>
 
+</div>
   )
 }
 

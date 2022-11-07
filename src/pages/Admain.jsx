@@ -123,28 +123,32 @@ const hadelerdelete=(el,i)=>{
 <h4>check your home</h4>
 </h1>  :(
     <>
-<label  htmlFor="tit"> title</label>
-<input required='requrid' id='tit' type="text" onChange={(event)=>settitle(event.target.value)} />
-<label htmlFor="tit"> discription</label>
-<input id='tit' type="text"  onChange={(event)=>setdsc(event.target.value)}/>
-<label htmlFor="tit" > price</label>
-<input required id='tit' type="number" onChange={(event)=>setprice(event.target.value)} />
-<label htmlFor="mm" > upload image</label>
+    <h3 className="add_item">Add New Items</h3>
+{/* <label  htmlFor="tit"> title</label> */}
+<input required='requrid' id='tit' type="text" placeholder='title' onChange={(event)=>settitle(event.target.value)} />
+{/* <label htmlFor="tit"> discription</label> */}
+<input id='tit' type="text" placeholder='discription'  onChange={(event)=>setdsc(event.target.value)}/>
+{/* <label htmlFor="tit" > price</label> */}
+<input required id='tit' type="number" placeholder='price' onChange={(event)=>setprice(event.target.value)} />
+{/* <label htmlFor="mm" > upload image</label> */}
 <input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
 <img src={image} width='200px' alt="" />
-      <label for="cars"> category:</label>
-<select  required="required" onChange={(event)=>setcategory(event.target.value)}  name="cars" id="cars">
+<div className="select_cat">
+<label for="cars"> category:</label>
+<select  required="required" onChange={(event)=>setcategory(event.target.value)}   name="cars" id="cars">
   <option value="volvo">Beef</option>
   <option value="saab">Pizza</option>
+  <option value="Chicken">Chicken</option>
 
 </select>
-<button onClick={additem} className='add_btn bt'>add new item</button>
+</div>
+<button onClick={additem} className='add_btn bt'>Add new item</button>
 </>)}
 
 
     </div>
     <div>
-        <h1 style={{textAlign:'center',margin:'5px'}}>your announce <span>{dat.length}</span> </h1>
+        <h3 style={{textAlign:'center',margin:'5px'}}>Your Announce <span>{dat.length}</span> </h3>
         <div className='aaa' style={{overflow:"scroll",height:'250px'}}>
             <div>
     {dat.map((el,i)=>(
