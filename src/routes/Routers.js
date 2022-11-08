@@ -13,6 +13,7 @@ import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
 import { useEffect, useState } from 'react'
 import { auth } from "../firebase";
+import NotFound from "../pages/NotFound";
 
 const Routers = () => {
   const Navigat= useNavigate()
@@ -44,7 +45,7 @@ useEffect(()=>{
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-    {/* <Route path='*' element={<Cart/>}/> */}
+    <Route path='*' element={<NotFound/>}/>
 
 
 

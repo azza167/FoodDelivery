@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Col, Container, Row } from 'reactstrap'
+import CommonSection from '../component/common-section/common-section'
+import Helmet from '../component/Helmet'
 import ProductCard from '../component/ProuductCard/ProductCard'
 import "../Styles/food-details.css"
 
@@ -41,7 +43,6 @@ const FoodDetails = () => {
         const reviewsById= reviews.filter((item)=>id===item.id)
         setReviews(reviews);
         setReviewsById(reviewsById)
-        console.log("naaa")
       }
     },[product,reviews]);
 
@@ -51,7 +52,8 @@ const FoodDetails = () => {
   
     
   return (
-    <div>
+    <Helmet title="Product-details">
+    <CommonSection title={title} />
     <Container className='pt-3'>
       <Row>
         <Col lg="2" md="2" >
@@ -105,8 +107,8 @@ const FoodDetails = () => {
             ):(
               <div>
                 {
-                  reviewsById.map((item)=>(
-                  <div className='tab_rev mb-3' >
+                  reviewsById.map((item,idx)=>(
+                  <div className='tab_rev mb-3' key={idx}>
                   <Col lg="4" className="review ps-3">
                     <p className="mb-0"> {item.name}</p>
                     <p className="mb-0 "> {item.email}</p>
@@ -166,7 +168,7 @@ const FoodDetails = () => {
             }
       </Row>
     </Container>
-    </div>
+    </Helmet>
   )
 }
 
