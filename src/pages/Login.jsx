@@ -15,8 +15,12 @@ const[show , setshow]=useState(false)
 const[email , setemail]=useState('')
 
 const[dat , setdat]=useState([])
+// useEffect(()=>{
+//   auth.sendPasswordResetEmail('dd1e60577f@inboxmail.life').then((res)=>{
+//     console.log(res)
+//   })
 
-
+// },[])
 
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
@@ -124,10 +128,16 @@ window.location.reload(true)
               </button>
               <p>{err}</p>
          
-            </form>
+            </form><div>
                  <Link to="/register">
                  Don't have an account? Create an account
                </Link>
+               </div>
+               <div>
+               <Link to="/forgetpassword">
+                 forget password
+               </Link>
+               </div>
                </div>
             
                :<div><p>welcom {email} </p>
