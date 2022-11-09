@@ -6,12 +6,16 @@ import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
 import '../Styles/checkout.css';
 import { useState } from 'react';
+import { auth } from '../firebase';
 
 
 
 const Checkout = () => {
+  
   const [enterName, setEnterName] = useState("");
   const [se, set] = useState("");
+  const [disc, setdisc] = useState("");
+
 
   const [enterEmail, setEnterEmail] = useState("");
   const [enterNumber, setEnterNumber] = useState("");
@@ -22,6 +26,12 @@ const Checkout = () => {
   const obj ={name:'',email:'',number:'',country:'',city:'',PostalCode:''}
   const [usersss, setusersss] = useState('');
   const [age, setage] = useState('');
+  const [checker, setchecker] = useState(false);
+  // const [inpu, setinpu] = useState('');
+
+
+  // const [offerss, setoffers] = useState('');
+
 
   
   
@@ -29,9 +39,15 @@ const Checkout = () => {
   
   const shippingInfo = [];
   const cartTotalAmount = useSelector((state) => state.tot);
-  
+  const offers = useSelector((state) => state.offers);
+  const [inpu, setinpu] = useState(offers);
+
+
+
+  console.log(offers)
+// setoffers(offers)
   const shippingCost = 15;
-  const totalAmount = cartTotalAmount + Number(shippingCost);
+  const [totalAmount ,settotalAmount] =useState( cartTotalAmount + Number(shippingCost));
 
   
 //   const discountcode=["Bufflo20"]
@@ -62,12 +78,42 @@ const Checkout = () => {
     console.log(shippingInfo);
 
   };
-  // const hade=()=>{
 
-  //   setusersss(enterName)
-  //   setage(se)
 
-  // }
+  const handelerchangediscount=(e)=>{
+    if (e.target.value===offers) {
+      setchecker(true)
+    
+
+    }else{
+      setchecker(false)
+    
+
+
+    }
+console.log(e.target.value)
+
+
+  }
+const hadelerapplay=()=>{
+if (checker) {
+  console.log('ijodfjoohi')
+  setdisc('25%')
+  setinpu('')
+ 
+        settotalAmount ( cartTotalAmount + Number(shippingCost)*0.15);
+  offers=''
+}else{
+
+  settotalAmount ( cartTotalAmount + Number(shippingCost));
+      console.log('hi wrong')
+
+}
+
+
+
+
+}
   
   return(
 
@@ -146,13 +192,16 @@ const Checkout = () => {
 
               <Col lg="4" md="6">
               <Col lg="4" md="6">
+              <h5 className='dis' style={{color:'black'}}>discount code:  <span style={{color:'orange',fontSize:'30px'}}>{ inpu}</span> </h5>
+
               <h5 className='dis'>Do you have a discount code..?</h5>
               <input  className='inputDis'
                     type="text"
                     placeholder="Discount code"
+                    onChange={handelerchangediscount}
                     
                     />
-                    <button className='apply'>Apply</button>
+                    <button className='apply' onClick={hadelerapplay}>Apply</button>
               </Col>
                 <div className="checkout__bill">
                   <h6 className="d-flex align-items-center justify-content-between mb-3">
@@ -160,6 +209,9 @@ const Checkout = () => {
                   </h6>
                   <h6 className="d-flex align-items-center justify-content-between mb-3">
                     Shipping: <span>${shippingCost}</span>
+                  </h6>
+                  <h6 className="d-flex align-items-center justify-content-between mb-3">
+                    discount: <span>${disc}</span>
                   </h6>
                   <div className="checkout__total">
                     <h5 className="d-flex align-items-center justify-content-between">

@@ -10,7 +10,7 @@ let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
-
+offers:'',
 // <<<<<<< HEAD
     userauto:'',
 // =======
@@ -53,7 +53,12 @@ const Store = (state = initstate, action) => {
     aa()
 // >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
+if (action.type === "offers"){
 
+console.log(action.payload)
+return {...state,offers:action.payload}
+
+}
 // <<<<<<< HEAD
     if (action.type === "add") {
 
