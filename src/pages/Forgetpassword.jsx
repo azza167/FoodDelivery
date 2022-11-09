@@ -39,7 +39,7 @@ e.preventDefault()
               <div className="form__group">
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="Enter your  Email"
                   required
                 
                onChange={handelerholdemaol}
