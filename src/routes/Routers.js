@@ -14,6 +14,9 @@ import Checkout from '../pages/Checkout';
 import { useEffect, useState } from 'react'
 import { auth } from "../firebase";
 import NotFound from "../pages/NotFound";
+import Forgetpassword from "../pages/Forgetpassword";
+
+import Contact from "../pages/Contact";
 
 const Routers = () => {
   const Navigat= useNavigate()
@@ -42,10 +45,13 @@ useEffect(()=>{
     <Route path='/Login' element={<Login/>}/>
     <Route path='/Register' element={<Register/>}/>
     <Route path='/Cart' element={<Cart/>}/>
+    <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-    <Route path='/Cart' element={<Cart/>}/>
+   {!show? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
+
     <Route path='*' element={<NotFound/>}/>
+
 
 
 

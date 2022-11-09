@@ -13,7 +13,7 @@ const Footer = () => {
         <div className=" footer__logo text-start">
           <img src={logo} alt="logo" />
           
-          <p>
+          <p  className='pFooter'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Nesciunt pariatur accusamus
           </p>
@@ -30,7 +30,7 @@ const Footer = () => {
 
           <ListGroupItem className=" delivery__time-item border-0 ps-0">
             <span>Friday - Saturday</span>
-            <p>Off day</p>
+            <p  className='pFooter'>Off day</p>
           </ListGroupItem>
         </ListGroup>
       </Col>
@@ -53,7 +53,7 @@ const Footer = () => {
 
       <Col lg="3" md="4" sm="6">
         <h5 className="footer__title">Newsletter</h5>
-        <p>Subscribe our newsletter</p>
+        <p className='pFooter' >Subscribe our newsletter</p>
         <div className="newsletter">
           <input className='email' type="email" placeholder="Enter your email" />
           <span>

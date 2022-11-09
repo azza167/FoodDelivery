@@ -13,15 +13,19 @@ let initstate = {
     admaincart: [],
     AddTocart: [],
 
-    // <<<<<<< HEAD
-    userauto: "",
-    // =======
-    // >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
-    // <<<<<<< HEAD
-    // =======
 
-    // >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
+
+
+
+    offers: '',
+
+    userauto: '',
+
+
+
+
+
     tot: 0,
     qty: 1,
     user: "",
@@ -46,14 +50,16 @@ const Store = (state = initstate, action) => {
     }
 
     aa();
-    // >>>>>>> 40cf7afaf3e41769825d8bc0e417f0de826217c0
 
-    // <<<<<<< HEAD
+    if (action.type === "offers") {
+
+        console.log(action.payload)
+        return {...state, offers: action.payload }
+
+    }
     if (action.type === "add") {
         state.product.push(action.payload);
         state.admaincart.push(action.payload);
-        // =======
-        // >>>>>>> a0a519fae1e92fd9eb7866f84a9cbc9418b5ac46
     }
 
     if (action.type === "delete") {

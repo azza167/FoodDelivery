@@ -11,6 +11,7 @@ import { Col, Container, Row } from "reactstrap";
 import hero from '../assets/images/hero.png'
 import { Link } from "react-router-dom";
 import HomeSlider from "../component/Slider/HomeSlider.jsx";
+import Offers from "../component/offers/offers.jsx";
 
 const Home = () => {
 
@@ -34,7 +35,11 @@ const Home = () => {
 <div className="overflow-hidden">
 <div className="mb-4">
   <HomeSlider/>
-  </div>      
+  </div> 
+  <div className="mb-4">  
+  <h4 className="hotOffers"> Hot Offers</h4>
+  <Offers/>
+  </div>   
 <Container> 
       <Row>
         <Col lg='6' md='6' className="hero-details">

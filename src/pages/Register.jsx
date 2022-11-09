@@ -9,9 +9,10 @@ import { Link } from "react-router-dom";
 const Register = () => {
   const initial ={email:'',password:'',repassword:''}
   const[inp,setinp]=useState(initial)
+  const dispatch =useDispatch()
   const user = useSelector((state)=>state.user)
   const x= useNavigate()
-
+  
   const[err,seterr]=useState('')
   const[done,setdone]=useState('')
 
@@ -19,12 +20,24 @@ const Register = () => {
 
 
 
+  
+  const[discount,setdiscount]=useState('')
+  let dis=''
+  let charcter ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+// useEffect(()=>{
+//   for (let i = 0; i < 7; i++) {
+//     let y = Math.floor(Math.random()*62);
+//     // setdiscount(  charcter[y])
 
-
+//     dis+=charcter[y]
+//   }
+  
+//   setdiscount(dis)
+// },[])
 
   const hadelerlogin=(e)=>{
   
-  console.log(e.target.name)
+  
   setinp({...inp,[e.target.name]:e.target.value})
   
   }
@@ -38,17 +51,30 @@ const Register = () => {
   await auth.createUserWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
   console.log('done')
   setdone("congratulation you create an account ")
+  
+  for (let i = 0; i < 7; i++) {
+    let y = Math.floor(Math.random()*62);
+    
+
+    dis+=charcter[y]
+  }
+  
+  setdiscount(dis)
   setTimeout(() => {
     x('/home')
-  }, 2000);
- 
+  }, 3000);
   
-  
+  const offers ={
+    type:"offers",
+    payload:dis
   }
-  catch (error){
-    console.log(error.message)
+  dispatch(offers)
+}
+catch (error){
+  console.log(error.message)
   
-  }
+}
+
     }
 
 
@@ -97,6 +123,8 @@ const Register = () => {
             </button>
             <p style={{color:'red'}}>{err}</p>
             <p>{done}</p>
+          {discount!='' ? <p>congratulation you have discount 15% with code <span style={{color:'orange'}}>{discount}</span> </p>:''}
+
           </form>
           <Link to="/login">Already have an account? Login</Link>
         </Col>

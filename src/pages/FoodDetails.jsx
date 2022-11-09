@@ -102,7 +102,7 @@ const FoodDetails = () => {
           {
             tab==="Description" ? (
               <div className='tab_desc'>
-                  {desc}
+                  <p>{desc}</p>
               </div>
             ):(
               <div>
