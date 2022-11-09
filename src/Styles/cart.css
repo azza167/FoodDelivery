@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+.inpot {
+    width: 25px;
+}
+
 .style-0 {
     width: 70%;
     padding: 32px;
@@ -322,7 +326,4 @@ button {
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
-}
-.addTOCart__btn a{
-    text-decoration: none;
 }

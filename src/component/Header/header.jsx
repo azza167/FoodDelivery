@@ -64,9 +64,6 @@ const handeler=()=>{
   const obj ={
     
     type:"showCart",
-
-    
-  
   };
   dispatch(obj);
 }
