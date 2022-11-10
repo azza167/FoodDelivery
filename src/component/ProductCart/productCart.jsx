@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./productcart.css";
 const ProductCart = () => {
@@ -28,21 +28,15 @@ const ProductCart = () => {
 
   const handelQty = (e, el, i) => {
     hamada.map((item) =>
-      el.id === item.id ? { ...item, quantity: setQoty(el.quantity) 
-        } : item
+      el.id === item.id ? { ...item, quantity: setQoty(el.quantity) } : item
     );
-  
-    
-    console.log(hamada)
-    console.log(el.quantity)
-    console.log(hamada)
-    console.log(totalQuantity)
-    console.log("totalQuantity")
-    
+
+    console.log(hamada);
+    console.log(el.quantity);
+    console.log(hamada);
+    console.log(totalQuantity);
+    console.log("totalQuantity");
   };
-
-
-
 
   return (
     <>
@@ -51,14 +45,8 @@ const ProductCart = () => {
           <h3>{totalAmount}</h3>
           {hamada.map((el, i) => (
             <div>
-              
               <h1>{el.price}</h1>
               <h1>{el.quantity}</h1>
-          
-           
-                
-                
-                
 
               <img src={el.img} alt="" />
               <button onClick={() => handeldel(i, el)}>delete</button>

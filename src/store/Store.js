@@ -3,29 +3,16 @@ import { createStore, applyMiddleware } from "redux";
 import products from "../assets/products";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { createLogger } from 'redux-logger'
+import { createLogger } from "redux-logger";
 // import { auth } from "./firebase";
 const logger = createLogger();
-
 
 let initstate = {
     product: products,
     admaincart: [],
     AddTocart: [],
-
-
-
-
-
-
-    offers: '',
-
-    userauto: '',
-
-
-
-
-
+    offers: "",
+    userauto: "",
     tot: 0,
     qty: 1,
     user: "",
@@ -52,10 +39,8 @@ const Store = (state = initstate, action) => {
     aa();
 
     if (action.type === "offers") {
-
-        console.log(action.payload)
-        return {...state, offers: action.payload }
-
+        console.log(action.payload);
+        return {...state, offers: action.payload };
     }
     if (action.type === "add") {
         state.product.push(action.payload);

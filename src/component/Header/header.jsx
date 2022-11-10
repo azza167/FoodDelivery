@@ -108,21 +108,19 @@ const handeler=()=>{
        
        <div className="nav__right d-flex align-items-center gap-4">
        <span className="cart__icon"
-         onClick={()=>{handeler()}}
        >
-       </span>
-
-
-
         
+       </span>
+       <span className="cart__icon"
+              onClick={()=>handeler()}
+       >
 
-
-       <span className="cart__icon">
-
-       <NavLink to={'/Cart'}>
+        <NavLink>
          <i className="ri-shopping-basket-line"></i>
-    </NavLink>
-         <span className="cart__badge"></span>
+        </NavLink>
+         <span className="cart__badge">
+          
+         </span>
 
 
          <span className="cart__badge"
