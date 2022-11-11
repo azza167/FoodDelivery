@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import {fire} from '../firebase'
 
 const Cart = () => {
@@ -22,8 +22,10 @@ const Cart = () => {
     };
     dispatch(dele);
   };
-
+const [orders , setorders]=useState([])
 const [count, setCount] = useState([]);
+const [ord, setord] = useState([]);
+
 var qool;
 console.log(hamada)
 console.log("hamada")
@@ -41,17 +43,41 @@ const handelPlus = (e,el,i) =>{
         };
         dispatch(qont);        
       }
+      // useEffect(() => {
+
+
+      //        hamada.map((product,index)=>(
+ 
+      //          setorders((pre)=>[...pre,product])
+
+               
+      //          ))
+            
+              
+           
+      //         } ,[])
+              
+       
+      // fire.collection('/orders').onSnapshot((el)=>{
+      //             setord(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
+      //           })
+           
+      // useEffect(()=>{
+
+      //   fire.collection('/orders').add({ordersss:hamada})
+
+
+      // },[])
+     
+
+
+
     const finito = ()=>{
-     hamada.map((product,index)=>(
-      fire.collection('/orders').add([{ 
-      quantity:product.quantity,
-      title:product.title,
-      price:product.price,
-      id:product.id,
-      
-    }]))
-    )}
-  
+
+      fire.collection('/orders').add({ordersss:hamada})
+
+    }
+
 
 // const handelMinus = (e,el,i) =>{
 //   setCount(hamada =>{
@@ -162,7 +188,7 @@ const handelPlus = (e,el,i) =>{
                 </div>
                 <div class="style-27">
                   <div class="style-28">{el.price} EGP</div>
-                  <button onClick={()=>finito()}>Checkout</button>
+                  <button >Checkout</button>
                 </div>
               </div>
             </div>
@@ -170,7 +196,7 @@ const handelPlus = (e,el,i) =>{
         ))}
       </div>
       <button className="addTOCart__btn">
-          <Link to="/checkout">Proceed to checkout</Link>
+          <Link to="/checkout" onClick={()=>finito()}>Proceed to checkout</Link>
             </button>
     </div>
   );
