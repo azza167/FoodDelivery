@@ -1,14 +1,15 @@
 import React from 'react'
 import { getAuth, updatePassword } from "firebase/auth";
+import  { useEffect, useState } from 'react'
 
-// import { auth } from '../../firebase';
+import { auth } from '../firebase';
 const Updatepassord = () => {
 
-    // useEffect(()=>{
-    //       updatePassword(auth.currentUser,123456789).then(()=>{
-    //         console.log('hi')
-    //       })
-    //     })
+ const updateprofile=()=>{
+          updatePassword(auth.currentUser,123456).then(()=>{
+            console.log('hi')
+          })
+        }   
   return (
     <div style={{textAlign:'center'}}>
               <div className="form__group">
@@ -42,7 +43,7 @@ const Updatepassord = () => {
                 />
               </div>
              
-              <button  type="submit" className="addTOCart__btn">
+              <button onClick={updateprofile} type="submit" className="addTOCart__btn">
           submit
               </button>
 

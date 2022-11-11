@@ -46,7 +46,7 @@ setinp({...inp,[e.target.name]:e.target.value})
       
 e.preventDefault()
 try {
-await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
+await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{})
 
 
 x('/')
