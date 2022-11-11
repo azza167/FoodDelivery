@@ -1,7 +1,7 @@
 import React from 'react'
 import { getAuth, updatePassword } from "firebase/auth";
 import  { useEffect, useState } from 'react'
-
+import { Container } from 'reactstrap';
 import { auth } from '../firebase';
 const Updatepassord = () => {
 
