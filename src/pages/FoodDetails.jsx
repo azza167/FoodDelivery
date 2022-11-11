@@ -8,8 +8,22 @@ import Helmet from '../component/Helmet'
 import ProductCard from '../component/ProuductCard/ProductCard'
 import { fire } from '../firebase'
 import "../Styles/food-details.css"
+import { auth } from '../firebase';
 
 const FoodDetails = () => {
+const[emaila , setemaila]=useState('')
+
+  useEffect(()=>{
+    auth.onAuthStateChanged((userr)=>{
+      
+      
+      setemaila(userr.email)
+  
+  
+        })
+  },[]) 
+
+  // console.log(emaila)
     const {id}=useParams();
     const products= useSelector((state)=>state.product);
     const product=products.find((product)=>product.id===id);
@@ -31,7 +45,7 @@ const FoodDetails = () => {
       fire.collection('/reviws').add({
         id: id,
         name:name,
-        email:email,
+        email:emaila,
         review:review
      })
       // setReviews([...reviews,{id:id,name:name,email:email,review:review}]);
@@ -133,6 +147,15 @@ const FoodDetails = () => {
               }
                 <form className='form' onSubmit={addReview}>
                   <div className=' form_group'>
+                    <input
+                      type={'email'}
+                    placeholder={emaila}
+                      value={emaila}
+                      required
+                      // onChange={(e)=>setEmail(e.target.value)}
+                    />                    
+                  </div>
+                  <div className=' form_group'>
                     <input 
                       type={'text'}
                       placeholder='Enter your name'
@@ -140,15 +163,6 @@ const FoodDetails = () => {
                       onChange={(e)=>setName(e.target.value)}
                       required
                     />
-                  </div>
-                  <div className=' form_group'>
-                    <input
-                      type={'email'}
-                      placeholder='Enter your email'
-                      value={email}
-                      required
-                      onChange={(e)=>setEmail(e.target.value)}
-                    />                    
                   </div>
                   <div className=' form_group'>
                     <textarea

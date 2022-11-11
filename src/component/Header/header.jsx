@@ -51,7 +51,7 @@ const handeler=()=>{
         <img src={Logo} alt='logo' />
        {   /* <h5> Tasty Treat</h5>*/}
         </div> 
-        {/* {/Menu/} */}
+     
         <div className="navigation" >
         <div className="menu d-flex align-items-center gap-5">
           {nav__links.map((item, index) => (
