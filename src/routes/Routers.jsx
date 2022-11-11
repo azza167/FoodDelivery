@@ -15,7 +15,10 @@ import { useEffect, useState } from 'react'
 import { auth } from "../firebase";
 import NotFound from "../pages/NotFound";
 import Forgetpassword from "../pages/Forgetpassword";
+<<<<<<< HEAD:src/routes/Routers.js
 import Updatepassord from "../pages/Updatepassord";
+=======
+>>>>>>> 670e9cf04b125601945f4ef4327a4b380b066bf9:src/routes/Routers.jsx
 import Contact from "../pages/Contact";
 
 const Routers = () => {
