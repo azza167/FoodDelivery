@@ -6,9 +6,24 @@ import { Col, Container, Row } from 'reactstrap'
 import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
 import ProductCard from '../component/ProuductCard/ProductCard'
+import { fire } from '../firebase'
 import "../Styles/food-details.css"
+import { auth } from '../firebase';
 
 const FoodDetails = () => {
+const[emaila , setemaila]=useState('')
+
+  useEffect(()=>{
+    auth.onAuthStateChanged((userr)=>{
+      
+      
+      setemaila(userr.email)
+  
+  
+        })
+  },[]) 
+
+  // console.log(emaila)
     const {id}=useParams();
     const products= useSelector((state)=>state.product);
     const product=products.find((product)=>product.id===id);
@@ -17,7 +32,8 @@ const FoodDetails = () => {
     const [name,setName]=useState('');
     const [email,setEmail]=useState('');
     const [review,setReview]=useState('');
-    const [reviews,setReviews]=useState(JSON.parse(localStorage.getItem('reviews')));
+    const [reviews,setReviews]=useState([]);
+    // const [reviews,setReviews]=useState(JSON.parse(localStorage.getItem('reviews')));
     const [reviewsById,setReviewsById]=useState([]);
     const [mainImg ,setMainImg]=useState(image01);
     const relatedProduct = products.filter((item) =>
@@ -25,22 +41,33 @@ const FoodDetails = () => {
 
     const addReview=(e)=>{
       e.preventDefault();
-      setReviews([...reviews,{id:id,name:name,email:email,review:review}]);
-      localStorage.setItem('reviews',JSON.stringify([...reviews,{id:id,name:name,email:email,review:review}]));
+
+      fire.collection('/reviws').add({
+        id: id,
+        name:name,
+        email:emaila,
+        review:review
+     })
+      // setReviews([...reviews,{id:id,name:name,email:email,review:review}]);
+      // localStorage.setItem('reviews',JSON.stringify([...reviews,{id:id,name:name,email:email,review:review}]));
       setName("");
       setEmail("");
       setReview("");
     }
-   
-    // useEffect(()=>{
+ 
+    
+    useEffect(()=>{
     //   localStorage.setItem('reviews',JSON.stringify([...reviews,{id:id,name:name,email:email,review:review}]));
-    // },[reviews]);
+    fire.collection('/reviws').onSnapshot((el)=>{
+      setReviews(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
+    })
+    },[]);
 
-
+// console.log(reviews[0].dataa)
     useEffect(()=>{
       //  const reviews =JSON.parse(localStorage.getItem('reviews'));
       if(reviews){
-        const reviewsById= reviews.filter((item)=>id===item.id)
+        const reviewsById= reviews.filter((item)=>id===item.dataa.id)
         setReviews(reviews);
         setReviewsById(reviewsById)
       }
@@ -110,15 +137,24 @@ const FoodDetails = () => {
                   reviewsById.map((item,idx)=>(
                   <div className='tab_rev mb-3' key={idx}>
                   <Col lg="4" className="review ps-3">
-                    <p className="mb-0"> {item.name}</p>
-                    <p className="mb-0 "> {item.email}</p>
-                    <p className=" text-danger">{item.review}</p>
+                    <p className="mb-0"> {item.dataa.name}</p>
+                    <p className="mb-0 "> {item.dataa.email}</p>
+                    <p className=" text-danger">{item.dataa.review}</p>
                   </Col>  
                   </div>                   
 
               ))
               }
                 <form className='form' onSubmit={addReview}>
+                  <div className=' form_group'>
+                    <input
+                      type={'email'}
+                    placeholder={emaila}
+                      value={emaila}
+                      required
+                      // onChange={(e)=>setEmail(e.target.value)}
+                    />                    
+                  </div>
                   <div className=' form_group'>
                     <input 
                       type={'text'}
@@ -127,15 +163,6 @@ const FoodDetails = () => {
                       onChange={(e)=>setName(e.target.value)}
                       required
                     />
-                  </div>
-                  <div className=' form_group'>
-                    <input
-                      type={'email'}
-                      placeholder='Enter your email'
-                      value={email}
-                      required
-                      onChange={(e)=>setEmail(e.target.value)}
-                    />                    
                   </div>
                   <div className=' form_group'>
                     <textarea

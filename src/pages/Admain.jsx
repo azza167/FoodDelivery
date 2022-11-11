@@ -5,11 +5,11 @@ import  { useState } from 'react'
 import {store,fire} from '../firebase'
 
 import '../App.css'
+import Ordedrs from '../component/Admin/Ordedrs';
 const Admain = () => {
     const product = useSelector((state)=>state.product)
     const admin = useSelector((state)=>state.admaincart)
     
-
     const [show,setshow] =useState(true)
 
 const dispatch =useDispatch()
@@ -23,27 +23,21 @@ const [dsc,setdsc] =useState("")
 const [download,setdownload] =useState("")
 
 
-
-
-
-
-
 const handelerimagereq =(e)=>{
     setimage(URL.createObjectURL(e.target.files[0]))
 const file = e.target.files[0]
 const storage = store.ref('/image'+file.name)
 storage.put(file).then(()=>{
 
-   alert('uplod fin')
+   alert('image loaded')
 storage.getDownloadURL().then((el)=>setdownload(el))
 })
 }
 
 const [dat,setdat] =useState([])
 
-
 useEffect(()=>{
-    
+
     fire.collection('/product').onSnapshot((el)=>{
         setdat(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
       })
@@ -54,27 +48,12 @@ useEffect(()=>{
       dispatch(obj)
     },[setdat])
 
-
-
-    
-
-   
-      
-
-
   
-
-
 const additem=()=>{
     
-
-
     if(titl.length!=0&&(pric!=0)){
-
    
         setshow(false)
-  
-
 
      setTimeout(()=>{
         setshow(true)
@@ -89,9 +68,6 @@ const additem=()=>{
         image01:download,
         category:String( category),
         desc:String(dsc)
-    
-
-
      })
 
    }
@@ -102,22 +78,15 @@ else{
 }
 
 const hadelerdelete=(el,i)=>{
-
-
-
     fire.collection('/product').doc(i).delete()
  
-
-
 }
-
-
-
-
 
   return (
     <>
     <div className='cont'>
+    <Ordedrs/>
+
 {!show?<h1 className='succefull' ><span>sucessful</span>  adding
 
 <h4>check your home</h4>
@@ -134,7 +103,7 @@ const hadelerdelete=(el,i)=>{
 <input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
 <img src={image} width='200px' alt="" />
 <div className="select_cat">
-<label for="cars"> category:</label>
+<label htmlFor="cars"> category:</label>
 <select  required="required" onChange={(event)=>setcategory(event.target.value)}   name="cars" id="cars">
   <option value="volvo">Beef</option>
   <option value="saab">Pizza</option>
@@ -152,7 +121,7 @@ const hadelerdelete=(el,i)=>{
         <div className='aaa' style={{overflow:"scroll",height:'250px'}}>
             <div>
     {dat.map((el,i)=>(
-        <div className='mmm'>
+        <div className='mmm' key={i}>
 
             <h4>{el.dataa.title}</h4>
             <h6>{el.dataa.price}</h6>
@@ -163,6 +132,7 @@ const hadelerdelete=(el,i)=>{
 </div>
         </div>
       
+
 
 </div>
 </>

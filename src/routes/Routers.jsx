@@ -15,6 +15,9 @@ import { useEffect, useState } from 'react'
 import { auth } from "../firebase";
 import NotFound from "../pages/NotFound";
 import Forgetpassword from "../pages/Forgetpassword";
+
+import Updatepassord from "../pages/Updatepassord";
+
 import Contact from "../pages/Contact";
 
 const Routers = () => {
@@ -49,6 +52,8 @@ useEffect(()=>{
     <Route path='/Cart' element={<Cart/>}/>
    {!show? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
 
+
+   {show? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
     <Route path='*' element={<NotFound/>}/>
 
 

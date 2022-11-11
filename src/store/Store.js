@@ -107,6 +107,6 @@ const Store = (state = initstate, action) => {
     return state;
 };
 
-const store = createStore(Store, mid);
+const store = createStore(Store,mid);
 
 export default store;
