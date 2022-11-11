@@ -29,7 +29,7 @@ const file = e.target.files[0]
 const storage = store.ref('/image'+file.name)
 storage.put(file).then(()=>{
 
-   alert('uplod fin')
+   alert('image loaded')
 storage.getDownloadURL().then((el)=>setdownload(el))
 })
 }
