@@ -43,13 +43,13 @@ const handelPlus = (e,el,i) =>{
       }
     const finito = ()=>{
      hamada.map((product,index)=>(
-      fire.collection('/orders').add([{ 
+      fire.collection('/orders').add({ 
       quantity:product.quantity,
       title:product.title,
       price:product.price,
       id:product.id,
       
-    }]))
+    }))
     )}
   
 
