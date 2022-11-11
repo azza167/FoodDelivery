@@ -28,7 +28,7 @@ useEffect(()=>{
     userr?setshow(true):setshow(false)
     setemail(userr.email)
 
- 
+
       })
 },[]) 
        
@@ -143,7 +143,16 @@ window.location.reload(true)
                :<div><p>welcom {email} </p>
             
             
-            <button onClick={()=>hadelerlog()}>log out</button></div>
+            <button onClick={()=>hadelerlog()}>log out</button>
+            <div>
+            <Link to={'/updateprofile'}>
+              
+            <button  type="submit" className="addTOCart__btn">
+                Update profile
+              </button>
+              </Link>
+              </div>
+              </div>
            
      
            }

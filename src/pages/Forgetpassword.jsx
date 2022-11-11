@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { auth } from "../firebase";
+// import { getAuth, updateProfile } from "firebase/auth";
 import {NavLink,Link} from 'react-router-dom';
 
 const Forgetpassword = () => {
@@ -11,6 +12,8 @@ const [checkemail,setcheckemail]=useState('')
 
 
   const handelerholdemaol=(e)=>{
+
+    
    setemail( e.target.value)
   }
 
