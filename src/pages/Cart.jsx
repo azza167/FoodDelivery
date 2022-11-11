@@ -1,11 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
 import { useState } from "react";
+import {fire} from '../firebase'
 
 const Cart = () => {
   const hamada = useSelector((state) => state.AddTocart);
+  
+  const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
@@ -19,23 +23,44 @@ const Cart = () => {
     dispatch(dele);
   };
 
-const [count, setCount] = useState(0);
-
+const [count, setCount] = useState([]);
+var qool;
 console.log(hamada)
 console.log("hamada")
 
 
-const handelPlus = (e,i) =>{
-   setCount(e.target.value*hamada.price);
-  console.log(hamada.price)
-}
-const handelMinus = () =>{
-  if(count>1 && count !== 0){
-    setCount(count-1);
-  }
-}
- 
+const handelPlus = (e,el,i) =>{
+   
+        hamada.map((item)=>
+        el.id=== item.id ? {...item, quantity: el.quantity= e.target.value* el.price} : item
+        ,setCount(el.quantity)
+        )
+        const qont = {
+          type: "qont",
+          payload: count,
+        };
+        dispatch(qont);        
+      }
+    const finito = ()=>{
+     hamada.map((product,index)=>(
+      fire.collection('/orders').add([{ 
+      quantity:product.quantity,
+      title:product.title,
+      price:product.price,
+      id:product.id,
+      
+    }]))
+    )}
+  
 
+// const handelMinus = (e,el,i) =>{
+//   setCount(hamada =>{
+//     hamada.map((item)=>
+//     el.id=== item.id ? {...item, quantity: item.quantity -1} : item
+//     )
+//   })
+// }
+ 
 
 
   return (
@@ -90,16 +115,17 @@ const handelMinus = () =>{
                       <noscript className="style-14"></noscript>
                     </div>
                   </div>
-                  <div className="style-15">
-                    <div className="style-16">{el.title}</div>
-                    <div className="style-17" font-size="16px">
+                  <div class="style-15">
+                    <div class="style-16">{el.title}</div>
+                    <div class="style-16">{el.quantity}</div>
+                    <div class="style-17" font-size="16px">
                       {el.description}
                     </div>
                   </div>
                 </div>
-                <div className="style-18">
-                  <div className="style-19">
-                    <button className="style-20" onClick={() => handelMinus()}>
+                <div class="style-18">
+                  <div class="style-19">
+                    {/* <button class="style-20" onClick={(e) => handelMinus(e,el,i)}> */}
                       <svg
                         className="style-21"
                         focusable="false"
@@ -112,10 +138,13 @@ const handelMinus = () =>{
                           className="style-22"
                         ></path>
                       </svg>
-                    </button>
-                    <span className="style-23">{count}</span>
-                    <input type="number" onChange={(e,i) => handelPlus(e,i)}/>
-                    {/* <button className="style-24" onClick={(e,i) => handelPlus(e,i)}> */}
+                    {/* </button> */}
+                    <h1>{qool}</h1>
+                    <span class="style-23">{qool}</span>
+                    <input type="number" class="inpot" 
+                            min="1" max="50" 
+                    onChange={(e) => handelPlus(e,el,i)}/>
+                    <button class="style-24">
                       <svg
                         className="style-25"
                         focusable="false"
@@ -128,11 +157,12 @@ const handelMinus = () =>{
                           className="style-26"
                         ></path>
                       </svg>
-                    {/* </button> */}
+                    </button>
                   </div>
                 </div>
-                <div className="style-27">
-                  <div className="style-28">{el.price} EGP</div>
+                <div class="style-27">
+                  <div class="style-28">{el.price} EGP</div>
+                  <button onClick={()=>finito()}>Checkout</button>
                 </div>
               </div>
             </div>
@@ -160,7 +190,7 @@ const handelMinus = () =>{
 // ))}
 // <button className="addTOCart__btn">
 //               <Link to="/checkout">Proceed to checkout</Link>
-//             </button>
+//             </busstton>
 // </div>
 
 export default Cart;
