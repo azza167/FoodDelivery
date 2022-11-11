@@ -8,6 +8,7 @@ import { useSelector,useDispatch} from 'react-redux';
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
+import { getAuth, updatePassword } from "firebase/auth";
 
 import { auth } from '../../firebase';
 
