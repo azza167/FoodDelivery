@@ -1,21 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
 import { useState } from "react";
-import {fire} from '../firebase'
+import { fire } from "../firebase";
 
 const Cart = () => {
   const hamada = useSelector((state) => state.AddTocart);
-  
+
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
     const dele = {
       type: "del",
-      payload: {  
+      payload: {
         index: i,
         element: el,
       },
@@ -23,44 +23,76 @@ const Cart = () => {
     dispatch(dele);
   };
 
-const [count, setCount] = useState([]);
-var qool;
-console.log(hamada)
-console.log("hamada")
+  const [count, setCount] = useState([]);
+  var qool;
+  console.log(hamada);
+  console.log("hamada");
 
+  const handelPlus = (e, el, i) => {
+    hamada.map(
+      (item) =>
+        el.id === item.id
+          ? { ...item, quantity: (el.quantity = e.target.value * el.price) }
+          : item,
+      setCount(el.quantity)
+    );
+    const qont = {
+      type: "qont",
+      payload: count,
+    };
+    dispatch(qont);
+  };
+  // const finito = ()=>{
+  //  hamada.map((product,index)=>(
+  //   fire.collection('/orders').add({
+  //   quantity:product.quantity,
+  //   title:product.title,
+  //   price:product.price,
+  //   id:product.id,
 
-const handelPlus = (e,el,i) =>{
-   
-        hamada.map((item)=>
-        el.id=== item.id ? {...item, quantity: el.quantity= e.target.value* el.price} : item
-        ,setCount(el.quantity)
-        )
-        const qont = {
-          type: "qont",
-          payload: count,
-        };
-        dispatch(qont);        
-      }
-    const finito = ()=>{
-     hamada.map((product,index)=>(
-      fire.collection('/orders').add([{ 
-      quantity:product.quantity,
-      title:product.title,
-      price:product.price,
-      id:product.id,
-      
-    }]))
-    )}
-  
+  // }))
+  // )}
 
-// const handelMinus = (e,el,i) =>{
-//   setCount(hamada =>{
-//     hamada.map((item)=>
-//     el.id=== item.id ? {...item, quantity: item.quantity -1} : item
-//     )
-//   })
-// }
- 
+  // const finito = () => {
+  //   const order = hamada.map((product, index) => ({
+  //     quantity: product.quantity,
+  //     title: product.title,
+  //     price: product.price,
+  //     id: product.id,
+  //     index: index,
+  //   }));
+  // };
+const porcedHandeler=()=>{
+  const order = hamada.map((product, index) => ({
+    quantity: product.quantity,
+    title: product.title,
+    price: product.price,
+    id: product.id,
+    index: index,
+  }));
+  const porceed = {
+    type: "order",
+    payload: order,
+  };
+  dispatch(porceed);
+}
+  // const handelMinus = (e,el,i) =>{
+  //   setCount(hamada =>{
+  //     hamada.map((item)=>
+  //     el.id=== item.id ? {...item, quantity: item.quantity -1} : item
+  //     )
+  //   })
+  // }
+
+if(hamada.length<1){
+  return (<div>
+
+    its empty add products 
+  </div>
+
+  )
+}else{
+
 
 
   return (
@@ -70,6 +102,7 @@ const handelPlus = (e,el,i) =>{
       <div class="style-3">Cart</div>
       <div class="style-4"> {hamada.length}</div>
       <div class="style-0">
+        
         {hamada.map((el, i) => (
           <div>
             {/* <h1>{el.price}</h1>
@@ -126,24 +159,28 @@ const handelPlus = (e,el,i) =>{
                 <div class="style-18">
                   <div class="style-19">
                     {/* <button class="style-20" onClick={(e) => handelMinus(e,el,i)}> */}
-                      <svg
-                        class="style-21"
-                        focusable="false"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        data-testid="RemoveCircleOutlineIcon"
-                      >
-                        <path
-                          d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                          class="style-22"
-                        ></path>
-                      </svg>
+                    <svg
+                      class="style-21"
+                      focusable="false"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-testid="RemoveCircleOutlineIcon"
+                    >
+                      <path
+                        d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                        class="style-22"
+                      ></path>
+                    </svg>
                     {/* </button> */}
                     <h1>{qool}</h1>
                     <span class="style-23">{qool}</span>
-                    <input type="number" class="inpot" 
-                            min="1" max="50" 
-                    onChange={(e) => handelPlus(e,el,i)}/>
+                    <input
+                      type="number"
+                      class="inpot"
+                      min="1"
+                      max="50"
+                      onChange={(e) => handelPlus(e, el, i)}
+                    />
                     <button class="style-24">
                       <svg
                         class="style-25"
@@ -162,18 +199,19 @@ const handelPlus = (e,el,i) =>{
                 </div>
                 <div class="style-27">
                   <div class="style-28">{el.price} EGP</div>
-                  <button onClick={()=>finito()}>Checkout</button>
+                  {/* <button onClick={() => finito()}>Checkout</button> */}
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <button className="addTOCart__btn">
-          <Link to="/checkout">Proceed to checkout</Link>
-            </button>
+      <button className="addTOCart__btn" onClick={()=>{porcedHandeler()}}>
+        <Link to="/checkout">Proceed to checkout</Link>
+      </button>
     </div>
   );
+} 
 };
 
 //  <h1 style={{color:'#ff5f00'}}> Counter: {hamada.length}</h1>
