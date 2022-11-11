@@ -37,7 +37,7 @@ storage.getDownloadURL().then((el)=>setdownload(el))
 const [dat,setdat] =useState([])
 
 useEffect(()=>{
-    
+
     fire.collection('/product').onSnapshot((el)=>{
         setdat(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
       })
