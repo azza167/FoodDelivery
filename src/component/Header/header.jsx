@@ -1,3 +1,9 @@
+import React from 'react';
+
+import { Container } from 'reactstrap';
+import Logo from '../../assets/images/icon1.png'
+import { useSelector,useDispatch} from 'react-redux';
+
 import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
@@ -70,7 +76,6 @@ const handeler=()=>{
         <img src={Logo} alt='logo' />
        {   /* <h5> Tasty Treat</h5>*/}
         </div> 
-        {/Menu/}
         <div className="navigation" >
         <div className="menu d-flex align-items-center gap-5">
           {nav__links.map((item, index) => (
