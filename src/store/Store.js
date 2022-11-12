@@ -4,6 +4,9 @@ import products from "../assets/products";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { createLogger } from "redux-logger";
+import { Action } from "@remix-run/router";
+import { fire } from "../firebase";
+
 // import { auth } from "./firebase";
 const logger = createLogger();
 
@@ -17,6 +20,7 @@ let initstate = {
     qty: 1,
     user: "",
     cartShow: true,
+    order: [{}],
 
     userauto: false,
 
@@ -88,6 +92,17 @@ const Store = (state = initstate, action) => {
         console.log("sasd");
 
         return {...state };
+    }
+    if (action.type === "order") {
+        state.order.push(action.payload);
+        return {...state }
+
+    }
+    if (action.type === "payment") {
+        state.order.push(action.payload)
+            // fire.collection('/orders').add(state.order)
+
+        return {...state }
     }
     return state;
 };

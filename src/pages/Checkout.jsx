@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Container,Row, Col } from 'reactstrap';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
 import '../Styles/checkout.css';
@@ -29,11 +28,13 @@ const Checkout = () => {
   const [checker, setchecker] = useState(false);
   // const [inpu, setinpu] = useState('');
 
+  const dispatch = useDispatch();
 
   // const [offerss, setoffers] = useState('');
 
 
-  
+  const porceed= useSelector((state) => state.order);
+
   
   
   
@@ -81,8 +82,22 @@ const hamada = useSelector((state) => state.AddTocart);
     fire.collection('/orders').add({ordersss:hamada,shippingInfo:userShippingAddress})
 
 
-  };
+    const payment = {
+      type: "payment",
+      payload: shippingInfo,
+    };
+    dispatch(payment);
+  
+ 
 
+
+  };
+// const porcee=()=>{
+//     fire.collection('/orders').add([{
+//       porceed
+
+//   }])
+// }
 
   const handelerchangediscount=(e)=>{
     if (e.target.value===offers) {
@@ -190,6 +205,7 @@ if (checker) {
                 <button  onClick={submitHandler} className='submit' >
                   Payment
                 </button>
+                {/* <button onClick={()=>{porcee()}}>ddd</button> */}
               </form>
               </Col>
              
