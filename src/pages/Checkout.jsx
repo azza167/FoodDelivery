@@ -6,9 +6,7 @@ import Helmet from '../component/Helmet'
 import '../Styles/checkout.css';
 import { useState } from 'react';
 import { auth } from '../firebase';
-import { fire } from "../firebase";
-
-
+import {fire} from '../firebase'
 
 
 const Checkout = () => {
@@ -48,7 +46,7 @@ const Checkout = () => {
 
 
 
-  console.log(offers)
+  // console.log(offers)
 // setoffers(offers)
   const shippingCost = 15;
   const [totalAmount ,settotalAmount] =useState( cartTotalAmount + Number(shippingCost));
@@ -62,7 +60,7 @@ const Checkout = () => {
 
 // }
 
-  
+
   
   const submitHandler = (e) => {
      setusersss({name:enterName,email:enterEmail,number:enterNumber,country:enterCountry,city:enterCity,PostalCode:postalCode})
@@ -80,12 +78,15 @@ const Checkout = () => {
     };
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
-    fire.collection("./orders").add([{foo:hamada}])
-    // const payment = {
-    //   type: "payment",
-    //   payload: shippingInfo,
-    // };
-    // dispatch(payment);
+    // fire.collection('/orders').add({shippingInfo:shippingInfo})
+    fire.collection('/orders').add({ordersss:hamada,shippingInfo:userShippingAddress})
+
+
+    const payment = {
+      type: "payment",
+      payload: shippingInfo,
+    };
+    dispatch(payment);
   
  
 
