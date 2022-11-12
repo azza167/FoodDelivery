@@ -44,29 +44,15 @@ const handelPlus = (e,el,i) =>{
         dispatch(qont);        
       }
       // useEffect(() => {
-
-
       //        hamada.map((product,index)=>(
- 
       //          setorders((pre)=>[...pre,product])
-
-               
       //          ))
-            
-              
-           
       //         } ,[])
-              
-       
       // fire.collection('/orders').onSnapshot((el)=>{
       //             setord(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
       //           })
-           
       // useEffect(()=>{
-
       //   fire.collection('/orders').add({ordersss:hamada})
-
-
       // },[])
      
 
@@ -74,7 +60,12 @@ const handelPlus = (e,el,i) =>{
 
     const finito = ()=>{
 
-      fire.collection('/orders').add({ordersss:hamada})
+      const order = hamada
+      const porceed = {
+        type: "order",
+        payload: order,
+      };
+      dispatch(porceed);        
 
     }
 

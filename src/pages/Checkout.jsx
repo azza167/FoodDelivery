@@ -37,7 +37,8 @@ const Checkout = () => {
 
   const porceed= useSelector((state) => state.order);
 
-  
+  const hamada = useSelector((state) => state.AddTocart);
+
   
   
   const shippingInfo = [];
@@ -79,12 +80,12 @@ const Checkout = () => {
     };
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
-
-    const payment = {
-      type: "payment",
-      payload: shippingInfo,
-    };
-    dispatch(payment);
+    fire.collection("./orders").add([{foo:hamada}])
+    // const payment = {
+    //   type: "payment",
+    //   payload: shippingInfo,
+    // };
+    // dispatch(payment);
   
  
 

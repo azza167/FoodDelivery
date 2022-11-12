@@ -7,7 +7,6 @@ import { createLogger } from "redux-logger";
 import { Action } from "@remix-run/router";
 import { fire } from "../firebase";
 
-// import { auth } from "./firebase";
 const logger = createLogger();
 
 let initstate = {
@@ -100,13 +99,14 @@ const Store = (state = initstate, action) => {
     }
     if (action.type === "payment") {
         state.order.push(action.payload)
-            // fire.collection('/orders').add(state.order)
 
-        return {...state }
+
+
+        return {...state, }
     }
     return state;
 };
 
-const store = createStore(Store,mid);
+const store = createStore(Store, mid);
 
 export default store;
