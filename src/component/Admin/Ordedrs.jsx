@@ -30,18 +30,25 @@ function Ordedrs() {
         else return 0;
     }
         useEffect(()=>{
-            console.log(orders)
             fire.collection('/orders').onSnapshot((el)=>{
                 setOrders(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
+               
+            
+                // el.docs.map((el)=>  fire.collection('/orders').doc(el.id).delete())
             })
+
             },[]);
-  
+
+console.log("ord",orders)  
         return (
     <div>Ordedrs
     {
         orders.map((item,idx)=>(
                   <div className='mb-3' key={idx}>
-                  <div className='admin-content-text'> order num ({item.dataa.id})</div>
+                  <div className='admin-content-text'> order's code ({item.id})</div>
+                  {item.dataa.ordersss.map((order,id)=>(
+                     <div key={id}>product:{order.title}, price={order.price}</div>
+                  ))}
                   <Row className="justify-content-center mt-4 user-data">
                   <Col lg="12" className=" d-flex">
                   <div className="admin-content-text py-2"> user data</div>
@@ -62,7 +69,7 @@ function Ordedrs() {
                             fontSize: "16px",
                         }}
                         className="mx-2">
-                         {/* {item.dataa.name} */}
+                         {item.dataa.shippingInfo.name}
                     </div>
                   </Col>  
                   <Col xs="12" className="d-flex">
@@ -82,7 +89,7 @@ function Ordedrs() {
                             fontSize: "16px",
                         }}
                         className="mx-2">
-                        {/* {item.dataa.phone} */}
+                        {item.dataa.shippingInfo.phone}
                     </div>
                 </Col>
                 <Col xs="12" className="d-flex">
@@ -102,7 +109,7 @@ function Ordedrs() {
                             fontSize: "16px",
                         }}
                         className="mx-2">
-                        {/* {item.dataa.email} */}
+                        {item.dataa.shippingInfo.email}
                     </div>
                 </Col>
                 <div className=" d-inline px-4 border text-center pt-2">

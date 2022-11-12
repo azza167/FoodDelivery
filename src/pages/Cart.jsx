@@ -27,8 +27,6 @@ const [count, setCount] = useState([]);
 const [ord, setord] = useState([]);
 
 var qool;
-console.log(hamada)
-console.log("hamada")
 
 
 const handelPlus = (e,el,i) =>{
@@ -74,7 +72,7 @@ const handelPlus = (e,el,i) =>{
 
     const finito = ()=>{
 
-      fire.collection('/orders').add({ordersss:hamada})
+      // fire.collection('/orders').add({ordersss:hamada})
 
     }
 
@@ -195,9 +193,12 @@ const handelPlus = (e,el,i) =>{
           </div>
         ))}
       </div>
-      <button className="addTOCart__btn">
+      {/* <button className="addTOCart__btn">
           <Link to="/checkout" onClick={()=>finito()}>Proceed to checkout</Link>
-            </button>
+            </button> */}
+             <button className="addTOCart__btn">
+               <Link to="/checkout">Proceed to checkout</Link>
+           </button>
     </div>
   );
 };

@@ -69,7 +69,7 @@ const handeler=()=>{
          <NavLink
               to={'/admain'}
             >
-            Admain
+            Admin
             </NavLink>
 :''}
         </div>
@@ -95,7 +95,7 @@ const handeler=()=>{
        </span>
        <span className="user" >
          <Link to="/login">
-           <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>     
+           <i className="ri-user-line" ><span style={{fontSize:'10px',color:'white'}}>{email}</span></i>     
          </Link>
        </span>
        <span className="mobile__menu">
