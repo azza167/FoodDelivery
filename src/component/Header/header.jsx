@@ -6,6 +6,8 @@ import {NavLink,Link} from 'react-router-dom';
 import '../../Styles/Header.css'
 import { useEffect, useState } from 'react'
 import { auth } from '../../firebase';
+import { fire } from '../../firebase'
+
 const nav__links=[
   {
     display:'Home',
@@ -25,15 +27,39 @@ const nav__links=[
   },
 ]
 const Header = () => {
+
+
+//   useEffect(()=>{
+//     fire.doc('/users/'+auth.currentUser.uid).onSnapshot((e)=>{
+//   console.log(e.data().name)
+//   // setdaaa(e.data())
+// })
+  // },[])
   var cartTotal = useSelector((state)=>state);
 const [a,seta]=useState(null)
 const [email,setemail]=useState('')
+const [imgg,setimgg]=useState('')
+
 const[show , setshow]=useState(false)
 const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
-    userr?setemail(userr.email):setemail('')
+ userr?   fire.doc('/users/'+auth.currentUser.uid).onSnapshot((e)=>{
+      console.log(e.data().name)
+      setemail(e.data().name)
+      setimgg(e.data().imagee)
+
+      const storeee={
+        type:"user data",
+        payload:e.data()
+
+      }
+      dispatch(storeee)
+ }):
+ setemail('');
+ 
+
    userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
       })
 },[]) 
@@ -98,6 +124,7 @@ const handeler=()=>{
            <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>     
          </Link>
        </span>
+       <img src={imgg} style={{width:'30px',borderRadius:'50%' }} alt="" srcset="" />
        <span className="mobile__menu">
          <i className="ri-menu-line"></i>
        </span>
