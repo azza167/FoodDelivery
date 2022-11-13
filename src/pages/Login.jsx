@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
 import {store,fire} from '../firebase'
 const Login = () => {
+// auth.signInWithPopup(auth.currentUser,new GoogleAuthProvider()).then((e)=>console.log(e))
 
   // const dispatch=useDispatch()
 const initial ={email:'',password:''}
