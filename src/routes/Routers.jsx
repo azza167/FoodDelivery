@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import AllFoods from '../pages/AllFoods';
 import FoodDetails from '../pages/FoodDetails';
  import Store from '../store/Store';
+
 import Admain from '../pages/Admain';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -62,12 +63,11 @@ useEffect(()=>{
 
 
 
-
     {show? <Route path='/admain' element={<Admain/>}/>:''}
-    {show? <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>:''}
-    {show? <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>:''}
-    {show? <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>:''}
 
+    {show? <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>:''} 
+    {show? <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>:''}
+    {show? <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>:''} 
 
 
   {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}
