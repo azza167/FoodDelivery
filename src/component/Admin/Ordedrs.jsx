@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import { fire } from '../../firebase';
+import Admain from '../../pages/Admain';
 import "./order.css"
 function Ordedrs() {
     // const orders=JSON.parse(localStorage.getItem('orders'));
@@ -35,7 +36,8 @@ function Ordedrs() {
 
 console.log("ord",orders)  
         return (
-    <div>Ordedrs
+    <div className='cont'>
+    Ordedrs
     {
         orders.map((item,idx)=>(
                   <div className='mb-3' key={idx}>

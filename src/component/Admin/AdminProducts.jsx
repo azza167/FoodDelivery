@@ -69,6 +69,7 @@ function AdminProducts() {
     }
     return (
         <>
+            <div className='cont'>
                 {!show ? <h1 className='succefull' ><span>sucessful</span>  adding
 
                     <h4>check your home</h4>
@@ -97,6 +98,7 @@ function AdminProducts() {
                     </>)}
 
 
+            </div>
             <div>
                 <h3 style={{ textAlign: 'center', margin: '5px' }}>Your Announce <span>{dat.length}</span> </h3>
                 <div className='aaa' style={{ overflow: "scroll", height: '250px' }}>
