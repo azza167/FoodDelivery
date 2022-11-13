@@ -33,7 +33,6 @@ function HomeSlider() {
     arrows:true,
     //  nextArrow: <NextArrow />, 
     //  prevArrow: <SamplePrevArrow/>,
-
   };
   return (
     <div className="">

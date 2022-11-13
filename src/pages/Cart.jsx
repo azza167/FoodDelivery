@@ -95,7 +95,7 @@ const handelPlus = (e,el,i) =>{
       <div className="style-4"> {hamada.length}</div>
       <div className="style-0">
         {hamada.map((el, i) => (
-          <div>
+          <div key={i}>
             {/* <h1>{el.price}</h1>
           <img src={el.img} alt="" />
           <button onClick={() => handeldel(i, el)}>delete</button> */}
@@ -139,16 +139,16 @@ const handelPlus = (e,el,i) =>{
                       <noscript className="style-14"></noscript>
                     </div>
                   </div>
-                  <div class="style-15">
-                    <div class="style-16">{el.title}</div>
-                    <div class="style-16">{el.quantity}</div>
-                    <div class="style-17" font-size="16px">
+                  <div className="style-15">
+                    <div className="style-16">{el.title}</div>
+                    <div className="style-16">{el.quantity}</div>
+                    <div className="style-17" fontSize="16px">
                       {el.description}
                     </div>
                   </div>
                 </div>
-                <div class="style-18">
-                  <div class="style-19">
+                <div className="style-18">
+                  <div className="style-19">
                     {/* <button class="style-20" onClick={(e) => handelMinus(e,el,i)}> */}
                       <svg
                         className="style-21"
@@ -164,11 +164,11 @@ const handelPlus = (e,el,i) =>{
                       </svg>
                     {/* </button> */}
                     <h1>{qool}</h1>
-                    <span class="style-23">{qool}</span>
-                    <input type="number" class="inpot" 
+                    <span className="style-23">{qool}</span>
+                    <input type="number" className="inpot" 
                             min="1" max="50" 
                     onChange={(e) => handelPlus(e,el,i)}/>
-                    <button class="style-24">
+                    <button className="style-24">
                       <svg
                         className="style-25"
                         focusable="false"
@@ -184,8 +184,8 @@ const handelPlus = (e,el,i) =>{
                     </button>
                   </div>
                 </div>
-                <div class="style-27">
-                  <div class="style-28">{el.price} EGP</div>
+                <div className="style-27">
+                  <div className="style-28">{el.price} EGP</div>
                   <button >Checkout</button>
                 </div>
               </div>

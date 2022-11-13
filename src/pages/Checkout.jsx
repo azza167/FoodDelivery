@@ -79,7 +79,7 @@ const hamada = useSelector((state) => state.AddTocart);
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
     // fire.collection('/orders').add({shippingInfo:shippingInfo})
-    fire.collection('/orders').add({ordersss:hamada,shippingInfo:userShippingAddress})
+    fire.collection('/orders').add({ordersss:hamada,shippingInfo:userShippingAddress,totalPrice:totalAmount})
 
 
     const payment = {

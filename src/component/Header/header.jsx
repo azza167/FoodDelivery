@@ -67,6 +67,9 @@ const handeler=()=>{
           ))}
           {show?
          <NavLink
+         className={(navClass) =>
+                navClass.isActive ? "active__menu" : ""
+              }
               to={'/admain'}
             >
             Admin
