@@ -160,6 +160,7 @@ const[userid , setuserid]=useState('')
             ):(
               <div class="box-container">
                 {
+                  
                   reviewsById.map((item,idx)=>(
 
 
@@ -172,9 +173,13 @@ const[userid , setuserid]=useState('')
 
 
                     <div class="box">
+                    <p>{item.dataa.date}</p>
                     <img src={item.dataa.userrr.imagee} style={{width:'50px',borderRadius:'50%'}}  alt=""/>
-                    <h3>{item.dataa.userrr.name}</h3>
+                    <h6>{item.dataa.userrr.name}</h6>
+
                     <p>{item.dataa.review}</p>
+                    
+
                    
                 </div>
         
@@ -197,7 +202,7 @@ const[userid , setuserid]=useState('')
                       </div>
             )
           }
-                       <form className='form' onSubmit={addReview}>
+                       <form className='form' onSubmit={addReview} style={{marginTop:'10px'}}>
                   <div className=' form_group'>
                     <input
                       type={'email'}
