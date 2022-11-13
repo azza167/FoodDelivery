@@ -4,7 +4,9 @@ import products from "../assets/products";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { createLogger } from "redux-logger";
-// import { auth } from "./firebase";
+import { Action } from "@remix-run/router";
+import { fire } from "../firebase";
+
 const logger = createLogger();
 
 let initstate = {
@@ -20,6 +22,7 @@ let initstate = {
     qty: 1,
     user: "",
     cartShow: true,
+    order: [{}],
 
     userauto: false,
 
@@ -98,9 +101,21 @@ const Store = (state = initstate, action) => {
 
         return {...state };
     }
+    if (action.type === "order") {
+        state.order.push(action.payload);
+        return {...state }
+
+    }
+    if (action.type === "payment") {
+        state.order.push(action.payload)
+
+
+
+        return {...state, }
+    }
     return state;
 };
 
-const store = createStore(Store,mid);
+const store = createStore(Store);
 
 export default store;

@@ -19,6 +19,9 @@ import Forgetpassword from "../pages/Forgetpassword";
 import Updatepassord from "../pages/Updatepassord";
 
 import Contact from "../pages/Contact";
+import AdminContacts from "../component/Admin/AdminContacts";
+import AdminProducts from "../component/Admin/AdminProducts";
+import Ordedrs from "../component/Admin/Ordedrs";
 
 const Routers = () => {
   const Navigat= useNavigate()
@@ -61,7 +64,10 @@ useEffect(()=>{
 
 
     {show? <Route path='/admain' element={<Admain/>}/>:''}
-   
+    {show? <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>:''}
+    {show? <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>:''}
+    {show? <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>:''}
+
 
 
   {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}

@@ -1,18 +1,45 @@
-import React from 'react'
-import { Col, ListGroup, ListGroupItem, Row } from 'reactstrap'
+import React, { useState } from 'react'
+import { Col, ListGroupItem, Row } from 'reactstrap'
 import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
+import { fire } from '../firebase';
 
 function Contact() {
+
+    const [name,setName]=useState('');
+    const [email,setEmail]=useState('');
+    const [phone,setPhone]=useState('');
+    const [massage,setMassage]=useState('');
+    const [Category, setCategory] = useState("");
+
+    const onSubmit=(e)=>{
+            e.preventDefault();
+        fire.collection('/Contact').add({
+            category:Category,
+            name:name,
+            email:email,
+            phone:phone,
+            massage:massage
+       })
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMassage("");
+        alert('your massage was sent successfully')
+
+      }
     return (
         <Helmet title="Contact">
             <CommonSection />
             <Row className='p-4'>
                 <Col lg="8">
-                    <form className='form' >
+                    <form className='form' onSubmit={onSubmit}>
                         <div className='select form_group'>
                             <label className='pb-2 '>category:</label>
-                            <select className="w-100" onChange={(e) => (e.target.value)}>
+                            <select className="w-100"
+                             onChange={(e) => setCategory(e.target.value)}
+                             required
+                             >
                                 <option value="Choose">Choose</option>
                                 <option value="Complaint">Complaint</option>
                                 <option value="descending">Social Responsibility</option>
@@ -25,8 +52,8 @@ function Contact() {
                             <input
                                 type={'text'}
                                 placeholder='Enter your name'
-                                //   value={name}
-                                //   onChange={(e)=>setName(e.target.value)}
+                                  value={name}
+                                  onChange={(e)=>setName(e.target.value)}
                                 required
                             />
                         </div>
@@ -35,9 +62,9 @@ function Contact() {
                             <input
                                 type={'phone'}
                                 placeholder='Enter your phone number'
-                                //   value={email}
+                                  value={phone}
                                 required
-                            //   onChange={(e)=>setEmail(e.target.value)}
+                              onChange={(e)=>setPhone(e.target.value)}
                             />
                         </div>
                         <div className=' form_group'>
@@ -45,9 +72,9 @@ function Contact() {
                             <input
                                 type={'email'}
                                 placeholder='Enter your email'
-                                //   value={email}
+                                  value={email}
                                 required
-                            //   onChange={(e)=>setEmail(e.target.value)}
+                              onChange={(e)=>setEmail(e.target.value)}
                             />
                         </div>
                         <div className='form_group'>
@@ -56,8 +83,8 @@ function Contact() {
                                 type={'text'}
                                 placeholder='Write your massage'
                                 rows={3}
-                                //   value={review}
-                                //   onChange={(e)=>setReview(e.target.value)}
+                                  value={massage}
+                                  onChange={(e)=>setMassage(e.target.value)}
                                 required
                             />
                         </div>
