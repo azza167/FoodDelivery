@@ -63,11 +63,17 @@ useEffect(()=>{
 
 
 
-    {show? <Route path='/admain' element={<Admain/>}/>:''}
+    {show? <Route path='/admain' element={<Admain/>}>      
+    
+    <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
+    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
+     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/> 
+     </Route> 
+    :''}
 
-    {show? <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>:''} 
-    {show? <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>:''}
-    {show? <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>:''} 
+     {/* <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
+    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
+     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>  */}
 
 
   {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}
