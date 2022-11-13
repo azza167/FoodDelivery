@@ -35,7 +35,8 @@ const Checkout = () => {
 
   const porceed= useSelector((state) => state.order);
 
-  
+  const hamada = useSelector((state) => state.AddTocart);
+
   
   
   const shippingInfo = [];
@@ -59,7 +60,6 @@ const Checkout = () => {
 
 // }
 
-const hamada = useSelector((state) => state.AddTocart);
 
   
   const submitHandler = (e) => {
