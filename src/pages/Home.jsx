@@ -36,10 +36,7 @@ const Home = () => {
 <div className="mb-4">
   <HomeSlider/>
   </div> 
-  <div className="mb-4">  
-  <h4 className="hotOffers"> Hot Offers</h4>
-  <Offers/>
-  </div>   
+    
 <Container> 
       <Row>
         <Col lg='6' md='6' className="hero-details">
@@ -64,11 +61,12 @@ const Home = () => {
         <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
         </Col>
 
-
         </Row>
-      <Category/>
-
- 
+        <div className="mb-4">  
+  <h4 className="hotOffers"> Hot Offers</h4>
+  <Offers/>
+  </div> 
+      <Category/> 
 
     </Container>
 

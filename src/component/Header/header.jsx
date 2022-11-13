@@ -81,7 +81,6 @@ useEffect(()=>{
       type: "showCart",
     };
     dispatch(obj);
-
   };
   return (
     <header className="header">
