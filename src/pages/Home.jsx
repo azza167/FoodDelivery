@@ -62,10 +62,13 @@ const Home = () => {
         </Col>
 
         </Row>
-        <div className="mb-4">  
+            </Container>
+
+  <div className="mb-4">  
   <h4 className="hotOffers"> Hot Offers</h4>
   <Offers/>
   </div> 
+  <Container>
       <Category/> 
 
     </Container>
