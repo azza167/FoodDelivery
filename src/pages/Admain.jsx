@@ -1,15 +1,20 @@
 import React from 'react'
 import '../App.css'
-import Ordedrs from '../component/Admin/Ordedrs';
-import AdminContacts from '../component/Admin/AdminContacts';
 import AdminProducts from '../component/Admin/AdminProducts';
 import { Col, Container, Row } from 'reactstrap';
-import { NavLink, Routes } from 'react-router-dom';
+import { NavLink ,Outlet} from 'react-router-dom';
+import { Routes,Route,Navigate} from 'react-router-dom' ;
+import { useNavigate } from "react-router-dom";
+
+
 const Admain = () => {
+
+
+
 
     return (
         <>
-            <Container >
+            <Container  >
                 <Row className='py-3'>
                     <Col sm="3" xs="2" md="2">
                         <div className="sidebar">
@@ -34,17 +39,14 @@ const Admain = () => {
                         </div>
 
                     </Col>
-                    <Col sm="9" xs="10" md="10">
-                    {/* <Ordedrs />
-                    <AdminContacts/>
-                    <AdminProducts/> */}
-                </Col>
+          <div style={{width:'83%'}}>          
+     <Outlet/>
+     </div>   
                 </Row>
             </Container>
-            <Routes>
-                
-            </Routes>
-
+           
+ 
+                 
         </>
     )
 }

@@ -10,6 +10,8 @@ import { fire } from '../firebase'
 import "../Styles/food-details.css"
 import { auth } from '../firebase';
 import { GoogleAuthProvider } from 'firebase/auth'
+import '../App.css'
+
 
 const FoodDetails = () => {
 const[emaila , setemaila]=useState('')
@@ -32,7 +34,7 @@ const[userid , setuserid]=useState('')
   const products= useSelector((state)=>state.product);
   const product=products.find((product)=>product.id===id);
   const userdata =useSelector((state)=>state.userdata);
-  console.log(userdata)
+  console.log(new Date().toLocaleString())
 
     const {title,price,category,desc,image01,image02,image03}=product;
     const [tab,setTab]=useState("Description");
@@ -66,7 +68,9 @@ const[userid , setuserid]=useState('')
         name:name,
         email:emaila,
         review:review,
-        userrr:userdata
+        userrr:userdata,
+        date:new Date().toLocaleString()
+
      })
       // setReviews([...reviews,{id:id,name:name,email:email,review:review}]);
       // localStorage.setItem('reviews',JSON.stringify([...reviews,{id:id,name:name,email:email,review:review}]));
@@ -154,24 +158,51 @@ const[userid , setuserid]=useState('')
                   <p>{desc}</p>
               </div>
             ):(
-              <div>
+              <div class="box-container">
                 {
+                  
                   reviewsById.map((item,idx)=>(
-                  <div className='tab_rev mb-3' key={idx}>
-                  <Row lg="4" className="review ps-3"  style={{width:'100%'}}>
-                 <img style={{width:'50px',borderRadius:'50%'}} src={item.dataa.userrr.imagee} alt="" />
-                    <p className=" text-danger">{item.dataa.userrr.name}</p>
-                    {/* <p className="mb-0 "> {item.dataa.email}</p> */}
-                    <p className="mb-0"> {item.dataa.name}</p>
-                    <p className=" text-danger">{item.dataa.review}</p>
 
 
-                  </Row>  
-                  </div>                   
 
-              ))
+
+
+
+
+
+
+
+                    <div class="box">
+                    <p>{item.dataa.date}</p>
+                    <img src={item.dataa.userrr.imagee} style={{width:'50px',borderRadius:'50%'}}  alt=""/>
+                    <h6>{item.dataa.userrr.name}</h6>
+
+                    <p>{item.dataa.review}</p>
+                    
+
+                   
+                </div>
+        
+           
+                //   <div className='tab_rev mb-3' key={idx}>
+                //   <Row lg="4" className="review ps-3"  style={{width:'100%'}}>
+                //  <img style={{width:'50px',borderRadius:'50%'}} src={item.dataa.userrr.imagee} alt="" />
+                //     <p className=" text-danger">{item.dataa.userrr.name}</p>
+                //     {/* <p className="mb-0 "> {item.dataa.email}</p> */}
+                //     <p className="mb-0"> {item.dataa.name}</p>
+                //     <p className=" text-danger">{item.dataa.review}</p>
+
+
+                //   </Row>  
+                //   </div>                   
+                
+                ))
               }
-                <form className='form' onSubmit={addReview}>
+   
+                      </div>
+            )
+          }
+                       <form className='form' onSubmit={addReview} style={{marginTop:'10px'}}>
                   <div className=' form_group'>
                     <input
                       type={'email'}
@@ -197,15 +228,12 @@ const[userid , setuserid]=useState('')
                       value={review}
                       onChange={(e)=>setReview(e.target.value)}
                       required
-                    />
+                      />
                   </div>
                   <button type='submit' className='add_btn'>
                       Add Review
                   </button>
                 </form>
-              </div>
-            )
-          }
         </Col>
         <Col lg='12' className='mb-5 mt-5'>
             <h2 className='related_Product'>
