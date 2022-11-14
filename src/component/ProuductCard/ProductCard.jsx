@@ -18,7 +18,6 @@ export default function ProductCard(props) {
     
     function addCartHandeler(img,idd,tit,pric,qty){
         setAdded("already_added");
-    fire.doc("/added/" + auth.currentUser.uid).set({ addedd: hamada })
 
             const obj = {
                 type:"cart",
@@ -32,6 +31,8 @@ export default function ProductCard(props) {
             }
             
             dispatch(obj);
+    fire.doc("/added/" + auth.currentUser.uid).set({ addedd: hamada })
+
     }
     const [added, setAdded] = useState("add_btn ");
 
