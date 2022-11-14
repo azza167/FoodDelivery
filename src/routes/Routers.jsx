@@ -53,10 +53,10 @@ useEffect(()=>{
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-   {!show? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
+   {!a? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
 
 
-   {show? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
+   {a? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
     <Route path='*' element={<NotFound/>}/>
 
 

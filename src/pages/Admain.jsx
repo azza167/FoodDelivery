@@ -4,7 +4,7 @@ import Ordedrs from '../component/Admin/Ordedrs';
 import AdminContacts from '../component/Admin/AdminContacts';
 import AdminProducts from '../component/Admin/AdminProducts';
 import { Col, Container, Row } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Routes } from 'react-router-dom';
 const Admain = () => {
 
     return (
@@ -41,6 +41,9 @@ const Admain = () => {
                 </Col>
                 </Row>
             </Container>
+            <Routes>
+                
+            </Routes>
 
         </>
     )
