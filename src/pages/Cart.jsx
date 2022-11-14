@@ -5,7 +5,9 @@ import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
 import { useState,useEffect } from "react";
-import {fire} from '../firebase'
+
+import { fire,auth} from '../firebase'
+
 
 const Cart = () => {
   const hamada = useSelector((state) => state.AddTocart);
@@ -14,6 +16,8 @@ const Cart = () => {
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
+    fire.doc("/added/" + auth.currentUser.uid).delete((e)=>{setAdded(e.data().addedd[i])})
+
     const dele = {
       type: "del",
       payload: {  
@@ -27,9 +31,14 @@ const [orders , setorders]=useState([])
 const [count, setCount] = useState([]);
 const [ord, setord] = useState([]);
 const [val, setVal] = useState([]);
+const [add, setAdded] = useState([]);
 
 var qool;
+useEffect(()=>{
+fire.doc("/added/" + auth.currentUser.uid).onSnapshot((e)=>{setAdded(e.data().addedd)})
 
+
+},[])
 
 // const handelPlus = (e,el,i) =>{
    
@@ -48,7 +57,7 @@ const handelplus=(e,el)=>{
   
   setVal(e.target.previousSibling.stepUp());
   console.log(e.target.previousSibling.value); 
-   hamada.map((item)=>
+   add.map((item)=>
   el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
@@ -62,7 +71,7 @@ const handelminus=(e,el)=>{
   
   setVal(e.target.nextSibling.stepDown());
   console.log(e.target.previousSibling.value); 
-   hamada.map((item)=>
+   add.map((item)=>
   el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
@@ -87,9 +96,9 @@ const handelminus=(e,el)=>{
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
       <h1> total:{totalAmount}</h1>
       <div className="style-3">Cart</div>
-      <div className="style-4"> {hamada.length}</div>
+      <div className="style-4"> {add.length}</div>
       <div className="style-0">
-        {hamada.map((el, i) => (
+        {add.map((el, i) => (
           <div key={i}>
             {/* <h1>{el.price}</h1>
           <img src={el.img} alt="" />
