@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
 import {store,fire} from '../firebase'
 const Login = () => {
+// auth.signInWithPopup(auth.currentUser,new GoogleAuthProvider()).then((e)=>console.log(e))
 
   // const dispatch=useDispatch()
 const initial ={email:'',password:''}
@@ -146,6 +147,14 @@ window.location.reload(true)
             <button onClick={()=>hadelerlog()}>log out</button>
             <div>
             <Link to={'/updateprofile'}>
+              
+            <button  type="submit" className="addTOCart__btn">
+                Update password
+              </button>
+              </Link>
+              </div>
+              <div>
+            <Link to={'/Updadeting'}>
               
             <button  type="submit" className="addTOCart__btn">
                 Update profile

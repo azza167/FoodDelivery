@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import AllFoods from '../pages/AllFoods';
 import FoodDetails from '../pages/FoodDetails';
  import Store from '../store/Store';
+
 import Admain from '../pages/Admain';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -17,8 +18,11 @@ import NotFound from "../pages/NotFound";
 import Forgetpassword from "../pages/Forgetpassword";
 
 import Updatepassord from "../pages/Updatepassord";
-
+import Updadeting from "../pages/Updadeting";
 import Contact from "../pages/Contact";
+import AdminContacts from "../component/Admin/AdminContacts";
+import AdminProducts from "../component/Admin/AdminProducts";
+import Ordedrs from "../component/Admin/Ordedrs";
 
 const Routers = () => {
   const Navigat= useNavigate()
@@ -50,18 +54,28 @@ useEffect(()=>{
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
-   {!show? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
+    <Route path='/Updadeting' element={<Updadeting/>}/>
+
+   {!a? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
 
 
-   {show? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
+   {a? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
     <Route path='*' element={<NotFound/>}/>
 
 
 
 
+    {show? <Route path='/admain' element={<Admain/>}>      
+    
+    <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
+    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
+     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/> 
+     </Route> 
+    :''}
 
-    {show? <Route path='/admain' element={<Admain/>}/>:''}
-   
+     {/* <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
+    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
+     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>  */}
 
 
   {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}

@@ -42,11 +42,11 @@
 .cont{
   display:flex;
   flex-direction:column;
-  width:50% ;
+  width:80% ;
 
 margin-left: auto;
 margin-right: auto;
-justify-content: center;
+/* justify-content: center; */
 margin-top: 10px;
 text-align: center;
 font-size: 15px;
@@ -86,4 +86,73 @@ width:20% ;
 }
 .aaa {
 
+}
+
+/* admin style  */
+.sidebar {
+  height: 660px;
+  width: 100%;
+  border-radius: 21px;
+  background-color: #ffffff;
+}
+.box-container{
+  display: flex;
+
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+width: 100%;}
+.box{
+
+  word-break:break-all;
+
+  /* flex-direction: row; */
+  display: inline-block;
+ /* flex:1 1 30rem; */
+ text-align: center; 
+  border:.1rem solid rgba(134, 101, 11, 0.1);
+  border-radius: .5rem;
+  background:#ffffff;
+  padding:10px; 
+  width: 20%;
+  height: 10%; 
+}
+ .box img{
+  border-radius: 50%;
+  object-fit: cover;
+  /* height:15rem;
+  width:15rem;
+  margin:1rem 0; */
+}
+ .box h3{
+  font-size:20px;
+  color:var(--black);
+}
+ .box p{
+  font-size: 10px;
+  color:#666;
+  padding:1rem 0;
+}
+.contupdating{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+.contupdating div{
+
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.contupdating div input{
+  margin: 5px;
+width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+.contupdating p {
+  text-align: center;
+  font-size: large;
+  color: #ff5f00;
 }

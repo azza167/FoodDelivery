@@ -2,6 +2,7 @@ import { useSelector ,useDispatch  } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { useEffect, useState } from 'react'
+import {store,fire} from '../firebase'
 
 import React from 'react'
 import { Container, Row, Col } from "reactstrap";
@@ -14,8 +15,25 @@ const Register = () => {
   const x= useNavigate()
   
   const[err,seterr]=useState('')
-  const[done,setdone]=useState('')
+  const[username,setusername]=useState('')
+  const[adress,setadress]=useState('')
 
+
+  const[done,setdone]=useState('')
+  const [download,setdownload] =useState("")
+  const [image,setimage] =useState(null)
+
+
+  const handelerimagereq =(e)=>{
+      setimage(URL.createObjectURL(e.target.files[0]))
+  const file = e.target.files[0]
+  const storage = store.ref('/image'+file.name)
+  storage.put(file).then(()=>{
+  
+     alert('image loaded')
+  storage.getDownloadURL().then((el)=>setdownload(el))
+  })
+  }
 
 
 
@@ -24,16 +42,7 @@ const Register = () => {
   const[discount,setdiscount]=useState('')
   let dis=''
   let charcter ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-// useEffect(()=>{
-//   for (let i = 0; i < 7; i++) {
-//     let y = Math.floor(Math.random()*62);
-//     // setdiscount(  charcter[y])
 
-//     dis+=charcter[y]
-//   }
-  
-//   setdiscount(dis)
-// },[])
 
   const hadelerlogin=(e)=>{
   
@@ -48,8 +57,16 @@ const Register = () => {
        if(inp.password!=inp.repassword) 
        return seterr('password not matchenig')
   try {
-  await auth.createUserWithEmailAndPassword(inp.email,inp.password).then((res)=>{console.log(res.user.email)})
-  console.log('done')
+  await auth.createUserWithEmailAndPassword(inp.email,inp.password).then((res)=>{
+     fire.doc('/users/'+res.user.uid).set({
+       name:username,
+       adresss:adress,
+       imagee:download
+      })
+
+
+      console.log(res.user.uid)
+  })
   setdone("congratulation you create an account ")
   
   for (let i = 0; i < 7; i++) {
@@ -88,7 +105,12 @@ catch (error){
       <Row>
         <Col lg="6" md="6" sm="12" className="m-auto text-center">
           <form className="form mb-5" onSubmit={hadelersub}>
-   
+            
+            <input type="text" placeholder="username" onChange={(e)=>setusername(e.target.value)} />
+            <input type="text" placeholder="adress" onChange={(e)=>setadress(e.target.value)} />
+
+          <input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
+<img src={image} width='200px' style={{borderRadius:'50%'}} alt="" />
             <div className="form__group">
               <input
                 type="email"
