@@ -16,7 +16,7 @@ import '../App.css'
 const FoodDetails = () => {
 const[emaila , setemaila]=useState('')
 const[userid , setuserid]=useState('')
-
+const uid = useSelector((state) => state.uid);
 
   useEffect(()=>{
     auth.onAuthStateChanged((userr)=>{

@@ -8,6 +8,7 @@ import React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 const Register = () => {
+  const uid = useSelector((state) => state.uid);
 
   const initial ={email:'',password:'',repassword:''}
   const[inp,setinp]=useState(initial)

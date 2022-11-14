@@ -13,7 +13,8 @@ let initstate = {
     product: products,
     admaincart: [],
     admaincart: [],
-    userdata: {},
+   
+    uid: '',
 
     AddTocart: [],
     offers: "",
@@ -44,10 +45,12 @@ const Store = (state = initstate, action) => {
 
     aa();
     if (action.type === "user data") {
-        console.log(state.userdata);
+        
         return {...state, userdata: action.payload };
-
-
+    }
+    if (action.type === "ui") {
+       
+        return {...state, uid: action.payload };
     }
 
     if (action.type === "offers") {

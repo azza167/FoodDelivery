@@ -7,7 +7,10 @@ import { useState } from 'react';
 import {store,fire, auth} from '../../firebase'
 
 
+
 export default function ProductCard(props) {
+
+  const uid = useSelector((state) => state.uid);
     
      const {id,title,image01,price,quantity}=props.item;
     //  const [category, setCategory] = useState("ALL");
@@ -31,7 +34,9 @@ export default function ProductCard(props) {
             }
             
             dispatch(obj);
-    fire.doc("/added/" + auth.currentUser.uid).set({ addedd: hamada })
+
+            auth.currentUser?  fire.doc("/added/" +uid ).set({ addedd: hamada }):console.log("hi")
+    
 
     }
     const [added, setAdded] = useState("add_btn ");

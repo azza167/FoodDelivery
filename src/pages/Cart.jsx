@@ -10,35 +10,52 @@ import { fire,auth} from '../firebase'
 
 
 const Cart = () => {
+  const uid = useSelector((state) => state.uid);
+  const [orders , setorders]=useState([])
+const [count, setCount] = useState([]);
+const [ord, setord] = useState([]);
+const [val, setVal] = useState([]);
+
+
+const [add, setAdded] = useState([]);
+
   const hamada = useSelector((state) => state.AddTocart);
   
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
-    fire.doc("/added/" + auth.currentUser.uid).delete((e)=>{setAdded(e.data().addedd[i])})
-
+    
+    fire.doc("/added/" +uid ).update({addedd:add.filter(addedd=>addedd.id!=el.id)})
+    
+   
+    // onSnapshot((e)=>{setAdded(e.data().addedd.filter((e,index)=>e.id!=el.id))})
+    console.log(add)
     const dele = {
       type: "del",
       payload: {  
         index: i,
         element: el,
+        
       },
     };
     dispatch(dele);
+
   };
-const [orders , setorders]=useState([])
-const [count, setCount] = useState([]);
-const [ord, setord] = useState([]);
-const [val, setVal] = useState([]);
-const [add, setAdded] = useState([]);
+  useEffect(()=>{
+    auth.onAuthStateChanged((userr)=>{
+      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])
+      
+
+    })
+    
+    
+  },[])
+  
+
 
 var qool;
-useEffect(()=>{
-fire.doc("/added/" + auth.currentUser.uid).onSnapshot((e)=>{setAdded(e.data().addedd)})
 
-
-},[])
 
 // const handelPlus = (e,el,i) =>{
    

@@ -8,6 +8,7 @@ import {store,fire, auth} from '../firebase'
 
 const 
 Updadeting = () => {
+  const uid = useSelector((state) => state.uid);
 
     const [name,setName]=useState('');
     const [adress,setadress]=useState('');
@@ -33,7 +34,7 @@ store.ref('/image').put(upimage).then((res)=>{
     
     if(res._delegate.state==='success'){
         store.ref('/image').getDownloadURL().then((res)=>{setdownload(res)})
-        fire.doc('/users/'+auth.currentUser.uid).update({
+        fire.doc('/users/'+uid).update({
             adresss:adress,
             imagee:download,
             name:name
