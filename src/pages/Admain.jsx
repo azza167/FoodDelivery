@@ -39,9 +39,11 @@ const Admain = () => {
                         </div>
 
                     </Col>
-          <div style={{width:'83%'}}>          
-     <Outlet/>
-     </div>   
+          {/* <div style={{width:'83%'}}>           */}
+          <Col sm="9" xs="10" md="10">
+          <Outlet/>
+           </Col>
+     {/* </div>    */}
                 </Row>
             </Container>
            

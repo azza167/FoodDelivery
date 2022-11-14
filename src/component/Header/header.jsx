@@ -139,7 +139,7 @@ useEffect(()=>{
            <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>     
          </Link>
        </span>
-       <img src={imgg} style={{width:'30px',borderRadius:'50%' }} alt="" srcset="" />
+       <img src={imgg} style={{width:'30px',borderRadius:'50%' }} alt="" srcSet="" />
        <span className="mobile__menu">
          <i className="ri-menu-line"></i>
        </span>
