@@ -149,6 +149,14 @@ window.location.reload(true)
             <Link to={'/updateprofile'}>
               
             <button  type="submit" className="addTOCart__btn">
+                Update password
+              </button>
+              </Link>
+              </div>
+              <div>
+            <Link to={'/Updadeting'}>
+              
+            <button  type="submit" className="addTOCart__btn">
                 Update profile
               </button>
               </Link>

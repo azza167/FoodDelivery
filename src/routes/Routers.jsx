@@ -18,7 +18,7 @@ import NotFound from "../pages/NotFound";
 import Forgetpassword from "../pages/Forgetpassword";
 
 import Updatepassord from "../pages/Updatepassord";
-
+import Updadeting from "../pages/Updadeting";
 import Contact from "../pages/Contact";
 import AdminContacts from "../component/Admin/AdminContacts";
 import AdminProducts from "../component/Admin/AdminProducts";
@@ -54,6 +54,8 @@ useEffect(()=>{
     <Route path='/Contact' element={<Contact/>}/>
     <Route path='/Cart' element={<Cart/>}/>
     <Route path='/Cart' element={<Cart/>}/>
+    <Route path='/Updadeting' element={<Updadeting/>}/>
+
    {!a? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
 
 
