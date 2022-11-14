@@ -15,7 +15,7 @@ let initstate = {
     admaincart: [],
    
     uid: '',
-
+userdata:{},
     AddTocart: [],
     offers: "",
     userauto: "",
@@ -45,7 +45,7 @@ const Store = (state = initstate, action) => {
 
     aa();
     if (action.type === "user data") {
-        
+        console.log(state.userdata)
         return {...state, userdata: action.payload };
     }
     if (action.type === "ui") {

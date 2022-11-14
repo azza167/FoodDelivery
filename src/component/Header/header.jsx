@@ -56,7 +56,7 @@ const dispatch = useDispatch();
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
  userr?   fire.doc('/users/'+userr.uid).onSnapshot((e)=>{
-      // console.log(e.data().name)
+      console.log(e.data().name)
       setemail(e.data().name)
       setimgg(e.data().imagee)
 console.log(userr.uid)
