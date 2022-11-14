@@ -13,7 +13,7 @@ let initstate = {
     product: products,
     admaincart: [],
     admaincart: [],
-    userdata:{},
+    userdata: {},
 
     AddTocart: [],
     offers: "",
@@ -43,7 +43,7 @@ const Store = (state = initstate, action) => {
     }
 
     aa();
-    if (action.type === "user data"){
+    if (action.type === "user data") {
         console.log(state.userdata);
         return {...state, userdata: action.payload };
 
@@ -70,8 +70,17 @@ const Store = (state = initstate, action) => {
         };
     }
     if (action.type === "cart") {
-        state.tot += action.payload.price;
 
+        state.tot += action.payload.price;
+        const bar = state.AddTocart.filter((el) => el.id === action.payload.id)
+        if (bar.length == 0) {
+            state.AddTocart.push(action.payload);
+            console.log(state.AddTocart)
+        } else {
+            alert("adsasd")
+        }
+
+        console.log(bar)
 
 
 

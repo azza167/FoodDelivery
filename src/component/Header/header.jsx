@@ -117,17 +117,15 @@ useEffect(()=>{
 
        {/* nav right icons */}
        <div className="nav__right d-flex align-items-center gap-4">
-       <span className="cart__icon"
-         onClick={()=>{handeler()}}
-       >
+       <span className="cart__icon">
+        
        </span>
        <span className="cart__icon">
-       <NavLink to={'/Cart'}>
-         <i className="ri-shopping-basket-line"></i>
-    </NavLink>
+      
+         <i className="ri-shopping-basket-line" onClick={()=>{handeler()}}></i>
+ 
          <span className="cart__badge"></span>
-         <span className="cart__badge"
-         >
+         <span className="cart__badge">
          <Link to=""></Link>
          {cartTotal.AddTocart.length}</span>
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>

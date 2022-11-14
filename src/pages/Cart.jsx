@@ -135,7 +135,6 @@ const handelminus=(e,el)=>{
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
                 <div class="style-18">
                   <div class="style-19">
                   
@@ -155,30 +154,6 @@ const handelminus=(e,el)=>{
                     onChange={(e) => handelPlus(e,el,i)}/> */}
          
                     {/* <button class="style-24">
-=======
-                <div className="style-18">
-                  <div className="style-19">
-                    {/* <button class="style-20" onClick={(e) => handelMinus(e,el,i)}> */}
-                      <svg
-                        className="style-21"
-                        focusable="false"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        data-testid="RemoveCircleOutlineIcon"
-                      >
-                        <path
-                          d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                          className="style-22"
-                        ></path>
-                      </svg>
-                    {/* </button> */}
-                    <h1>{qool}</h1>
-                    <span className="style-23">{qool}</span>
-                    <input type="number" className="inpot" 
-                            min="1" max="50" 
-                    onChange={(e) => handelPlus(e,el,i)}/>
-                    <button className="style-24">
->>>>>>> 92ec55fe42ee2cf84e91ce89b4c7186522f24361
                       <svg
                         className="style-25"
                         focusable="false"
@@ -194,15 +169,9 @@ const handelminus=(e,el)=>{
                     </button> */}
                   </div>
                 </div>
-<<<<<<< HEAD
                 <div class="style-27">
                   <div class="style-28">{el.price} EGP</div>
                   
-=======
-                <div className="style-27">
-                  <div className="style-28">{el.price} EGP</div>
-                  <button >Checkout</button>
->>>>>>> 92ec55fe42ee2cf84e91ce89b4c7186522f24361
                 </div>
               </div>
             </div>
