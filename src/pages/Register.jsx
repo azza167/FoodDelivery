@@ -8,6 +8,7 @@ import React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 const Register = () => {
+
   const initial ={email:'',password:'',repassword:''}
   const[inp,setinp]=useState(initial)
   const dispatch =useDispatch()
@@ -34,9 +35,6 @@ const Register = () => {
   storage.getDownloadURL().then((el)=>setdownload(el))
   })
   }
-
-
-
 
   
   const[discount,setdiscount]=useState('')
