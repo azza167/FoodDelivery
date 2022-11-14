@@ -61,13 +61,13 @@ const Store = (state = initstate, action) => {
         };
     }
     if (action.type === "cart") {
-        console.log(state.tot);
-
-        console.log("check");
         state.tot += action.payload.price;
-        console.log(state.AddTocart);
-        console.log("check");
-        state.AddTocart.push(action.payload);
+
+
+
+
+
+
         return {...state };
     }
     if (action.type === "del") {

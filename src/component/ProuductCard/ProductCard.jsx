@@ -20,7 +20,7 @@ export default function ProductCard(props) {
                     title:tit,
                     img:img,
                     price:pric,
-                    quantity:qty
+                    quantity:qty,
                 }
             }
             
