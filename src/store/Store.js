@@ -13,8 +13,9 @@ let initstate = {
     product: products,
     admaincart: [],
     admaincart: [],
-    userdata:{},
-
+   
+    uid: '',
+userdata:{},
     AddTocart: [],
     offers: "",
     userauto: "",
@@ -43,11 +44,13 @@ const Store = (state = initstate, action) => {
     }
 
     aa();
-    if (action.type === "user data"){
-        console.log(state.userdata);
+    if (action.type === "user data") {
+        console.log(state.userdata)
         return {...state, userdata: action.payload };
-
-
+    }
+    if (action.type === "ui") {
+       
+        return {...state, uid: action.payload };
     }
 
     if (action.type === "offers") {
@@ -70,13 +73,22 @@ const Store = (state = initstate, action) => {
         };
     }
     if (action.type === "cart") {
-        console.log(state.tot);
 
-        console.log("check");
         state.tot += action.payload.price;
-        console.log(state.AddTocart);
-        console.log("check");
-        state.AddTocart.push(action.payload);
+        const bar = state.AddTocart.filter((el) => el.id === action.payload.id)
+        if (bar.length == 0) {
+            state.AddTocart.push(action.payload);
+            console.log(state.AddTocart)
+        } else {
+            alert("adsasd")
+        }
+
+        console.log(bar)
+
+
+
+
+
         return {...state };
     }
     if (action.type === "del") {

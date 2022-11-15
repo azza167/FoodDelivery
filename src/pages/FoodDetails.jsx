@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Col, Container, Row } from 'reactstrap'
 import CommonSection from '../component/common-section/common-section'
@@ -16,7 +16,7 @@ import '../App.css'
 const FoodDetails = () => {
 const[emaila , setemaila]=useState('')
 const[userid , setuserid]=useState('')
-
+const uid = useSelector((state) => state.uid);
 
   useEffect(()=>{
     auth.onAuthStateChanged((userr)=>{
@@ -102,8 +102,23 @@ const[userid , setuserid]=useState('')
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [product,reviews]);
-  
-    
+    // const {id,title,image01,price,quantity}=props.item;s
+    const dispatch = useDispatch();
+
+    function addCartHandeler(img,idd,tit,pric,qty){
+            
+      const obj = {
+          type:"cart",
+          payload:{id:idd,
+              title:tit,
+              img:img,
+              price:pric,
+              quantity:qty
+          }
+      }
+      
+      dispatch(obj);
+}
   return (
     <Helmet title="Product-details">
     <CommonSection title={title} />
@@ -136,7 +151,7 @@ const[userid , setuserid]=useState('')
             <p className='product_category'>
             Category:<span>{category}</span>
             </p>
-            <button onClick={()=>{}} className="add_btn">
+            <button onClick={()=>{addCartHandeler(image01,id,title,price)}} className="add_btn">
               Add To Cart
             </button>
           </div>

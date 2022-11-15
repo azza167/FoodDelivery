@@ -78,7 +78,7 @@ const ProductCart = () => {
                 </div>
                 <div class="styler-7">
                   <div class="styler-8">
-                    <span class="styler-9">Blanco Fries</span>
+                    <span class="styler-9">{el.title}</span>
                     <div class="styler-10">
                       <button class="styler-16" onClick={()=>{handeldel(i,el)}}>
                       <svg

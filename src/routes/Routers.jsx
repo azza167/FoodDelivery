@@ -68,8 +68,12 @@ useEffect(()=>{
     {show? <Route path='/admain' element={<Admain/>}>      
     
     <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
+    
+
     <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
      <Route path='/admain/Ordedrs' element={<Ordedrs/>}/> 
+     <Route path='/admain' element={<Ordedrs/>}/> 
+
      </Route> 
     :''}
 

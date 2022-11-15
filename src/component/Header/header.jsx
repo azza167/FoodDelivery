@@ -51,19 +51,28 @@ const [imgg,setimgg]=useState('')
 const[show , setshow]=useState(false)
 const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
+
+
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
- userr?   fire.doc('/users/'+auth.currentUser.uid).onSnapshot((e)=>{
+ userr?   fire.doc('/users/'+userr.uid).onSnapshot((e)=>{
       console.log(e.data().name)
       setemail(e.data().name)
       setimgg(e.data().imagee)
+console.log(userr.uid)
 
+const ui={
+  type:"ui",
+  payload:userr.uid
+}
       const storeee={
         type:"user data",
         payload:e.data()
 
       }
       dispatch(storeee)
+      dispatch(ui)
+
  }):
  setemail('');
  
@@ -117,17 +126,15 @@ useEffect(()=>{
 
        {/* nav right icons */}
        <div className="nav__right d-flex align-items-center gap-4">
-       <span className="cart__icon"
-         onClick={()=>{handeler()}}
-       >
+       <span className="cart__icon">
+        
        </span>
        <span className="cart__icon">
-       <NavLink to={'/Cart'}>
-         <i className="ri-shopping-basket-line"></i>
-    </NavLink>
+      
+         <i className="ri-shopping-basket-line" onClick={()=>{handeler()}}></i>
+ 
          <span className="cart__badge"></span>
-         <span className="cart__badge"
-         >
+         <span className="cart__badge">
          <Link to=""></Link>
          {cartTotal.AddTocart.length}</span>
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>

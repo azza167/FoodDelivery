@@ -8,32 +8,33 @@ import {store,fire, auth} from '../firebase'
 
 const 
 Updadeting = () => {
+  const uid = useSelector((state) => state.uid);
 
     const [name,setName]=useState('');
     const [adress,setadress]=useState('');
-    const [image,setimage]=useState('');
     const [upimage,setupimage]=useState('');
-    const [download,setdownload]=useState('');
-
+    
     const [loading,setloadind]=useState('');
-
-
-
-
-
+    
+    
+    
+    
+    
     const userdata =useSelector((state)=>state.userdata);
+    const [download,setdownload]=useState(userdata.imagee);
+    const [image,setimage]=useState(userdata.imagee);
 const hadeleeimg=(e)=>{
     setimage(URL.createObjectURL( e.target.files[0]))
     setupimage(e.target.files[0])
 }
 
 const confirmupdate =()=>{
-setloadind('....loading')
+setloadind('...loading')
 store.ref('/image').put(upimage).then((res)=>{
     
     if(res._delegate.state==='success'){
         store.ref('/image').getDownloadURL().then((res)=>{setdownload(res)})
-        fire.doc('/users/'+auth.currentUser.uid).update({
+        fire.doc('/users/'+uid).update({
             adresss:adress,
             imagee:download,
             name:name
@@ -88,7 +89,7 @@ useEffect(()=>{
               />
             </div>
             <div>
-                <img src={image} width='150px' alt="" srcset="" />
+                <img src={image} width='150px'  alt="" srcset="" />
                 </div>
             <div className="form__group">
                 <input
@@ -100,7 +101,7 @@ useEffect(()=>{
                 />
               </div>
               <p>{loading}</p>
-            <button type="submit" onClick={confirmupdate} className="addTOCart__btn"> updating</button>
+            <button type="submit" style={{width:'20%' ,margin:'auto'}} onClick={confirmupdate} className="addTOCart__btn"> updating</button>
     </div>
   )
 }

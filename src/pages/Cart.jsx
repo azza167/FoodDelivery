@@ -1,76 +1,111 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch
+ } from "react-redux";
 import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
 import { useState,useEffect } from "react";
-import {fire} from '../firebase'
+
+import { fire,auth} from '../firebase'
+
 
 const Cart = () => {
+  const uid = useSelector((state) => state.uid);
+  const [orders , setorders]=useState([])
+const [count, setCount] = useState([]);
+const [ord, setord] = useState([]);
+const [val, setVal] = useState([]);
+
+
+const [add, setAdded] = useState([]);
+
   const hamada = useSelector((state) => state.AddTocart);
   
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
+    
+    fire.doc("/added/" +uid ).update({addedd:add.filter(addedd=>addedd.id!=el.id)})
+    
+   
+    // onSnapshot((e)=>{setAdded(e.data().addedd.filter((e,index)=>e.id!=el.id))})
+    console.log(add)
     const dele = {
       type: "del",
       payload: {  
         index: i,
         element: el,
+        
       },
     };
     dispatch(dele);
+
   };
-const [orders , setorders]=useState([])
-const [count, setCount] = useState([]);
-const [ord, setord] = useState([]);
+  useEffect(()=>{
+    auth.onAuthStateChanged((userr)=>{
+      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])
+      
+
+    })
+    
+    
+  },[])
+  
+
 
 var qool;
 
 
-const handelPlus = (e,el,i) =>{
+// const handelPlus = (e,el,i) =>{
    
-        hamada.map((item)=>
-        el.id=== item.id ? {...item, quantity: el.quantity= e.target.value* el.price} : item
-        ,setCount(el.quantity)
-        )
-        const qont = {
-          type: "qont",
-          payload: count,
-        };
-        dispatch(qont);        
-      }
-      // useEffect(() => {
-      //        hamada.map((product,index)=>(
-      //          setorders((pre)=>[...pre,product])
-      //          ))
-      //         } ,[])
-      // fire.collection('/orders').onSnapshot((el)=>{
-      //             setord(el.docs.map((el)=>({dataa: el.data(),id:el.id})))
-      //           })
-      // useEffect(()=>{
-      //   fire.collection('/orders').add({ordersss:hamada})
-      // },[])
-     
+//         hamada.map((item)=>
+//         el.id=== item.id ? {...item, quantity: el.quantity= e.target.value* el.price} : item
+//         ,setCount(el.quantity)
+//         )
+//         const qont = {
+//           type: "qont",
+//           payload: count,
+//         };
+//         dispatch(qont);        
+//       }
+
+const handelplus=(e,el)=>{
+  
+  setVal(e.target.previousSibling.stepUp());
+  console.log(e.target.previousSibling.value); 
+   add.map((item)=>
+  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
+  ,setCount(el.quantity)
+  )
+  const qont = {
+    type: "qont",
+    payload: count,
+  };
+  dispatch(qont);        
+}
+const handelminus=(e,el)=>{
+  
+  setVal(e.target.nextSibling.stepDown());
+  console.log(e.target.previousSibling.value); 
+   add.map((item)=>
+  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
+  ,setCount(el.quantity)
+  )
+  const qont = {
+    type: "qont",
+    payload: count,
+  };
+  dispatch(qont);        
+}
+  
+       
+      
+      
 
 
+   
 
-    const finito = ()=>{
-
-      // fire.collection('/orders').add({ordersss:hamada})
-
-    }
-
-
-// const handelMinus = (e,el,i) =>{
-//   setCount(hamada =>{
-//     hamada.map((item)=>
-//     el.id=== item.id ? {...item, quantity: item.quantity -1} : item
-//     )
-//   })
-// }
- 
 
 
   return (
@@ -78,9 +113,9 @@ const handelPlus = (e,el,i) =>{
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
       <h1> total:{totalAmount}</h1>
       <div className="style-3">Cart</div>
-      <div className="style-4"> {hamada.length}</div>
+      <div className="style-4"> {add.length}</div>
       <div className="style-0">
-        {hamada.map((el, i) => (
+        {add.map((el, i) => (
           <div key={i}>
             {/* <h1>{el.price}</h1>
           <img src={el.img} alt="" />
@@ -114,14 +149,7 @@ const handelPlus = (e,el,i) =>{
                           className="style-12"
                         />
                       </div>
-                      {/* <img
-                  alt="Bacon Mushroom Jacssssk"
-                  src={el.img}
-                  decoding="async"
-                  data-nimg="intrinsic"
-                  srcset="/_next/image?url=https%3A%2F%2Fbuffalonlineorderingprod.s3-accelerate.amazonaws.com%2Fmenu_items%2Fd845c9309b0d95d8c5d945b6b2552491.png&amp;w=64&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fbuffalonlineorderingprod.s3-accelerate.amazonaws.com%2Fmenu_items%2Fd845c9309b0d95d8c5d945b6b2552491.png&amp;w=128&amp;q=75 2x"
-                  className="style-13"
-                /> */}
+                
                       <noscript className="style-14"></noscript>
                     </div>
                   </div>
@@ -133,28 +161,25 @@ const handelPlus = (e,el,i) =>{
                     </div>
                   </div>
                 </div>
-                <div className="style-18">
-                  <div className="style-19">
-                    {/* <button class="style-20" onClick={(e) => handelMinus(e,el,i)}> */}
-                      <svg
-                        className="style-21"
-                        focusable="false"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        data-testid="RemoveCircleOutlineIcon"
-                      >
-                        <path
-                          d="M7 11v2h10v-2H7zm5-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-                          className="style-22"
-                        ></path>
-                      </svg>
-                    {/* </button> */}
+                <div class="style-18">
+                  <div class="style-19">
+                  
                     <h1>{qool}</h1>
-                    <span className="style-23">{qool}</span>
-                    <input type="number" className="inpot" 
+                    <span class="style-23">{qool}</span>
+                    <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
+            crossOrigin="anonymous"/>
+
+<div class="number-input">
+  <button onClick={(e)=>{handelminus(e,el)}} class="minus"></button>
+  <input class=" inpot" name="quantity"  type="number" value={val} />
+  <button onClick={(e)=>{handelplus(e,el)}} class="plus"></button>
+</div>
+                    {/* <input type="number" class="inpot" 
                             min="1" max="50" 
-                    onChange={(e) => handelPlus(e,el,i)}/>
-                    <button className="style-24">
+                    onChange={(e) => handelPlus(e,el,i)}/> */}
+         
+                    {/* <button class="style-24">
                       <svg
                         className="style-25"
                         focusable="false"
@@ -167,12 +192,12 @@ const handelPlus = (e,el,i) =>{
                           className="style-26"
                         ></path>
                       </svg>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
-                <div className="style-27">
-                  <div className="style-28">{el.price} EGP</div>
-                  <button >Checkout</button>
+                <div class="style-27">
+                  <div class="style-28">{el.price} EGP</div>
+                  
                 </div>
               </div>
             </div>
@@ -185,6 +210,7 @@ const handelPlus = (e,el,i) =>{
              <button className="addTOCart__btn">
                <Link to="/checkout">Proceed to checkout</Link>
            </button>
+                     
     </div>
   );
 };

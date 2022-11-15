@@ -3,29 +3,43 @@ import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import './product-card.css'
 import { useSelector,useDispatch} from 'react-redux';
+import { useState } from 'react';
+import {store,fire, auth} from '../../firebase'
+
+
 
 export default function ProductCard(props) {
+
+  const uid = useSelector((state) => state.uid);
     
      const {id,title,image01,price,quantity}=props.item;
     //  const [category, setCategory] = useState("ALL");
     const dispatch = useDispatch()
 
+    const hamada = useSelector((state) => state.AddTocart);
 
     
     function addCartHandeler(img,idd,tit,pric,qty){
-            
+        setAdded("already_added");
+
             const obj = {
                 type:"cart",
                 payload:{id:idd,
                     title:tit,
                     img:img,
                     price:pric,
-                    quantity:qty
+                    quantity:qty,
+                    
                 }
             }
             
             dispatch(obj);
+
+            auth.currentUser?  fire.doc("/added/" +uid ).set({ addedd: hamada }):console.log("hi")
+    
+
     }
+    const [added, setAdded] = useState("add_btn ");
 
      return (
     <Container>
@@ -46,9 +60,9 @@ export default function ProductCard(props) {
 
                
 
-                <button className='add_btn' onClick={()=>{
+                <button className={added} onClick={()=>{
                     addCartHandeler(image01,id,title,price,quantity);
-                }}>Add To Cart</button>
+                }}>{added}</button>
 
             </div>
         </div>
