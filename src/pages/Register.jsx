@@ -112,8 +112,12 @@ catch (error){
             <input type="text" placeholder="adress" onChange={(e)=>setadress(e.target.value)} />
             </div>
             <div className="form__group">
-          <input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
-          </div>
+              <label htmlFor="mm">  
+                Select Image  
+                <i className="m-2 ri-camera-fill"></i>
+                 <input className='d-none' required="required" id='mm' type="file"  onChange={handelerimagereq}/>          
+              </label>
+                </div>
           {image?
           <div>
           <img src={image} width='200px' style={{borderRadius:'50%'}} alt="" />

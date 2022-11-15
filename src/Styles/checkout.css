@@ -17,14 +17,16 @@
   .form__group{
     /* font-size: 2em; */
    
-  
-  color: #000;
-  letter-spacing: 5px;
+  /* color: #000; */
+  /* letter-spacing: 5px; */
   margin-bottom: 10px;
-  font-weight: bold; 
+  /* font-weight: bold;  */
    padding-left: 10px; 
    border-radius: 6px;
   }
+  label{
+    cursor: pointer;
+}
   .input{
     padding:7px;
     margin-bottom: 10px;
@@ -34,6 +36,7 @@
     z-index: 50;
     background-color: transparent;
     border-bottom: 2px solid rgb(180, 179, 179);
+
   /* border-left: 2px solid #ff5f00; */
 
   }
