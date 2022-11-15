@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch
  } from "react-redux";
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { Link } from "react-router-dom";
 import "../Styles/cart.css";
 import { useState,useEffect } from "react";
@@ -207,8 +207,8 @@ const handelminus=(e,el)=>{
       {/* <button className="addTOCart__btn">
           <Link to="/checkout" onClick={()=>finito()}>Proceed to checkout</Link>
             </button> */}
-             <button className="addTOCart__btn">
-               <Link to="/checkout">Proceed to checkout</Link>
+             <button className="add_btn">
+               <NavLink to="/checkout" style={{ color:"white" , textDecoration:"none"}}>Proceed to checkout</NavLink>
            </button>
                      
     </div>

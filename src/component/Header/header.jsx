@@ -56,7 +56,7 @@ const dispatch = useDispatch();
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
  userr?   fire.doc('/users/'+userr.uid).onSnapshot((e)=>{
-      console.log(e.data().name)
+      // console.log(e.data().name)
       setemail(e.data().name)
       setimgg(e.data().imagee)
 console.log(userr.uid)
@@ -142,7 +142,7 @@ const ui={
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>         
        </span>
        <span className="user" >
-         <Link to="/login">
+         <Link to="/Login">
            <i className="ri-user-line" ><span style={{fontSize:'10px'}}>{email}</span></i>     
          </Link>
        </span>

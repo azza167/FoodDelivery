@@ -12,6 +12,7 @@ import hero from '../assets/images/hero.png'
 import { Link } from "react-router-dom";
 import HomeSlider from "../component/Slider/HomeSlider.jsx";
 import Offers from "../component/offers/offers.jsx";
+import Footer from "../component/Footer/footer";
 
 const Home = () => {
 
@@ -68,11 +69,10 @@ const Home = () => {
   <h4 className="hotOffers"> Hot Offers</h4>
   <Offers/>
   </div> 
-  <Container>
+    <Container>
       <Category/> 
-
     </Container>
-
+    <Footer/>
 </div>
   )
 }

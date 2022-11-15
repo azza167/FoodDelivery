@@ -90,7 +90,7 @@ width:20% ;
 
 /* admin style  */
 .sidebar {
-  height: 660px;
+  /* height: 660px; */
   width: 100%;
   border-radius: 21px;
   background-color: #ffffff;
@@ -146,10 +146,9 @@ justify-content: center;
 }
 .contupdating div input{
   margin: 5px;
-width: 100%;
+  width: 100%;
   font-size: 1rem;
   border-radius: 5px;
-  text-align: center;
 }
 .contupdating p {
   text-align: center;

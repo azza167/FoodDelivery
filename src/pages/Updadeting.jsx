@@ -9,22 +9,15 @@ import {store,fire, auth} from '../firebase'
 const 
 Updadeting = () => {
   const uid = useSelector((state) => state.uid);
-
     const [name,setName]=useState('');
     const [adress,setadress]=useState('');
     const [upimage,setupimage]=useState('');
-    
     const [loading,setloadind]=useState('');
-    
-    
-    
-    
-    
     const userdata =useSelector((state)=>state.userdata);
     const [download,setdownload]=useState(userdata.imagee);
     const [image,setimage]=useState(userdata.imagee);
 const hadeleeimg=(e)=>{
-    setimage(URL.createObjectURL( e.target.files[0]))
+    setimage(URL.createObjectURL(e.target.files[0]))
     setupimage(e.target.files[0])
 }
 
@@ -50,8 +43,6 @@ store.ref('/image').put(upimage).then((res)=>{
 
     }
 })
-
-
 }
 
 useEffect(()=>{
@@ -60,11 +51,9 @@ useEffect(()=>{
     setimage(userdata.imagee)
 
 },[])
-
-
   return (
     <div className='contupdating'>
-                    <div className="form__group">
+          <div className="form__group">
               <input
                 type="email"
                 placeholder="name"
@@ -73,7 +62,6 @@ useEffect(()=>{
             value={name}
               name="text"
               onChange={(e)=>setName(e.target.value)}
-
               />
             </div>
             <div className="form__group">
@@ -89,7 +77,7 @@ useEffect(()=>{
               />
             </div>
             <div>
-                <img src={image} width='150px'  alt="" srcset="" />
+                <img src={image} width='150px'  alt="" srcSet="" />
                 </div>
             <div className="form__group">
                 <input

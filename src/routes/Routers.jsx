@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
 import React from 'react';
-import { Routes,Route,Navigate} from 'react-router-dom' ;
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
 import AllFoods from '../pages/AllFoods';
 import FoodDetails from '../pages/FoodDetails';
- import Store from '../store/Store';
+import Store from '../store/Store';
 
 import Admain from '../pages/Admain';
 import Login from '../pages/Login';
@@ -23,67 +23,70 @@ import Contact from "../pages/Contact";
 import AdminContacts from "../component/Admin/AdminContacts";
 import AdminProducts from "../component/Admin/AdminProducts";
 import Ordedrs from "../component/Admin/Ordedrs";
+import UserProfile from "../pages/UserProfile";
 
 const Routers = () => {
-  const Navigat= useNavigate()
+  const Navigat = useNavigate()
 
-  const [a,seta]=useState(false)
+  const [a, seta] = useState(false)
 
-  const[show , setshow]=useState(false)
+  const [show, setshow] = useState(false)
 
-useEffect(()=>{
-  auth.onAuthStateChanged((userr)=>{
-    
-    userr?seta(true):seta(false)
-   userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
+  useEffect(() => {
+    auth.onAuthStateChanged((userr) => {
 
-   
- 
-      })
-},[]) 
+      userr ? seta(true) : seta(false)
+      userr.email === 'metaea@gmail.com' ? setshow(true) : setshow(false)
+
+
+
+    })
+  }, [])
 
 
   return <Routes>
-    <Route path='/' element={<Navigate to='/home'/>}/>
-    <Route path='/home' element={<Home/>}/>
-    <Route path='/foods' element={<AllFoods/>}/>
-    <Route path='/foods/:id' element={<FoodDetails/>}/>
-    <Route path='/Login' element={<Login/>}/>
-    <Route path='/Register' element={<Register/>}/>
-    <Route path='/Cart' element={<Cart/>}/>
-    <Route path='/Contact' element={<Contact/>}/>
-    <Route path='/Cart' element={<Cart/>}/>
-    <Route path='/Cart' element={<Cart/>}/>
-    <Route path='/Updadeting' element={<Updadeting/>}/>
+    <Route path='/' element={<Navigate to='/home' />} />
+    <Route path='/home' element={<Home />} />
+    <Route path='/foods' element={<AllFoods />} />
+    <Route path='/foods/:id' element={<FoodDetails />} />
+    <Route path='/Register' element={<Register />} />
+    <Route path='/Cart' element={<Cart />} />
+    <Route path='/Contact' element={<Contact />} />
+    <Route path='/Cart' element={<Cart />} />
+    <Route path='/Cart' element={<Cart />} />
+    <Route path='/Updadeting' element={<Updadeting />} />
 
-   {!a? <Route path='/forgetpassword' element={<Forgetpassword/>}/>:''}
+    {!a ? <Route path='/forgetpassword' element={<Forgetpassword />} /> : ''}
 
 
-   {a? <Route path='/updateprofile' element={<Updatepassord/>}/>:''}
-    <Route path='*' element={<NotFound/>}/>
-
+    {a ? <Route path='/Updatepassord' element={<Updatepassord />} /> : ''}
+    <Route path='*' element={<NotFound />} />
 
 
 
-    {show? <Route path='/admain' element={<Admain/>}>      
-    
-    <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
-    
 
-    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
-     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/> 
-     <Route path='/admain' element={<Ordedrs/>}/> 
+    {show ? <Route path='/admain' element={<Admain />}>
 
-     </Route> 
-    :''}
-
-     {/* <Route path='/admain/AdminProducts' element={<AdminProducts/>}/>
-    <Route path='/admain/AdminContacts' element={<AdminContacts/>}/>
-     <Route path='/admain/Ordedrs' element={<Ordedrs/>}/>  */}
+      <Route path='/admain/AdminProducts' element={<AdminProducts />} />
 
 
-  {a?  <Route path='/Checkout' element={<Checkout/>}/>:<Route path='/Checkout' element={<Login/>}/>}
+      <Route path='/admain/AdminContacts' element={<AdminContacts />} />
+      <Route path='/admain/Ordedrs' element={<Ordedrs />} />
+      <Route path='/admain' element={<Ordedrs />} />
 
-  </Routes> 
+    </Route>
+      : ''}
+
+    <Route path='/Login' element={<Login />} >
+    <Route path='/Login' element={<UserProfile/>}/>
+    <Route path='/Login/AdminProducts' element={<AdminProducts/>}/>
+    <Route path='/Login/Updatepassord' element={<Updatepassord/>}/>
+    <Route path='/Login/Updadeting' element={<Updadeting/>}/> 
+    </Route>
+
+
+    {a ? <Route path='/Checkout' element={<Checkout />} /> : <Route path='/Checkout' element={<Login />} />}
+
+  </Routes>
 }
 export default Routers

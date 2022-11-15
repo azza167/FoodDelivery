@@ -14,11 +14,8 @@ const [message,setmessage]=useState()
 const[email , setemail]=useState('')
 
 useEffect(()=>{
-  auth.onAuthStateChanged((userr)=>{
-    
-    
+  auth.onAuthStateChanged((userr)=>{    
     setemail(userr.email)
-
 
       })
 },[])   
@@ -56,8 +53,7 @@ setmessage("password not match")
                   type="email"
                   placeholder="Email"
                   value={email}
-                 
-               
+                  readOnly
                 name='email'
                 />
               </div>
