@@ -104,12 +104,21 @@ catch (error){
       <Row>
         <Col lg="6" md="6" sm="12" className="m-auto text-center">
           <form className="form mb-5" onSubmit={hadelersub}>
-            
-            <input type="text" placeholder="username" onChange={(e)=>setusername(e.target.value)} />
-            <input type="text" placeholder="adress" onChange={(e)=>setadress(e.target.value)} />
+          <div className="form__group">
 
+            <input type="text" placeholder="username" onChange={(e)=>setusername(e.target.value)} />
+          </div>  
+            <div className="form__group">
+            <input type="text" placeholder="adress" onChange={(e)=>setadress(e.target.value)} />
+            </div>
+            <div className="form__group">
           <input  required="required" id='mm' type="file"  onChange={handelerimagereq}/>
-<img src={image} width='200px' style={{borderRadius:'50%'}} alt="" />
+          </div>
+          {image?
+          <div>
+          <img src={image} width='200px' style={{borderRadius:'50%'}} alt="" />
+          </div>
+          :<div></div>}
             <div className="form__group">
               <input
                 type="email"
