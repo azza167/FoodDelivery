@@ -105,6 +105,7 @@ const ProductCart = () => {
                         ></path>
                       </svg>
                       </button>
+                      
                     </div>
                   </div>
                   <div className="styler-13">
