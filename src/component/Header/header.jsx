@@ -51,16 +51,16 @@ const [imgg,setimgg]=useState('')
 const[show , setshow]=useState(false)
 const dispatch = useDispatch();
 // const user=useSelector((state)=>state.userauto)
+const [add, setAdded] = useState([]);
 
 
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
- userr?   fire.doc('/users/'+userr.uid).onSnapshot((e)=>{
-      // console.log(e.data().name)
+ userr? 
+  fire.doc('/users/'+userr.uid).onSnapshot((e)=>{
       setemail(e.data().name)
       setimgg(e.data().imagee)
-console.log(userr.uid)
-
+      console.log(userr.uid)
 const ui={
   type:"ui",
   payload:userr.uid
@@ -68,20 +68,23 @@ const ui={
       const storeee={
         type:"user data",
         payload:e.data()
-
       }
       dispatch(storeee)
       dispatch(ui)
-
- }):
+}):
  setemail('');
- 
-
-   userr.email==='metaea@gmail.com'?setshow(true):setshow(false)
+  userr.email==='metaea@gmail.com'?setshow(true):setshow(false);
       })
 },[]) 
 
 
+useEffect(()=>{
+  auth.onAuthStateChanged((userr)=>{
+ userr? 
+fire.doc("/added/" + userr.uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])
+})
+
+},[]) 
 
   // const user=useSelector((state)=>state.userauto)
 
@@ -129,7 +132,7 @@ const ui={
      
        <span className="cart__icon "onClick={()=>{handeler()}}>
          <i className="ri-shopping-basket-line"></i>
-         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
+         <span className="cart__badge">  {add.length}</span>
        </span>
        <span className="user" >
          <Link to="/Login">
