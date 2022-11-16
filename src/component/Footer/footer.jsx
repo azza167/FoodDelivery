@@ -14,8 +14,7 @@ const Footer = () => {
           <img src={logo} alt="logo" />
           
           <p  className='pFooter'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Nesciunt pariatur accusamus
+            
           </p>
         </div>
       </Col>
@@ -39,21 +38,21 @@ const Footer = () => {
         <h5 className="footer__title">Contact</h5>
         <ListGroup className="deliver__time-list">
           <ListGroupItem className=" delivery__time-item border-0 ps-0">
-            <p>Location: ZindaBazar, Sylhet-3100, Bangladesh</p>
+            <p>Location: Assuit </p>
           </ListGroupItem>
           <ListGroupItem className=" delivery__time-item border-0 ps-0">
-            <span>Phone: 01712345678</span>
+            <span>Phone: 01012345678</span>
           </ListGroupItem>
 
           <ListGroupItem className=" delivery__time-item border-0 ps-0">
-            <span>Email: example@gmail.com</span>
+            <span>Email: fooddelivery@gmail.com</span>
           </ListGroupItem>
         </ListGroup>
       </Col>
 
       <Col lg="3" md="4" sm="6">
-        <h5 className="footer__title">Newsletter</h5>
-        <p className='pFooter' >Subscribe our newsletter</p>
+        <h5 className="footer__title">Food Delivery</h5>
+        <p className='pFooter' >Subscribe our FoodDelivery</p>
         <div className="newsletter">
   
           <input className='email' type="email" placeholder="Enter your email" />
