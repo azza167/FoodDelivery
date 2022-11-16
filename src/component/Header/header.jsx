@@ -126,20 +126,10 @@ const ui={
 
        {/* nav right icons */}
        <div className="nav__right d-flex align-items-center gap-4">
-       <span className="cart__icon">
-        
-       </span>
-       <span className="cart__icon">
-      
-         <i className="ri-shopping-basket-line" onClick={()=>{handeler()}}></i>
- 
-         <span className="cart__badge"></span>
-         <span className="cart__badge">
-         <Link to=""></Link>
-         {cartTotal.AddTocart.length}</span>
+     
+       <span className="cart__icon "onClick={()=>{handeler()}}>
+         <i className="ri-shopping-basket-line"></i>
          <span className="cart__badge">  {cartTotal.AddTocart.length}</span>
-         <Link to=""></Link>
-         <span className="cart__badge">  {cartTotal.AddTocart.length}</span>         
        </span>
        <span className="user" >
          <Link to="/Login">

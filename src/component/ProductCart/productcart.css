@@ -1,6 +1,6 @@
 .floatty {
-    position: absolute;
-    right: 00px;
+    /* position: absolute; */
+    /* right: 00px;
     z-index: 1;
     padding: 18px;
     margin: 30px auto;
@@ -10,6 +10,18 @@
     width: 30%;
     height: 100vh;
     overflow-y: scroll;
+     */
+     overflow-y: scroll;
+    position: fixed;
+    top: 15%;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(230, 230, 230);
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px ;
+
 }
 
 .styler-0 {
@@ -156,7 +168,7 @@
 .styler-10 {
     padding: 8px;
     background-color: rgb(209, 213, 219);
-    border-radius: 9999px;
+    border-radius: 28px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -174,12 +186,12 @@
     box-sizing: border-box;
     border: 0px solid rgb(229, 231, 235);
     user-select: none;
-    width: 1em;
-    height: 24px;
+    width: 10px;
+    height: 10px;
     fill: rgb(255, 95, 0);
     flex-shrink: 0;
     transition: fill 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    font-size: 24px;
+    font-size: 5px;
     font-family: Roboto;
 }
 
