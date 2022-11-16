@@ -77,17 +77,17 @@ function AdminProducts() {
                     <>
                         <h3 className="add_item">Add New Items</h3>
                         {/* <label  htmlFor="tit"> title</label> */}
-                        <input required='requrid' id='tit' type="text" placeholder='title' onChange={(event) => settitle(event.target.value)} />
+                        <input required id='tit' type="text" placeholder='title' onChange={(event) => settitle(event.target.value)} />
                         {/* <label htmlFor="tit"> discription</label> */}
                         <input id='tit' type="text" placeholder='discription' onChange={(event) => setdsc(event.target.value)} />
                         {/* <label htmlFor="tit" > price</label> */}
                         <input required id='tit' type="number" placeholder='price' onChange={(event) => setprice(event.target.value)} />
                         {/* <label htmlFor="mm" > upload image</label> */}
-                        <input required="required" id='mm' type="file" onChange={handelerimagereq} />
+                        <input required id='mm' type="file" onChange={handelerimagereq} />
                         <img src={image} width='200px' alt="" />
                         <div className="select_cat">
                             <label htmlFor="cars"> category:</label>
-                            <select required="required" onChange={(event) => setcategory(event.target.value)} name="cars" id="cars">
+                            <select required onChange={(event) => setcategory(event.target.value)} name="cars" id="cars">
                                 <option value="volvo">Beef</option>
                                 <option value="saab">Pizza</option>
                                 <option value="Chicken">Chicken</option>
