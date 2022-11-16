@@ -5,6 +5,10 @@ import { auth } from "../firebase";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector ,useDispatch  } from 'react-redux'
+import "../Styles/login.css";
+import CommonSection from "../component/common-section/common-section";
+
+
 const Login = () => {
 // auth.signInWithPopup(auth.currentUser,new GoogleAuthProvider()).then((e)=>console.log(e))
 
@@ -150,48 +154,69 @@ catch (error){
           </Col>
         </Row>
       </Container> */}
-   
+      <CommonSection/>
       <Container >
       {!user?
         <Row>
           <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <div>  <form className="form mb-5" onSubmit={hadelersub}>
+              <div>
+              <form className="form mb-9 w-100 myform " onSubmit={hadelersub}>
+              <h3 className="login">Log in</h3>
+              <p className="pLogin">login here using your email and password</p>
+
               <div className="form__group">
-                <input
+              <i class="ri-user-line"></i>      
+           <input
+                
+                  className="inputLogin"
                   type="email"
                   placeholder="Email"
                   required
-                  onChange={(event)=>{hadelerlogin(event)}}
-               
-                name='email'
+                  onChange={(event) => {
+                    hadelerlogin(event);
+                  }}
+                  name="email"
                 />
               </div>
               <div className="form__group">
-                <input
+              <i class="ri-lock-2-line"></i> 
+              <input
+              className="inputLogin"
                   type="password"
                   placeholder="Password"
                   required
-               onChange={(event)=>{hadelerlogin(event)}}
-               name='password'
-
+                  onChange={(event) => {
+                    hadelerlogin(event);
+                  }}
+                  name="password"
                 />
               </div>
-             
-              <button  type="submit" className="addTOCart__btn">
+
+              <button  type="submit" className="all__btn">
                 Login
               </button>
+              <div className="forget">
+              <Link  to="/forgetpassword">forget password</Link>
+            </div>
               <p>{err}</p>
-         
-            </form><div>
-                 <Link to="/register">
-                 Don't have an account? Create an account
-               </Link>
-               </div>
-               <div>
-               <Link to="/forgetpassword">
-                 forget password
-               </Link>
-               </div>
+              <div>
+              <h3>Or log in via :</h3>
+              <i class="ri-facebook-circle-fill iconLogin"></i>
+              <i class="ri-twitter-fill iconLogin"></i>
+              <i class="ri-linkedin-box-fill iconLogin"></i>
+              
+              </div>
+              <div>
+              <div className="createAccount">
+             
+                Don't have an account?  <Link to="/register"><span > Create an account</span>
+              </Link>
+              </div>
+            </div>
+           
+            </form>
+            
+              
                </div>
             </Col>
             </Row>
@@ -230,6 +255,7 @@ catch (error){
               }
 
             </Container>
+            
     </section>
 
   )

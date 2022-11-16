@@ -7,6 +7,9 @@ import {store,fire} from '../firebase'
 import React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import "../Styles/Register.css";
+import CommonSection from "../component/common-section/common-section";
+
 const Register = () => {
   const uid = useSelector((state) => state.uid);
 
@@ -100,67 +103,115 @@ catch (error){
 
   return (
     <section>
+    <CommonSection />
+
     <Container>
       <Row>
         <Col lg="6" md="6" sm="12" className="m-auto text-center">
-          <form className="form mb-5" onSubmit={hadelersub}>
+        <form className="form mb-9 w-100 myform" onSubmit={hadelersub}>
+        <h3 className="login">Sign Up</h3>
+         
           <div className="form__group">
-
-            <input type="text" placeholder="username" onChange={(e)=>setusername(e.target.value)} />
-          </div>  
-            <div className="form__group">
-            <input type="text" placeholder="adress" onChange={(e)=>setadress(e.target.value)} />
-            </div>
-            <div className="form__group">
-              <label htmlFor="mm">  
-                Select Image  
-                <i className="m-2 ri-camera-fill"></i>
-                 <input className='d-none' required="required" id='mm' type="file"  onChange={handelerimagereq}/>          
-              </label>
-                </div>
-          {image?
-          <div>
-          <img src={image} width='200px' style={{borderRadius:'50%'}} alt="" />
+          <i class="ri-user-line"></i>      
+            <input
+              className="inputLogin"
+              type="text"
+              placeholder="username"
+              onChange={(e) => setusername(e.target.value)}
+            />
           </div>
-          :<div></div>}
-            <div className="form__group">
-              <input
-                type="email"
-                placeholder="Email"
-                required
+          <div className="form__group">
+         
+            <i className="m-2 ri-camera-fill"></i>
+            <input
+            
+            className="inputimage"
+              required="required"
+              id="mm"
+              type="file"
+              onChange={handelerimagereq}
+            />
+        </div>
+        {image ? (
+          <div>
+            <img
+              src={image}
+              width="200px"
+              style={{ borderRadius: "20%" }}
+              alt=""
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
+          <div className="form__group">
+            <i class="ri-mail-line"></i>
+            <input
+              className="inputLogin"
+              type="email"
+              placeholder="Email"
+              required
               onChange={hadelerlogin}
               name="email"
-
-              />
+            />
             </div>
             <div className="form__group">
-              <input
-                type="password"
-                placeholder="Password"
-                required
+            <i class="ri-home-5-line"></i>
+            <input
+            className="inputLogin"
+              type="text"
+              placeholder="address"
+              onChange={(e) => setadress(e.target.value)}
+            />
+          </div>
+          
+          <div className="form__group">
+            <i class="ri-lock-2-line"></i>
+            <input
+              className="inputLogin"
+              type="password"
+              placeholder="Password"
+              required
               onChange={hadelerlogin}
               name="password"
-               
-              />
-            </div>
-            <div className="form__group">
-                <input
-                  type="password"
-                  placeholder=" Confirm Password"
-                  required
-              onChange={hadelerlogin}
-               name="repassword"
-                />
-              </div>
-            <button type="submit" className="addTOCart__btn">
-              Sign Up
-            </button>
-            <p style={{color:'red'}}>{err}</p>
-            <p>{done}</p>
-          {discount!='' ? <p>congratulation you have discount 15% with code <span style={{color:'orange'}}>{discount}</span> </p>:''}
+            />
+          </div>
+          <div className="form__group">
+            <i class="ri-lock-2-line"></i>
 
-          </form>
-          <Link to="/login">Already have an account? Login</Link>
+            <input
+              className="inputLogin"
+              type="password"
+              placeholder=" Confirm Password"
+              required
+              onChange={hadelerlogin}
+              name="repassword"
+            />
+          </div>
+          <button type="submit" className="all__btn">
+            Sign Up
+          </button>
+          <div>
+            <h3>Or sign up via :</h3>
+            <i class="ri-facebook-circle-fill iconLogin"></i>
+            <i class="ri-twitter-fill iconLogin"></i>
+            <i class="ri-linkedin-box-fill iconLogin"></i>
+          </div>
+          <p style={{ color: "red" }}>{err}</p>
+          <p>{done}</p>
+          {discount !== "" ? (
+            <p>
+              congratulation you have discount 15% with code{" "}
+              <span style={{ color: "orange" }}>{discount}</span>{" "}
+            </p>
+          ) : (
+            ""
+          )}
+          <div  className="createAccount">
+            Already have an account? <Link to="/login">Login</Link>
+          </div>
+        </form>
+         
         </Col>
       </Row>
     </Container>
