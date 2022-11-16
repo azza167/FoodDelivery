@@ -22,6 +22,7 @@ const [add, setAdded] = useState([]);
   const hamada = useSelector((state) => state.AddTocart);  
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
+  console.log(totalAmount)
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
     

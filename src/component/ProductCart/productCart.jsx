@@ -55,20 +55,7 @@ const ProductCart = () => {
         </div>
           <h3>{totalAmount}</h3>
           {hamada.map((el, i) => (
-            // <div>
-            //   <h1>{el.price}</h1>
-            //   <h1>{el.quantity}</h1>
-
-            //   <img src={el.img} alt="" />
-            //   <button onClick={() => handeldel(i, el)}>delete</button>
-            //   <input
-            //     // onChange={(e) => handelQty(e, el)}
-            //     type="number"
-            //     name="quantity"
-            //     min="1"
-            //     max="500"
-            //   />
-            // </div>
+           
             <div className="styler-0">
               <div className="styler-1">
                 <div className="styler-2">

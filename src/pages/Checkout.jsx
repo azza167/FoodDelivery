@@ -10,13 +10,11 @@ import {fire} from '../firebase'
 
 
 const Checkout = () => {
-  
+  const useremail=auth.currentUser.email;
   const [enterName, setEnterName] = useState("");
   const [se, set] = useState("");
   const [disc, setdisc] = useState("");
-
-
-  const [enterEmail, setEnterEmail] = useState("");
+  const [enterEmail, setEnterEmail] = useState(useremail);
   const [enterNumber, setEnterNumber] = useState("");
   const [enterCountry, setEnterCountry] = useState("");
   const [enterCity, setEnterCity] = useState("");
@@ -27,7 +25,6 @@ const Checkout = () => {
   const [age, setage] = useState('');
   const [checker, setchecker] = useState(false);
   // const [inpu, setinpu] = useState('');
-
   const dispatch = useDispatch();
 
   // const [offerss, setoffers] = useState('');
@@ -107,8 +104,6 @@ const Checkout = () => {
     }else{
       setchecker(false)
     
-
-
     }
 console.log(e.target.value)
 
@@ -149,6 +144,7 @@ if (checker) {
                     type="text"
                     placeholder="Enter your name"
                     required
+                    value={enterName}
                     onChange={(e) => setEnterName(e.target.value)}
                      name=''
                   />
@@ -159,7 +155,8 @@ if (checker) {
                     type="email"
                     placeholder="Enter your email"
                     required
-                    onChange={(e) => setEnterEmail(e.target.value)}
+                    value={enterEmail}
+                    // onChange={(e) => setEnterEmail(e.target.value)}
                    
                   />
                 </div>
@@ -202,7 +199,7 @@ if (checker) {
                    
                   />
                 </div>
-                <button  onClick={submitHandler} className='submit' >
+                <button  onSubmit={submitHandler} className='submit' >
                   Payment
                 </button>
                 {/* <button onClick={()=>{porcee()}}>ddd</button> */}
