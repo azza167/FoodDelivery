@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import HomeSlider from "../component/Slider/HomeSlider.jsx";
 import Offers from "../component/offers/offers.jsx";
 import Footer from "../component/Footer/footer";
+import "../Styles/home.css"
 
 const Home = () => {
 
@@ -35,25 +36,25 @@ const Home = () => {
       <Container>
         <Row>
           <Col lg='6' md='6' className="hero-details">
-            <h4>Easy way to make an order </h4>
+            <h3>Easy way to make an order </h3>
             <h1 color="">Hungry?<span>Just order foood </span><span>at your door</span></h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
+              Enjoy out top rated menues.healthy recipes
               magni delectus tenetur autem, sint veritatis!
             </p>
             <div className="hero__btns d-flex align-items-center gap-5 mt-4">
-              <button className="order__btn d-flex align-items-center justify-content-between">
+              {/* <button className="order__btn d-flex align-items-center justify-content-between">
                 Order now <i className="ri-arrow-right-s-line"></i>
-              </button>
+              </button> */}
 
               <button className="all__foods-btn">
-                <Link to="/foods">See all foods</Link>
+                <Link className = "all__foods-btn"to="/foods">See all foods</Link>
               </button>
 
             </div>
           </Col>
           <Col lg='6' md='6' className="hero-image ">
-            <img src={hero} style={{ filter: 'hue-rotate(25deg)' }} className="w-100" alt="" />
+            <img src={hero} style={{ filter: 'hue-rotate(25deg)' }} className="w-100 vibrate-1" alt="" />
           </Col>
 
         </Row>

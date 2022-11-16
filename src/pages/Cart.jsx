@@ -70,7 +70,7 @@ const handelplus=(e,el)=>{
   
   setVal(e.target.previousSibling.stepUp());
   console.log(e.target.previousSibling.value); 
-   add.map((item)=>
+   hamada.map((item)=>
   el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
@@ -83,9 +83,9 @@ const handelplus=(e,el)=>{
 const handelminus=(e,el)=>{
   
   setVal(e.target.nextSibling.stepDown());
-  console.log(e.target.previousSibling.value); 
-   add.map((item)=>
-  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
+  console.log(e.target.nextSibling.value); 
+   hamada.map((item)=>
+  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.nextSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
   const qont = {
@@ -111,7 +111,7 @@ const handelminus=(e,el)=>{
       <div className="style-3">Cart</div>
       <div className="style-4"> {add.length}</div>
       <div className="style-0">
-        {add.map((el, i) => (
+        {hamada.map((el, i) => (
           <div key={i}>
             {/* <h1>{el.price}</h1>
           <img src={el.img} alt="" />
@@ -168,7 +168,7 @@ const handelminus=(e,el)=>{
 
 <div class="number-input">
   <button onClick={(e)=>{handelminus(e,el)}} class="minus"></button>
-  <input class=" inpot" name="quantity"  type="number" value={val} />
+  <input class=" inpot" name="quantity"  type="number" value={val}min="1"/>
   <button onClick={(e)=>{handelplus(e,el)}} class="plus"></button>
 </div>
                     {/* <input type="number" class="inpot" 
