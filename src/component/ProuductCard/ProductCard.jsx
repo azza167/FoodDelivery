@@ -17,7 +17,7 @@ export default function ProductCard(props) {
     const dispatch = useDispatch()
 
     const hamada = useSelector((state) => state.AddTocart);
-
+    const [added, setAdded] = useState("add_btn ");
     
     function addCartHandeler(img,idd,tit,pric,qty){
         setAdded("already_added");
@@ -28,8 +28,7 @@ export default function ProductCard(props) {
                     title:tit,
                     img:img,
                     price:pric,
-                    quantity:qty,
-                    
+                    quantity:qty,    
                 }
             }
             
@@ -39,7 +38,6 @@ export default function ProductCard(props) {
     
 
     }
-    const [added, setAdded] = useState("add_btn ");
 
      return (
     <Container>

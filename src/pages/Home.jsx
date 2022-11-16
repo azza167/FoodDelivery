@@ -1,9 +1,5 @@
-// import products from "../assets/products.js";
-// import { useSelector ,useDispatch  } from 'react-redux'
-// import { useEffect } from "react";
-//  import ProductCard from "../component/ProuductCard/ProductCard.jsx";
 import products from "../assets/products.js";
-import { useSelector ,useDispatch  } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from "react";
 import React, { useState } from 'react'
 import Category from "../component/Category/Category";
@@ -17,63 +13,61 @@ import Footer from "../component/Footer/footer";
 const Home = () => {
 
 
-// const [allproducts,setAllProducts]=useState(products);
-
-    
-// const [allproducts]=useState(products);
-  const product = useSelector((state)=>state.product)
-  const user = useSelector((state)=>state.user)
-  const show = useSelector((state)=>state.showin)
 
 
-  const newadmain = useSelector((state)=>state.admaincart)
+  const product = useSelector((state) => state.product)
+  const user = useSelector((state) => state.user)
+  const show = useSelector((state) => state.showin)
+
+
+  const newadmain = useSelector((state) => state.admaincart)
 
 
 
-  const [allproducts,setAllProducts]=useState(product);
+  const [allproducts, setAllProducts] = useState(product);
 
   return (
-<div className="overflow-hidden">
-<div className="mb-4">
-  <HomeSlider/>
-  </div> 
-    
-<Container> 
-      <Row>
-        <Col lg='6' md='6' className="hero-details">
-        <h4>Easy way to make an order </h4>
-        <h1 color="">Hungry?<span>Just order foood </span><span>at your door</span></h1>
-        <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
-                </p>
-                <div className="hero__btns d-flex align-items-center gap-5 mt-4">
-                  <button className="order__btn d-flex align-items-center justify-content-between">
-                    Order now <i className="ri-arrow-right-s-line"></i>
-                  </button>
+    <div className="overflow-hidden">
+      <div className="mb-4">
+        <HomeSlider />
+      </div>
 
-                  <button className="all__foods-btn">
-                    <Link to="/foods">See all foods</Link>
-                  </button>
-                  
-                </div>
-                </Col>
-        <Col lg='6' md='6' className="hero-image ">
-        <img src={hero} style={{filter:'hue-rotate(25deg)' }}  className="w-100" alt="" />
-        </Col>
+      <Container>
+        <Row>
+          <Col lg='6' md='6' className="hero-details">
+            <h4>Easy way to make an order </h4>
+            <h1 color="">Hungry?<span>Just order foood </span><span>at your door</span></h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
+              magni delectus tenetur autem, sint veritatis!
+            </p>
+            <div className="hero__btns d-flex align-items-center gap-5 mt-4">
+              <button className="order__btn d-flex align-items-center justify-content-between">
+                Order now <i className="ri-arrow-right-s-line"></i>
+              </button>
+
+              <button className="all__foods-btn">
+                <Link to="/foods">See all foods</Link>
+              </button>
+
+            </div>
+          </Col>
+          <Col lg='6' md='6' className="hero-image ">
+            <img src={hero} style={{ filter: 'hue-rotate(25deg)' }} className="w-100" alt="" />
+          </Col>
 
         </Row>
-            </Container>
+      </Container>
 
-  <div className="mb-4">  
-  <h4 className="hotOffers"> Hot Offers</h4>
-  <Offers/>
-  </div> 
-    <Container>
-      <Category/> 
-    </Container>
-    <Footer/>
-</div>
+      <div className="mb-4">
+        <h4 className="hotOffers"> Hot Offers</h4>
+        <Offers />
+      </div>
+      <Container>
+        <Category />
+      </Container>
+      <Footer />
+    </div>
   )
 }
 

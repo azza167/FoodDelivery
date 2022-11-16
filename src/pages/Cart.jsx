@@ -19,8 +19,7 @@ const [val, setVal] = useState([]);
 
 const [add, setAdded] = useState([]);
 
-  const hamada = useSelector((state) => state.AddTocart);
-  
+  const hamada = useSelector((state) => state.AddTocart);  
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
   const dispatch = useDispatch();
@@ -44,13 +43,9 @@ const [add, setAdded] = useState([]);
   };
   useEffect(()=>{
     auth.onAuthStateChanged((userr)=>{
-      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])
-      
-
+      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])  
     })
-    
-    
-  },[])
+  },[uid])
   
 
 
