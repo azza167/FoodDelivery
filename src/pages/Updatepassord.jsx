@@ -80,8 +80,8 @@ setmessage("password not match")
                 />
               </div>
              
-              <button onClick={updateprofile} type="submit" className="addTOCart__btn">
-          submit
+              <button onClick={updateprofile} type="submit" className="all__btn">
+          Submit
               </button>
 
               <p>{message}</p>

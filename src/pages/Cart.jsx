@@ -202,7 +202,7 @@ const handelminus=(e,el)=>{
       {/* <button className="addTOCart__btn">
           <Link to="/checkout" onClick={()=>finito()}>Proceed to checkout</Link>
             </button> */}
-             <button className="add_btn">
+             <button className="all__btn">
                <NavLink to="/checkout" style={{ color:"white" , textDecoration:"none"}}>Proceed to checkout</NavLink>
            </button>
                      
