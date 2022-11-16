@@ -96,7 +96,7 @@ useEffect(()=>{
               
               </div>
               <p>{loading}</p>
-            <button type="submit" style={{width:'20%' ,margin:'auto'}} onClick={confirmupdate} className="addTOCart__btn"> updating</button>
+            <button type="submit" style={{width:'20%' ,margin:'auto'}} onClick={confirmupdate} className="all__btn"> updating</button>
     </div>
   )
 }

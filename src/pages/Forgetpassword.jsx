@@ -51,12 +51,12 @@ e.preventDefault()
               </div>
        
              
-              <button onClick={resetemail} type="submit" className="addTOCart__btn">
+              <button onClick={resetemail} type="submit" className="all__btn">
                Reset password
               </button>
             {error!=''?  <p style={{fontSize:'20px',marginTop:'10px' ,color:'red'}}>{error}</p>:<div><p style={{fontSize:'20px',marginTop:'10px',color:'green'}}>{checkemail}</p>     </div>}
             <Link to="/login">
-            <button  type="submit" className="addTOCart__btn">
+            <button  type="submit" className="all__btn">
                 Login
               </button> 
          </Link>
