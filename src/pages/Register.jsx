@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { useEffect, useState } from 'react'
 import {store,fire} from '../firebase'
-
 import React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -98,9 +97,6 @@ catch (error){
 
 
 
-
-
-
   return (
     <section>
     <CommonSection />
@@ -121,16 +117,17 @@ catch (error){
             />
           </div>
           <div className="form__group">
-         
+          <label htmlFor="img">  
+                Select Image       
             <i className="m-2 ri-camera-fill"></i>
             <input
-            
-            className="inputimage"
-              required="required"
-              id="mm"
+              className='d-none'
+              required 
+              id="img"
               type="file"
               onChange={handelerimagereq}
             />
+                          </label>
         </div>
         {image ? (
           <div>

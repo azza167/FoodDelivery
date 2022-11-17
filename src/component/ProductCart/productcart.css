@@ -13,11 +13,11 @@
      */
      overflow-y: scroll;
     position: fixed;
-    top: 15%;
+    top: 0;
     right: 0;
     width: 30%;
     height: 100%;
-    background-color: rgb(230, 230, 230);
+    background-color: white;
     z-index: 1;
     text-align: center;
     padding: 0 20px ;

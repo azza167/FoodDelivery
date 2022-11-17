@@ -38,15 +38,12 @@ useEffect(()=>{
 const x= useNavigate()
 const[err,seterr]=useState('')
 const hadelerlogin=(e)=>{
-
 setinp({...inp,[e.target.name]:e.target.value})
-
 }
 
   const hadelersub= async (e)=>{
-   
+    e.preventDefault()
       
-e.preventDefault()
 try {
 await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{})
 
@@ -78,82 +75,7 @@ catch (error){
   return (
    
     <section>
-      {/* {dat.map((el)=>(
-        <div>
-<p>{el.dataa.name}</p>
-<img src={el.dataa.img} alt="" />
-<button onClick={()=>{handelerdel(el.id)}}>delet</button>
-        </div>
-      ))} */}
-       {/* <Container>
-        <Row>
-          <Col lg="6" md="6" sm="12" className="m-auto text-center">
-           {!user?
-              <div>  <form className="form mb-5" onSubmit={hadelersub}>
-              <div className="form__group">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  onChange={(event)=>{hadelerlogin(event)}}
-               
-                name='email'
-                />
-              </div>
-              <div className="form__group">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  required
-               onChange={(event)=>{hadelerlogin(event)}}
-               name='password'
-
-                />
-              </div>
-             
-              <button  type="submit" className="addTOCart__btn">
-                Login
-              </button>
-              <p>{err}</p>
-         
-            </form><div>
-                 <Link to="/register">
-                 Don't have an account? Create an account
-               </Link>
-               </div>
-               <div>
-               <Link to="/forgetpassword">
-                 forget password
-               </Link>
-               </div>
-               </div>
-            
-               :
-               <div><p>welcom {email} </p>   
-            <button onClick={()=>hadelerlog()}>log out</button>
-            <div>
-            <Link to={'/Updatepassord'}>
-              
-            <button  type="submit" className="addTOCart__btn">
-                Update password
-              </button>
-              </Link>
-              </div>
-              <div>
-            <Link to={'/Updadeting'}>
-              
-            <button  type="submit" className="addTOCart__btn">
-                Update profile
-              </button>
-              </Link>
-              </div>
-              </div>
-           
-     
-           }
-          </Col>
-        </Row>
-      </Container> */}
+  
       <CommonSection/>
       <Container >
       {!user?
@@ -163,9 +85,8 @@ catch (error){
               <form className="form mb-9 w-100 myform " onSubmit={hadelersub}>
               <h3 className="login">Log in</h3>
               <p className="pLogin">login here using your email and password</p>
-
               <div className="form__group">
-              <i class="ri-user-line"></i>      
+              <i className="ri-user-line"></i>      
            <input
                 
                   className="inputLogin"
@@ -179,7 +100,7 @@ catch (error){
                 />
               </div>
               <div className="form__group">
-              <i class="ri-lock-2-line"></i> 
+              <i className="ri-lock-2-line"></i> 
               <input
               className="inputLogin"
                   type="password"
@@ -201,9 +122,9 @@ catch (error){
               <p>{err}</p>
               <div>
               <h3>Or log in via :</h3>
-              <i class="ri-facebook-circle-fill iconLogin"></i>
-              <i class="ri-twitter-fill iconLogin"></i>
-              <i class="ri-linkedin-box-fill iconLogin"></i>
+              <i className="ri-facebook-circle-fill iconLogin"></i>
+              <i className="ri-twitter-fill iconLogin"></i>
+              <i className="ri-linkedin-box-fill iconLogin"></i>
               
               </div>
               <div>
@@ -225,7 +146,7 @@ catch (error){
                     <Col sm="3" xs="2" md="2">
                         <div className="sidebar">
                             <div className="d-flex flex-column">
-                                <NavLink to="/Login" style={{ textDecoration: 'none' }}>
+                                <NavLink to="/Login/UserProfile" style={{ textDecoration: 'none' }}>
                                     <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
                                         Account
                                     </div>

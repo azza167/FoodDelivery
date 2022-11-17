@@ -37,11 +37,14 @@ function Ordedrs() {
 console.log("ord",orders)  
         return (
     <div className='cont'>
-    Ordedrs
     {
         orders.map((item,idx)=>(
                   <div className='mb-3' key={idx}>
-                  <div className=' text-bg-danger'> order's code ({item.id})</div>
+                  <div >
+                  <h5 className=' text-danger'>
+                        order's code ({item.id})
+                  </h5> 
+                  </div>
                   <Row className="justify-content-center m-4 user-data">
                   <Col lg="12" className=" d-flex text-center">
                     <div className="admin-content-text py-2 text-danger "> Order data</div>

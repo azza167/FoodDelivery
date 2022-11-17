@@ -15,7 +15,7 @@ const Cart = () => {
 const [count, setCount] = useState([]);
 const [ord, setord] = useState([]);
 const [val, setVal] = useState([]);
-
+const [total, setTotal] = useState("");
 
 const [add, setAdded] = useState([]);
 
@@ -44,10 +44,16 @@ const [add, setAdded] = useState([]);
   };
   useEffect(()=>{
     auth.onAuthStateChanged((userr)=>{
-      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])  
+      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{
+        setAdded(e.data().addedd)
+        setTotal(e.data().total)
+        console.log(e.data())
+      })
+      :
+      setAdded([])  
+      setTotal("")
     })
   },[uid])
-  
 
 
 var qool;
@@ -107,10 +113,13 @@ const handelminus=(e,el)=>{
   return (
     <div>
       {/* <h1 style={{ color: "red" }}> counter: {hamada.length}</h1> */}
-      <h1> total:{totalAmount}</h1>
-      <div className="style-3">Cart</div>
-      <div className="style-4"> {add.length}</div>
-      <div className="style-0">
+      <div className="w-100 m-auto text-center">
+          <div className="style-3">Cart</div>
+          <div className="style-4"> {add.length}</div>
+      </div>
+
+      <div className="style-0 mt-2 mb-2">
+      <h1> total:{total}</h1>
         {add.map((el, i) => (
           <div key={i}>
             {/* <h1>{el.price}</h1>
@@ -120,8 +129,8 @@ const handelminus=(e,el)=>{
             <div className="style-0">
               <div className="style-1">
                 <div className="style-2">
-                  {/* <div class="style-3">Cart</div>
-            <div class="style-4"> {hamada.length}</div> */}
+                  {/* <div className="style-3">Cart</div>
+            <div className="style-4"> {hamada.length}</div> */}
                 </div>
                 <div className="style-5">Qty</div>
                 <div className="style-6">Total</div>
@@ -157,25 +166,25 @@ const handelminus=(e,el)=>{
                     </div>
                   </div>
                 </div>
-                <div class="style-18">
-                  <div class="style-19">
+                <div className="style-18">
+                  <div className="style-19">
                   
                     <h1>{qool}</h1>
-                    <span class="style-23">{qool}</span>
+                    <span className="style-23">{qool}</span>
                     <link rel="stylesheet" 
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
             crossOrigin="anonymous"/>
 
-<div class="number-input">
-  <button onClick={(e)=>{handelminus(e,el)}} class="minus"></button>
-  <input class=" inpot" name="quantity"  type="number" value={val} />
-  <button onClick={(e)=>{handelplus(e,el)}} class="plus"></button>
+<div className="number-input">
+  <button onClick={(e)=>{handelminus(e,el)}} className="minus"></button>
+  <input className=" inpot" name="quantity"  readOnly type="number" value={val} />
+  <button onClick={(e)=>{handelplus(e,el)}} className="plus"></button>
 </div>
-                    {/* <input type="number" class="inpot" 
+                    {/* <input type="number" className="inpot" 
                             min="1" max="50" 
                     onChange={(e) => handelPlus(e,el,i)}/> */}
          
-                    {/* <button class="style-24">
+                    {/* <button className="style-24">
                       <svg
                         className="style-25"
                         focusable="false"
@@ -191,8 +200,8 @@ const handelminus=(e,el)=>{
                     </button> */}
                   </div>
                 </div>
-                <div class="style-27">
-                  <div class="style-28">{el.price} EGP</div>
+                <div className="style-27">
+                  <div className="style-28">{el.price} EGP</div>
                   
                 </div>
               </div>
@@ -203,9 +212,12 @@ const handelminus=(e,el)=>{
       {/* <button className="addTOCart__btn">
           <Link to="/checkout" onClick={()=>finito()}>Proceed to checkout</Link>
             </button> */}
+            <div className="w-100 m-auto text-center">
+
              <button className="add_btn">
                <NavLink to="/checkout" style={{ color:"white" , textDecoration:"none"}}>Proceed to checkout</NavLink>
            </button>
+           </div>
                      
     </div>
   );

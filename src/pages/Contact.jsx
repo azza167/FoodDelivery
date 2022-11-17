@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Col, ListGroupItem, Row } from 'reactstrap'
+import { Col, Container, ListGroupItem, Row } from 'reactstrap'
 import CommonSection from '../component/common-section/common-section'
 import Helmet from '../component/Helmet'
 import { fire } from '../firebase';
@@ -29,8 +29,9 @@ function Contact() {
 
       }
     return (
-        <Helmet title="Contact">
+        <Helmet title="Contact" className="overflow-hidden">
             <CommonSection />
+            <Container >
             <Row className='p-4'>
                 <Col lg="8">
                     <form className='form' onSubmit={onSubmit}>
@@ -108,7 +109,6 @@ function Contact() {
                                 <p>Off day</p>
                             </ListGroupItem>
                         </div>
-
                     </Col>
                     <Col lg="12" md="6">
                         <div style={{ backgroundColor: '#f8f5f4',height:"200px" }} className="m-3">
@@ -129,6 +129,8 @@ function Contact() {
                     </Row>
                 </Col>
             </Row>
+            </Container>
+            
         </Helmet>
     )
 }

@@ -58,11 +58,10 @@ const Checkout = () => {
 // }
 
 
-  
+
   const submitHandler = (e) => {
-     setusersss({name:enterName,email:enterEmail,number:enterNumber,country:enterCountry,city:enterCity,PostalCode:postalCode})
-     
-     e.preventDefault();
+    e.preventDefault();
+    setusersss({name:enterName,email:enterEmail,number:enterNumber,country:enterCountry,city:enterCity,PostalCode:postalCode})     
      console.log(usersss.name)
      alert(usersss.name)
      const userShippingAddress = {
@@ -138,7 +137,7 @@ if (checker) {
           <Row>
             <Col lg="8" md="6">
               <h6 className="shipping">Shipping Address</h6>
-    <form className="checkout__form" >
+           <form className="checkout__form" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input className='input'
                     type="text"
@@ -156,6 +155,7 @@ if (checker) {
                     placeholder="Enter your email"
                     required
                     value={enterEmail}
+                    readOnly
                     // onChange={(e) => setEnterEmail(e.target.value)}
                    
                   />
@@ -199,7 +199,7 @@ if (checker) {
                    
                   />
                 </div>
-                <button  onSubmit={submitHandler} className='submit' >
+                <button type="submit" className='submit' >
                   Payment
                 </button>
                 {/* <button onClick={()=>{porcee()}}>ddd</button> */}

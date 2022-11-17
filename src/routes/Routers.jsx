@@ -24,6 +24,7 @@ import AdminContacts from "../component/Admin/AdminContacts";
 import AdminProducts from "../component/Admin/AdminProducts";
 import Ordedrs from "../component/Admin/Ordedrs";
 import UserProfile from "../pages/UserProfile";
+import UpdateProducts from "../component/Admin/updateProducts";
 
 const Routers = () => {
   const Navigat = useNavigate()
@@ -72,6 +73,7 @@ const Routers = () => {
 
       <Route path='/admain/AdminContacts' element={<AdminContacts />} />
       <Route path='/admain/Ordedrs' element={<Ordedrs />} />
+      <Route path='/admain/updateProducts' element={<UpdateProducts/>} />
       <Route path='/admain' element={<Ordedrs />} />
 
     </Route>
@@ -79,6 +81,7 @@ const Routers = () => {
 
     <Route path='/Login' element={<Login />} >
     <Route path='/Login' element={<UserProfile/>}/>
+    <Route path='/Login/UserProfile' element={<UserProfile/>}/>
     <Route path='/Login/AdminProducts' element={<AdminProducts/>}/>
     <Route path='/Login/Updatepassord' element={<Updatepassord/>}/>
     <Route path='/Login/Updadeting' element={<Updadeting/>}/> 

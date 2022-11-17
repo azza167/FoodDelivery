@@ -19,14 +19,19 @@ const Admain = () => {
                     <Col sm="3" xs="2" md="2">
                         <div className="sidebar">
                             <div className="d-flex flex-column">
+                            <NavLink to="/admain/Ordedrs" style={{ textDecoration: 'none' }}>
+                                    <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
+                                        Ordedrs
+                                    </div>
+                                </NavLink>
                                 <NavLink to="/admain/AdminProducts" style={{ textDecoration: 'none' }}>
                                     <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
                                         Add New Products
                                     </div>
-                                </NavLink>
-                                <NavLink to="/admain/Ordedrs" style={{ textDecoration: 'none' }}>
+                                </NavLink>                               
+                                <NavLink to="/admain/updateProducts" style={{ textDecoration: 'none' }}>
                                     <div className="admin-side-text mt-3 border-bottom p-2 mx-auto text-center">
-                                        Ordedrs
+                                    update Products
                                     </div>
                                 </NavLink>
                                 <NavLink to="/admain/AdminContacts" style={{ textDecoration: 'none' }}>
@@ -39,11 +44,9 @@ const Admain = () => {
                         </div>
 
                     </Col>
-          {/* <div style={{width:'83%'}}>           */}
-          <Col sm="9" xs="10" md="10">
-          <Outlet/>
-           </Col>
-     {/* </div>    */}
+                    <Col sm="9" xs="10" md="10">
+                    <Outlet/>
+                    </Col>
                 </Row>
             </Container>
            

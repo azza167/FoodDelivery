@@ -18,7 +18,8 @@ export default function ProductCard(props) {
 
     const hamada = useSelector((state) => state.AddTocart);
     const [added, setAdded] = useState("add_btn ");
-    
+    const totalAmount = useSelector((state) => state.tot);
+
     function addCartHandeler(img,idd,tit,pric,qty){
         setAdded("already_added");
 
@@ -34,7 +35,7 @@ export default function ProductCard(props) {
             
             dispatch(obj);
 
-            auth.currentUser?  fire.doc("/added/" +uid ).set({ addedd: hamada }):console.log("hi")
+            auth.currentUser? fire.doc("/added/" +uid ).set({ addedd: hamada, total:totalAmount}):console.log("hi")
     
 
     }
