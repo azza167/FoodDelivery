@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSelector,  } from 'react-redux'
+import { useDispatch, useSelector,  } from 'react-redux'
 import { useState } from 'react'
 import '../../App.css'
 import { fire, store } from '../../firebase';
 import { Col, Row } from 'reactstrap';
+import { useEffect } from 'react';
 function AdminProducts() {
     const product = useSelector((state) => state.product)
     const admin = useSelector((state) => state.admaincart)
@@ -19,6 +20,7 @@ function AdminProducts() {
     const [download1, setdownload1] = useState("")
     const [download2, setdownload2] = useState("")
     const [download3, setdownload3] = useState("")
+    const [lodding, setLodding] = useState("")
     const handelerimagereq = (e) => {
         setimage1(URL.createObjectURL(e.target.files[0]))
         setimage2(URL.createObjectURL(e.target.files[1]))
@@ -29,26 +31,41 @@ function AdminProducts() {
 
         const storage = store.ref('/image' + file1.name)
             storage.put(file1).then(() => {
-                alert('image loaded')
+                setLodding("image 1 looded")
                 storage.getDownloadURL().then((el) => setdownload1(el))
             })
             storage.put(file2).then(() => {
-                alert('image loaded')
+                setLodding("image 2 looded")
                 storage.getDownloadURL().then((el) => setdownload2(el))
             })
             storage.put(file3).then(() => {
-                alert('image loaded')
+                // alert('image loaded')
+                setLodding("image 3 looded")
                 storage.getDownloadURL().then((el) => setdownload3(el))
             })
 
      
     }
 
-  
+    const dispatch = useDispatch()
 
+    useEffect(()=>{
+
+        fire.collection('/product').onSnapshot((el)=>{
+          el.docs.map((el)=> {
+            const adminpro={
+            type:'addpro',
+        
+            payload:el.data()
+          }
+          dispatch(adminpro)
+        }
+          )
+        } )
+        },[]) 
 
     const additem = () => {
-
+setLodding("...lodding")
         if ((titl.length != 0 && category.length !=0) && ((pric != 0) )) {
             setshow(false)
             setTimeout(() => {
@@ -70,7 +87,8 @@ function AdminProducts() {
             })
         }
         else {
-            alert("complete field")
+            // alert("complete field")
+            setLodding("complete field")
         }
     }
     
@@ -113,6 +131,9 @@ function AdminProducts() {
                                 <option value="Chicken">Chicken</option>
 
                             </select>
+                        </div>
+                        <div>
+                            <p>{lodding}</p>
                         </div>
                         <button onClick={additem} className='add_btn bt'>Add new item</button>
                     </>)}

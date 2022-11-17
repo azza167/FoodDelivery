@@ -31,7 +31,7 @@
     font-size: 1.2rem;
 }
 
-.add_btn {
+.add_btn,.Add {
     border: none;
     padding: 7px 25px;
     background: #ff5f00;
@@ -40,11 +40,12 @@
     font-size: 0.9rem;
 }
 
-.already_added {
-    border: none;
+
+.Done {
+    border: 1px solid #ff5f00;
     padding: 7px 25px;
-    background: #41c20e;
-    color: #fff;
+    background: #fff;
+    color: #ff5f00;
     border-radius: 5px;
     font-size: 0.9rem;
 }
@@ -60,7 +61,7 @@
     .product_card {
         padding: 10px;
     }
-    .add_btn {
+    .add_btn , .Add ,.Done{
         padding: 5px 15px;
         font-size: 0.7rem;
     }
@@ -70,11 +71,7 @@
     .product_card {
         padding: 5px;
     }
-    .add_btn {
-        padding: 3px 10px;
-        font-size: 0.6rem;
-    }
-    .already_added {
+    .add_btn,.Add,Done {
         padding: 3px 10px;
         font-size: 0.6rem;
     }

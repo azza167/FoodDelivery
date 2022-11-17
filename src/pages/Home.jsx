@@ -10,6 +10,7 @@ import HomeSlider from "../component/Slider/HomeSlider.jsx";
 import Offers from "../component/offers/offers.jsx";
 import Footer from "../component/Footer/footer";
 import "../Styles/home.css"
+import { fire } from "../firebase.js";
 
 const Home = () => {
 
@@ -27,6 +28,21 @@ const Home = () => {
 
   const [allproducts, setAllProducts] = useState(product);
 
+  const dispatch=useDispatch();
+  useEffect(()=>{
+
+      fire.collection('/product').onSnapshot((el)=>{
+        el.docs.map((el)=> {
+          const adminpro={
+          type:'addpro',
+      
+          payload:el.data()
+        }
+        dispatch(adminpro)
+      }
+        )
+      } )
+      }) 
   return (
     <div className="overflow-hidden">
       <div className="mb-4">

@@ -80,7 +80,7 @@ const Store = (state = initstate, action) => {
             state.AddTocart.push(action.payload);
             console.log(state.AddTocart)
         } else {
-            alert("adsasd")
+            alert("Already added")
         }
 
         console.log(bar)
@@ -124,6 +124,17 @@ const Store = (state = initstate, action) => {
 
 
         return {...state, }
+    }
+    if (action.type === "addpro"){
+
+        console.log(action.payload)
+        const prd=state.product.filter((el)=>el.id==action.payload.id)
+      
+            prd.length ==0 ?state.product.push(action.payload):console.log("")
+        // console.log(prd)
+        // return {...state, product:[...products,action.payload]};
+
+
     }
     return state;
 };

@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./productcart.css";
+import { auth, fire } from "../../firebase";
 const ProductCart = () => {
   const hamada = useSelector((state) => state.AddTocart);
   // const qont = useSelector((state) => state.AddTocart);
@@ -14,7 +15,8 @@ const ProductCart = () => {
   const [qoty, setQoty] = useState();
   // const[col,setCol] = useState(1)
   const dispatch = useDispatch();
-
+  const uid = useSelector((state) => state.uid);
+  const [add, setAdded] = useState([]);
   const handeldel = (i, el) => {
     const dele = {
       type: "del",
@@ -24,8 +26,19 @@ const ProductCart = () => {
       },
     };
     dispatch(dele);
-  };
+    fire.doc("/added/" +uid ).update({addedd:add.filter(addedd=>addedd.id!=el.id)})
 
+  };
+  useEffect(()=>{
+    auth.onAuthStateChanged((userr)=>{
+      userr?fire.doc("/added/" + uid).onSnapshot((e)=>{
+        setAdded(e.data().addedd)
+        console.log(e.data())
+      })
+      :
+      setAdded([])  
+    })
+  },[uid])
   const handelQty = (e, el, i) => {
     hamada.map((item) =>
       el.id === item.id ? { ...item, quantity: setQoty(el.quantity) } : item
@@ -54,7 +67,7 @@ const ProductCart = () => {
           </span>
         </div>
           <h3>{totalAmount}</h3>
-          {hamada.map((el, i) => (
+          {add.map((el, i) => (
            
             <div className="styler-0">
               <div className="styler-1">

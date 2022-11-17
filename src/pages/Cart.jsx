@@ -15,10 +15,9 @@ const Cart = () => {
 const [count, setCount] = useState([]);
 const [ord, setord] = useState([]);
 const [val, setVal] = useState([]);
-const [total, setTotal] = useState("");
-
+const [total, setTotal] = useState(0);
 const [add, setAdded] = useState([]);
-
+let TotalPrice=0;
   const hamada = useSelector((state) => state.AddTocart);  
   const totalQuantity = useSelector((state) => state.totalQuantity);
   const totalAmount = useSelector((state) => state.tot);
@@ -26,7 +25,6 @@ const [add, setAdded] = useState([]);
   const dispatch = useDispatch();
   const handeldel = (i, el) => {
     
-    fire.doc("/added/" +uid ).update({addedd:add.filter(addedd=>addedd.id!=el.id)})
     
    
     // onSnapshot((e)=>{setAdded(e.data().addedd.filter((e,index)=>e.id!=el.id))})
@@ -40,13 +38,17 @@ const [add, setAdded] = useState([]);
       },
     };
     dispatch(dele);
+    fire.doc("/added/" +uid ).update({addedd:add.filter(addedd=>addedd.id!=el.id)})
 
   };
   useEffect(()=>{
     auth.onAuthStateChanged((userr)=>{
       userr?fire.doc("/added/" + uid).onSnapshot((e)=>{
         setAdded(e.data().addedd)
-        setTotal(e.data().total)
+        add.map((e)=>{
+          TotalPrice+= e.price
+        })
+        // setTotal(e.data().tot)
         console.log(e.data())
       })
       :
@@ -57,20 +59,6 @@ const [add, setAdded] = useState([]);
 
 
 var qool;
-
-
-// const handelPlus = (e,el,i) =>{
-   
-//         hamada.map((item)=>
-//         el.id=== item.id ? {...item, quantity: el.quantity= e.target.value* el.price} : item
-//         ,setCount(el.quantity)
-//         )
-//         const qont = {
-//           type: "qont",
-//           payload: count,
-//         };
-//         dispatch(qont);        
-//       }
 
 const handelplus=(e,el)=>{
   
@@ -100,11 +88,6 @@ const handelminus=(e,el)=>{
   };
   dispatch(qont);        
 }
-  
-       
-      
-      
-
 
    
 
@@ -119,7 +102,7 @@ const handelminus=(e,el)=>{
       </div>
 
       <div className="style-0 mt-2 mb-2">
-      <h1> total:{total}</h1>
+      <h1> total:{totalAmount}</h1>
         {add.map((el, i) => (
           <div key={i}>
             {/* <h1>{el.price}</h1>
@@ -160,7 +143,9 @@ const handelminus=(e,el)=>{
                   </div>
                   <div className="style-15">
                     <div className="style-16">{el.title}</div>
-                    <div className="style-16">{el.quantity}</div>
+                    <div className="style-16">
+                      EGP{el.price}
+                    </div>
                     <div className="style-17" fontSize="16px">
                       {el.description}
                     </div>
@@ -177,7 +162,7 @@ const handelminus=(e,el)=>{
 
 <div className="number-input">
   <button onClick={(e)=>{handelminus(e,el)}} className="minus"></button>
-  <input className=" inpot" name="quantity"  readOnly type="number" value={val} />
+  <input className=" inpot" name="quantity"  readOnly type="number" value={val} min="1" />
   <button onClick={(e)=>{handelplus(e,el)}} className="plus"></button>
 </div>
                     {/* <input type="number" className="inpot" 
@@ -201,7 +186,16 @@ const handelminus=(e,el)=>{
                   </div>
                 </div>
                 <div className="style-27">
-                  <div className="style-28">{el.price} EGP</div>
+                      {
+                        (el.quantity=="1")?
+                      <div className="style-28">
+                      EGP{el.price}
+                      </div>
+                      :
+                      <div className="style-28">
+                       EGP{el.quantity}
+                       </div>
+                      } 
                   
                 </div>
               </div>

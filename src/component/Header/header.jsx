@@ -81,9 +81,23 @@ const ui={
 useEffect(()=>{
   auth.onAuthStateChanged((userr)=>{
  userr? 
-fire.doc("/added/" + userr.uid).onSnapshot((e)=>{setAdded(e.data().addedd)}):setAdded([])
+fire.doc("/added/" + userr.uid).onSnapshot((e)=>{e.data() ? setAdded(e.data().addedd):setAdded([])}):setAdded([])
 })
 
+},[]) 
+useEffect(()=>{
+
+fire.collection('/product').onSnapshot((el)=>{
+  el.docs.map((el)=> {
+    const adminpro={
+    type:'addpro',
+
+    payload:el.data()
+  }
+  dispatch(adminpro)
+}
+  )
+} )
 },[]) 
 
   // const user=useSelector((state)=>state.userauto)

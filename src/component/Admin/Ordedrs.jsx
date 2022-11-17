@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import { fire } from '../../firebase';
 import Admain from '../../pages/Admain';
 import "./order.css"
@@ -10,10 +10,13 @@ function Ordedrs() {
 
      const [orders,setOrders]=useState([]);
 
-    const saveOrder=(id)=>{
+    const saveOrder=(id,i)=>{
         if(selectedValue==="Done")
         {
             fire.collection('/orders').doc(id).delete();
+               fire.doc("/added/" + orders[i].dataa.uid).delete();
+            //  console.log(orders[i].dataa.uid,"5555555")
+                // console.log("oerdwrr",orders,i)
         }
         if(selectedValue==="Waiting")
         {
@@ -36,18 +39,35 @@ function Ordedrs() {
 
 console.log("ord",orders)  
         return (
-    <div className='cont'>
+            <Container>
+                 <div className="w-100 m-auto text-center">
+                        <h4>
+                        number of ordders
+                        <div className="style-4">
+                                {orders.length}
+                         </div>
+
+                        </h4>
+                    </div>
+                <div className='cont'>
     {
         orders.map((item,idx)=>(
                   <div className='mb-3' key={idx}>
                   <div >
-                  <h5 className=' text-danger'>
-                        order's code ({item.id})
+                  <h5 className=' text-dark'>
+                        <span>order's code </span> 
+                        <span style={{
+                            color: "#979797",
+                            fontFamily: "Almarai",
+                            fontSize: "16px",
+                        }}>
+                         ( {item.id} )
+                        </span>
                   </h5> 
                   </div>
                   <Row className="justify-content-center m-4 user-data">
                   <Col lg="12" className=" d-flex text-center">
-                    <div className="admin-content-text py-2 text-danger "> Order data</div>
+                    <div className="admin-content-text py-2 "> Order data</div>
                   </Col>
                   {item.dataa.ordersss.map((order,id)=>(
                    <Row key={id}>
@@ -93,7 +113,7 @@ console.log("ord",orders)
              {/* <div key={id}>product: {order.title}, price = EGP {order.price}</div> */}
                   {/* <Row className="justify-content-center mt-4 user-data"> */}
                   <Col lg="12" className=" d-flex">
-                  <div className="admin-content-text py-2 text-danger"> user data</div>
+                  <div className="admin-content-text py-2 "> user data</div>
                   </Col>
                   <Col lg="12" className=" d-flex">
                   <div
@@ -214,8 +234,12 @@ console.log("ord",orders)
                     </div>
                 </Col>
                 <div className=" d-inline px-4 border text-center pt-2">
-                    total price:
-                    <span className="text-danger"> EGP{item.dataa.totalPrice}</span>
+                    Total Price:
+                    <span
+                      style={{
+                            color: "#ff5f00",
+                            fontSize: "16px",
+                        }}> EGP{item.dataa.totalPrice}</span>
                 </div>
                 <div className="d-flex m-2 justify-content-center">
                     <select
@@ -227,7 +251,7 @@ console.log("ord",orders)
                         <option value="Cancle">Cancle</option>
                     </select>
                     <button className="btn-a px-3 d-inline mx-2"
-                     onClick={()=>saveOrder(item.id)}>save</button>
+                     onClick={()=>saveOrder(item.id,idx)}>save</button>
                     </div>
                   </Row>
                   {/* </Row> */}
@@ -239,6 +263,8 @@ console.log("ord",orders)
 
               
     </div>
+   
+    </Container>
   )
 }
 

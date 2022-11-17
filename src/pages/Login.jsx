@@ -45,10 +45,13 @@ setinp({...inp,[e.target.name]:e.target.value})
     e.preventDefault()
       
 try {
-await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{})
+await auth.signInWithEmailAndPassword(inp.email,inp.password).then((res)=>{
+  x('/')
+
+}
+)
 
 
-x('/')
 
 
 }

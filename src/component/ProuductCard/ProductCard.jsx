@@ -4,7 +4,7 @@ import { Container } from 'reactstrap';
 import './product-card.css'
 import { useSelector,useDispatch} from 'react-redux';
 import { useState } from 'react';
-import {store,fire, auth} from '../../firebase'
+import {fire, auth} from '../../firebase'
 
 
 
@@ -17,12 +17,12 @@ export default function ProductCard(props) {
     const dispatch = useDispatch()
 
     const hamada = useSelector((state) => state.AddTocart);
+  const totalAmount = useSelector((state) => state.tot);
 
-    const [added, setAdded] = useState("add_btn ");
-    const totalAmount = useSelector((state) => state.tot);
-
+    const [added, setAdded] = useState("Add ");
+    
     function addCartHandeler(img,idd,tit,pric,qty){
-        setAdded("already_added");
+        setAdded("Done");
 
             const obj = {
                 type:"cart",
@@ -36,7 +36,7 @@ export default function ProductCard(props) {
             
             dispatch(obj);
 
-            auth.currentUser? fire.doc("/added/" +uid ).set({ addedd: hamada, total:totalAmount}):console.log("hi")
+            auth.currentUser?  fire.doc("/added/" +uid ).set({ addedd: hamada }):console.log("hi")
     
 
     }

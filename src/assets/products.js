@@ -28,6 +28,10 @@ import chicken1 from "../assets/images/chicken1.png"
 import chicken2 from "../assets/images/chicken2.png"
 import chicken3 from "../assets/images/chicken3.png"
 import chicken4 from "../assets/images/chicken4.png"
+import { useEffect } from "react"
+import { fire } from "../firebase"
+import React from "react";
+
 
 
 const products = [{
@@ -359,5 +363,28 @@ const products = [{
 ];
 
 
+export function getProducts() {
+
+ 
+    // useEffect(()=>{
+    //     fire.collection('/product').onSnapshot((el)=>{
+    //       el.docs.map((el)=> {
+    
+    //         const prd=products.filter((el)=>el.id===el.data().id)
+    // if(prd.length==0){
+    //         products.push(el.data())
+    // }else{console.log('hi')}
+    
+    //     }
+    //       )
+    //     } )
+      
+    //   },[])
+      
+}
+   
+
+
 
 export default products;
+

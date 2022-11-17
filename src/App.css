@@ -95,6 +95,9 @@ width:20% ;
   border-radius: 21px;
   background-color: #ffffff;
 }
+.sidebar a.active{
+  color: #ff5f00;
+}
 .box-container{
   display: flex;
 

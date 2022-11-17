@@ -24,7 +24,7 @@ function UpdateProducts() {
     }
     
   return (
-    <div>updateProducts
+    <div>
     
     <div>
                 <h3 style={{ textAlign: 'center', margin: '5px' }}>Your Announce <span>{dat.length}</span> </h3>

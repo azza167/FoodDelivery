@@ -5,11 +5,27 @@ import { Col, Container, Row } from 'reactstrap';
 import { NavLink ,Outlet} from 'react-router-dom';
 import { Routes,Route,Navigate} from 'react-router-dom' ;
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { fire } from '../firebase';
+import { useDispatch } from 'react-redux';
 
 
 const Admain = () => {
+    const dispatch=useDispatch();
+    useEffect(()=>{
 
-
+        fire.collection('/product').onSnapshot((el)=>{
+          el.docs.map((el)=> {
+            const adminpro={
+            type:'addpro',
+        
+            payload:el.data()
+          }
+          dispatch(adminpro)
+        }
+          )
+        } )
+        },[]) 
 
 
     return (

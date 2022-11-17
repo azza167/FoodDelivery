@@ -62,8 +62,6 @@ const Checkout = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setusersss({name:enterName,email:enterEmail,number:enterNumber,country:enterCountry,city:enterCity,PostalCode:postalCode})     
-     console.log(usersss.name)
-     alert(usersss.name)
      const userShippingAddress = {
       name: enterName,
       email: enterEmail,
@@ -75,7 +73,16 @@ const Checkout = () => {
     shippingInfo.push(userShippingAddress);
     console.log(shippingInfo);
     // fire.collection('/orders').add({shippingInfo:shippingInfo})
-    fire.collection('/orders').add({ordersss:hamada,shippingInfo:userShippingAddress,totalPrice:totalAmount})
+    setEnterCity("")
+    setEnterCountry("")
+    setEnterName("")
+    setPostalCode("")
+    setEnterNumber("")
+    fire.collection('/orders').add({
+      ordersss:hamada,
+      shippingInfo:userShippingAddress,
+      totalPrice:totalAmount,
+      uid:auth.currentUser.uid})
 
 
     const payment = {
@@ -102,7 +109,6 @@ const Checkout = () => {
 
     }else{
       setchecker(false)
-    
     }
 console.log(e.target.value)
 
@@ -165,6 +171,8 @@ if (checker) {
                     type="number"
                     placeholder="Phone number"
                     required
+                    value={enterNumber}
+
                     onChange={(e) => setEnterNumber(e.target.value)}
 
                     
@@ -176,6 +184,7 @@ if (checker) {
                     type="text"
                     placeholder="Country"
                     required
+                    value={enterCountry}
                     onChange={(e) => setEnterCountry(e.target.value)}
                    
                   />
@@ -185,6 +194,7 @@ if (checker) {
                     type="text"
                     placeholder="City"
                     required
+                    value={enterCity}
                     onChange={(e) => setEnterCity(e.target.value)}
 
                   />
@@ -194,6 +204,7 @@ if (checker) {
                     type="number"
                     placeholder="Postal code"
                     required
+                    value={enterNumber}
                     onChange={(e)=>setPostalCode(e.target.value)}
 
                    

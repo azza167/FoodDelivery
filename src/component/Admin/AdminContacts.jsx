@@ -26,6 +26,7 @@ function AdminContacts() {
     })
     },[]);
     console.log("contacts",contacts);
+    
 
   return (
     <div className='cont'>AdminContacts

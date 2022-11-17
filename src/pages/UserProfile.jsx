@@ -14,14 +14,19 @@ function UserProfile() {
     const[orders , setOrders]=useState([])
 
     const x = useNavigate() ;   
-    const hadelerlog=()=>{
+    const hadelerlog= async ()=>{
 
-        auth.signOut().then(()=>
-        console.log("log out")
+      try {
+
+        await auth.signOut().then(()=>
+         {x('/login')}
         )
+      }   
+      catch (error){
+        error.message.includes('There is no user record')? console.log('err'):console.log("er")
       
+      }   
    window.location.reload(true) 
-        x('/login')
     }
     useEffect(()=>{
         auth.onAuthStateChanged((userr)=>{  
