@@ -76,7 +76,7 @@ const handelplus=(e,el)=>{
   
   setVal(e.target.previousSibling.stepUp());
   console.log(e.target.previousSibling.value); 
-   add.map((item)=>
+   hamada.map((item)=>
   el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
@@ -89,9 +89,9 @@ const handelplus=(e,el)=>{
 const handelminus=(e,el)=>{
   
   setVal(e.target.nextSibling.stepDown());
-  console.log(e.target.previousSibling.value); 
-   add.map((item)=>
-  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.previousSibling.value * el.price} : item
+  console.log(e.target.nextSibling.value); 
+   hamada.map((item)=>
+  el.id=== item.id ? {...item, quantity: el.quantity=  e.target.nextSibling.value * el.price} : item
   ,setCount(el.quantity)
   )
   const qont = {
@@ -223,21 +223,6 @@ const handelminus=(e,el)=>{
   );
 };
 
-//  <h1 style={{color:'#ff5f00'}}> Counter: {hamada.length}</h1>
-// <h1> total:{totalAmount}</h1>
-// {hamada.map((el,i) =>(
-//   <div>
-//     <h1>
-//       {el.price}
 
-//     </h1>
-//    <img src={el.img} alt="" />
-//    <button onClick={()=>handeldel(i,el)}>delete</button>
-//   </div>
-// ))}
-// <button className="addTOCart__btn">
-//               <Link to="/checkout">Proceed to checkout</Link>
-//             </busstton>
-// </div>
 
 export default Cart;

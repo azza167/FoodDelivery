@@ -17,6 +17,7 @@ export default function ProductCard(props) {
     const dispatch = useDispatch()
 
     const hamada = useSelector((state) => state.AddTocart);
+
     const [added, setAdded] = useState("add_btn ");
     const totalAmount = useSelector((state) => state.tot);
 
